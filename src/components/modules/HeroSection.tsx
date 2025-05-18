@@ -25,7 +25,7 @@ export default function HeroSection() {
         </span>
       </h1>
       <p className="text-lg sm:text-xl md:text-2xl text-muted-foreground mb-10 max-w-3xl mx-auto text-balance animate-in fade-in slide-in-from-bottom-8 duration-700 delay-200">
-        An immersive journey through creativity and code. Explore a portfolio that's more than just a page – it's an evolving digital space.
+        I craft digital experiences that connect humans with technology.
       </p>
       <Button 
         asChild 
