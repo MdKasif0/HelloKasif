@@ -1,3 +1,4 @@
+
 // src/components/modules/ProjectsSection.tsx
 'use client';
 
@@ -5,56 +6,11 @@ import Image from 'next/image';
 import { CardContent, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
 import InteractiveCard from '@/components/interactive/InteractiveCard';
 import { Button } from '@/components/ui/button';
-import { ExternalLink, Github, MessageSquareQuote, ChevronDown, ChevronUp } from 'lucide-react';
+import { ExternalLink, Github, MessageSquareQuote, ChevronDown, ChevronUp, ArrowRight } from 'lucide-react';
 import { Badge } from '@/components/ui/badge';
 import { useState } from 'react';
-
-const allProjects = [
-  {
-    id: 1,
-    title: "Project Nova",
-    problem: "Users faced overwhelming information in a vast digital library, struggling to find relevant content efficiently.",
-    myRole: "Lead Developer & UI/UX Architect. Spearheaded the AI engine development, front-end implementation (Next.js), and overall user experience strategy.",
-    process: "Conducted user research to identify pain points. Designed and prototyped a spatial navigation concept. Developed AI algorithms for dynamic content personalization. Iteratively tested and refined based on user feedback.",
-    solution: "Project Nova: An innovative platform featuring an intuitive 3D interface and AI-driven content suggestions that adapt to individual user behavior and preferences.",
-    result: "Led to a 40% increase in user engagement, a 25% reduction in time-to-find content, and overwhelmingly positive feedback on the novel user interface.",
-    clientFeedback: "Nova has transformed how we interact with our data. Jane's vision and execution were exceptional!",
-    imageUrl: "https://placehold.co/600x400.png",
-    imageHint: "abstract futuristic",
-    tags: ["Next.js", "AI", "Tailwind CSS", "Spatial UI", "Genkit"],
-    liveLink: "#",
-    repoLink: "#",
-  },
-  {
-    id: 2,
-    title: "Chrono Scape",
-    problem: "Complex datasets were difficult to interpret using traditional 2D charts, limiting insights and decision-making.",
-    myRole: "Senior Frontend Engineer. Focused on developing the core visualization components using D3.js and integrating real-time data streams via WebSockets.",
-    process: "Explored various data visualization techniques. Developed custom D3.js components for adaptive depth perception. Implemented WebSocket integration for live data updates. Optimized rendering for large datasets.",
-    solution: "Chrono Scape: A dynamic data visualization tool offering adaptive depth perception for exploring complex, multi-dimensional datasets in real-time.",
-    result: "Enabled users to identify previously unseen patterns and correlations, leading to a 15% improvement in data-driven decision-making speed. Praised for its performance and clarity.",
-    clientFeedback: "The depth and clarity Chrono Scape provides are unparalleled. It's become an indispensable tool for our analysts.",
-    imageUrl: "https://placehold.co/600x400.png",
-    imageHint: "data visualization",
-    tags: ["React", "D3.js", "WebSockets", "UX Design", "Performance"],
-    liveLink: "#",
-    repoLink: "#",
-  },
-  {
-    id: 3,
-    title: "Aether Engine",
-    problem: "Building immersive and interactive web environments was time-consuming and lacked a standardized approach, leading to inconsistent user experiences.",
-    myRole: "Core Framework Developer. Designed and implemented the modular architecture, animation system, and developer APIs for the Aether Engine.",
-    process: "Researched existing UI frameworks and game engine principles. Developed a component-based architecture using TypeScript and Web Components. Focused on performance and ease of use for developers.",
-    solution: "Aether Engine: A modular UI framework designed for creating highly interactive and immersive web environments with a consistent look and feel.",
-    result: "Reduced development time for interactive web features by 30%. Adopted by multiple teams, enhancing product quality and developer productivity across the organization.",
-    imageUrl: "https://placehold.co/600x400.png",
-    imageHint: "geometric pattern",
-    tags: ["TypeScript", "Web Components", "Animation", "Framework Design"],
-    liveLink: "#",
-    repoLink: "#",
-  },
-];
+import Link from 'next/link';
+import { allProjects } from '@/lib/project-data'; // Import project data
 
 const INITIAL_PROJECTS_COUNT = 2;
 
@@ -96,9 +52,10 @@ export default function ProjectsSection() {
             <CardContent className="p-6 pt-0 flex-grow">
               <SectionBlock title="The Problem">{project.problem}</SectionBlock>
               <SectionBlock title="My Role">{project.myRole}</SectionBlock>
-              <SectionBlock title="The Process">{project.process}</SectionBlock>
-              <SectionBlock title="The Solution">{project.solution}</SectionBlock>
-              <SectionBlock title="The Result">{project.result}</SectionBlock>
+              {/* Hiding Process, Solution, Result for summary view. These will be on the detail page. */}
+              {/* <SectionBlock title="The Process">{project.process}</SectionBlock> */}
+              {/* <SectionBlock title="The Solution">{project.solution}</SectionBlock> */}
+              {/* <SectionBlock title="The Result">{project.result}</SectionBlock> */}
               
               {project.clientFeedback && (
                 <div className="mt-4 mb-4 p-4 border-l-4 border-accent bg-accent/10 rounded-r-md">
@@ -120,17 +77,26 @@ export default function ProjectsSection() {
                 </div>
               </div>
             </CardContent>
-            <CardFooter className="p-6 pt-0 flex flex-wrap gap-4 justify-start items-center border-t border-border/50 mt-auto">
-              <Button variant="outline" asChild className="border-accent/50 text-accent hover:bg-accent/10 hover:text-accent hover:border-accent">
-                <a href={project.liveLink} target="_blank" rel="noopener noreferrer">
-                  Live Demo <ExternalLink size={16} className="ml-2" />
-                </a>
+            <CardFooter className="p-6 pt-4 flex flex-wrap gap-4 justify-start items-center border-t border-border/50 mt-auto">
+              <Button variant="default" asChild className="bg-gradient-to-r from-primary to-accent hover:from-primary/90 hover:to-accent/90 text-primary-foreground group">
+                <Link href={`/projects/${project.slug}`}>
+                  View Case Study <ArrowRight size={16} className="ml-2 transition-transform group-hover:translate-x-1" />
+                </Link>
               </Button>
-              <Button variant="ghost" asChild className="text-muted-foreground hover:text-accent">
-                <a href={project.repoLink} target="_blank" rel="noopener noreferrer">
-                  <Github size={20} className="mr-2" /> View Source
-                </a>
-              </Button>
+              {project.liveLink && project.liveLink !== "#" && (
+                <Button variant="outline" asChild className="border-accent/50 text-accent hover:bg-accent/10 hover:text-accent hover:border-accent">
+                  <a href={project.liveLink} target="_blank" rel="noopener noreferrer">
+                    Live Demo <ExternalLink size={16} className="ml-2" />
+                  </a>
+                </Button>
+              )}
+              {project.repoLink && project.repoLink !== "#" && (
+                <Button variant="ghost" asChild className="text-muted-foreground hover:text-accent">
+                  <a href={project.repoLink} target="_blank" rel="noopener noreferrer">
+                    <Github size={20} className="mr-2" /> View Source
+                  </a>
+                </Button>
+              )}
             </CardFooter>
           </InteractiveCard>
         ))}

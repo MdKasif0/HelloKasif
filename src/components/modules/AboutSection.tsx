@@ -1,3 +1,4 @@
+
 // src/components/modules/AboutSection.tsx
 import InteractiveCard from '@/components/interactive/InteractiveCard';
 import { CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
