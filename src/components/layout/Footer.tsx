@@ -12,7 +12,7 @@ export default function Footer() {
             target="_blank" 
             rel="noopener noreferrer" 
             aria-label="GitHub" 
-            className="text-muted-foreground hover:text-primary transition-colors"
+            className="text-muted-foreground hover:text-primary transition-all hover:scale-125 hover:-translate-y-1"
           >
             <Github size={24} />
           </a>
@@ -21,7 +21,7 @@ export default function Footer() {
             target="_blank" 
             rel="noopener noreferrer" 
             aria-label="LinkedIn" 
-            className="text-muted-foreground hover:text-primary transition-colors"
+            className="text-muted-foreground hover:text-primary transition-all hover:scale-125 hover:-translate-y-1"
           >
             <Linkedin size={24} />
           </a>
@@ -30,7 +30,7 @@ export default function Footer() {
             target="_blank" 
             rel="noopener noreferrer" 
             aria-label="Twitter"
-            className="text-muted-foreground hover:text-primary transition-colors"
+            className="text-muted-foreground hover:text-primary transition-all hover:scale-125 hover:-translate-y-1"
           >
             <Twitter size={24} />
           </a>

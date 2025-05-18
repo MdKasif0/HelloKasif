@@ -41,18 +41,22 @@ const projects = [
 
 export default function ProjectsSection() {
   return (
-    <section id="projects" className="py-16 md:py-24">
-      <h2 className="text-4xl md:text-5xl font-bold text-center mb-16 tracking-tight">My Creations</h2>
+    <section id="projects" className="py-16 md:py-24 animate-in fade-in duration-500">
+      <h2 className="text-4xl md:text-5xl font-bold text-center mb-16 tracking-tight animate-in fade-in slide-in-from-bottom-5 duration-700">My Creations</h2>
       <div className="grid md:grid-cols-1 lg:grid-cols-3 gap-8 xl:gap-10">
-        {projects.map((project) => (
-          <InteractiveCard key={project.id} className="flex flex-col group/project">
+        {projects.map((project, index) => (
+          <InteractiveCard 
+            key={project.id} 
+            className={`flex flex-col group/project animate-in fade-in slide-in-from-bottom-10 duration-500`}
+            style={{ animationDelay: `${index * 200}ms` }}
+          >
             <div className="relative overflow-hidden rounded-t-xl">
               <Image
                 src={project.imageUrl}
                 alt={project.title}
                 width={600}
                 height={400}
-                className="object-cover aspect-[3/2] w-full transition-transform duration-500 ease-in-out group-hover/project:scale-105"
+                className="object-cover aspect-[3/2] w-full transition-transform duration-500 ease-in-out group-hover/project:scale-110 group-hover/project:rotate-1"
                 data-ai-hint={project.imageHint}
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>

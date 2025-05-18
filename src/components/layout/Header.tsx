@@ -8,17 +8,17 @@ export default function Header() {
     <header className="sticky top-0 z-50 w-full border-b border-border/40 bg-background/80 backdrop-blur-lg supports-[backdrop-filter]:bg-background/60">
       <div className="container flex h-16 max-w-screen-2xl items-center justify-between px-4 sm:px-6 lg:px-8">
         <Link href="/" className="flex items-center gap-2 group">
-          <CodeXml className="h-7 w-7 text-primary transition-transform group-hover:rotate-[15deg]" />
-          <span className="text-xl font-bold tracking-tight sm:text-2xl">PersonaVerse</span>
+          <CodeXml className="h-7 w-7 text-primary transition-transform group-hover:rotate-[25deg] group-hover:scale-110" />
+          <span className="text-xl font-bold tracking-tight sm:text-2xl group-hover:text-primary transition-colors">PersonaVerse</span>
         </Link>
-        <nav className="hidden items-center gap-2 sm:flex">
-          <Button variant="ghost" asChild className="text-muted-foreground hover:text-foreground">
+        <nav className="hidden items-center gap-1 sm:flex">
+          <Button variant="ghost" asChild className="text-muted-foreground hover:text-foreground transition-all hover:-translate-y-0.5">
             <Link href="#about">About</Link>
           </Button>
-          <Button variant="ghost" asChild className="text-muted-foreground hover:text-foreground">
+          <Button variant="ghost" asChild className="text-muted-foreground hover:text-foreground transition-all hover:-translate-y-0.5">
             <Link href="#projects">Projects</Link>
           </Button>
-          <Button variant="ghost" asChild className="text-muted-foreground hover:text-foreground">
+          <Button variant="ghost" asChild className="text-muted-foreground hover:text-foreground transition-all hover:-translate-y-0.5">
             <Link href="#contact">Contact</Link>
           </Button>
         </nav>

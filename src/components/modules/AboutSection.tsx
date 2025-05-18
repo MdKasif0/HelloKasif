@@ -6,10 +6,10 @@ import { Lightbulb, Cpu, Palette } from 'lucide-react'; // Icons: Lightbulb for 
 
 export default function AboutSection() {
   return (
-    <section id="about" className="py-16 md:py-24">
-      <h2 className="text-4xl md:text-5xl font-bold text-center mb-16 tracking-tight">The Architect Behind the Verse</h2>
+    <section id="about" className="py-16 md:py-24 animate-in fade-in duration-500">
+      <h2 className="text-4xl md:text-5xl font-bold text-center mb-16 tracking-tight animate-in fade-in slide-in-from-bottom-5 duration-700">The Architect Behind the Verse</h2>
       <div className="grid md:grid-cols-1 lg:grid-cols-3 gap-8 items-start">
-        <InteractiveCard className="lg:col-span-1 p-0">
+        <InteractiveCard className="lg:col-span-1 p-0 animate-in fade-in slide-in-from-left-10 duration-700">
           <Image
             src="https://placehold.co/600x750.png" 
             alt="Your Name - Digital Architect"
@@ -27,7 +27,7 @@ export default function AboutSection() {
         </InteractiveCard>
 
         <div className="lg:col-span-2 space-y-8">
-          <InteractiveCard>
+          <InteractiveCard className="animate-in fade-in slide-in-from-right-10 duration-700 delay-200">
             <CardHeader>
               <CardTitle className="flex items-center gap-3 text-2xl"><Lightbulb className="h-7 w-7 text-primary" /> My Philosophy</CardTitle>
             </CardHeader>
@@ -38,7 +38,7 @@ export default function AboutSection() {
             </CardContent>
           </InteractiveCard>
 
-          <InteractiveCard>
+          <InteractiveCard className="animate-in fade-in slide-in-from-right-10 duration-700 delay-400">
             <CardHeader>
               <CardTitle className="flex items-center gap-3 text-2xl"><Cpu className="h-7 w-7 text-primary" /> Core Skills</CardTitle>
             </CardHeader>
@@ -57,7 +57,7 @@ export default function AboutSection() {
               </ul>
             </CardContent>
           </InteractiveCard>
-           <InteractiveCard>
+           <InteractiveCard className="animate-in fade-in slide-in-from-right-10 duration-700 delay-600">
             <CardHeader>
               <CardTitle className="flex items-center gap-3 text-2xl"><Palette className="h-7 w-7 text-primary" /> Design & Interaction</CardTitle>
             </CardHeader>

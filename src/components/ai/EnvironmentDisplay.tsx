@@ -26,7 +26,7 @@ export default async function EnvironmentDisplay() {
   }
 
   return (
-    <Card className="bg-card/50 backdrop-blur-md border-border/30 shadow-xl my-8 mx-auto max-w-3xl transform-style-preserve-3d transition-all duration-300 hover:shadow-primary/20 hover:border-primary/50">
+    <Card className="bg-card/50 backdrop-blur-md border-border/30 shadow-xl my-8 mx-auto max-w-3xl transform-style-preserve-3d transition-all duration-300 hover:shadow-primary/20 hover:border-primary/50 animate-in fade-in zoom-in-95 duration-700">
       <CardHeader className="flex flex-row items-center gap-3 p-4 sm:p-6">
         <WandSparkles className="h-6 w-6 text-accent sm:h-7 sm:w-7" />
         <CardTitle className="text-lg text-accent sm:text-xl">Ambient Echoes</CardTitle>
