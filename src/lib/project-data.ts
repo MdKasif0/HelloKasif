@@ -44,7 +44,7 @@ export const allProjects: Project[] = [
     result: "The outcome is a fully functional, aesthetically pleasing, and user-friendly note-taking web app. This self-driven project was instrumental in my learning journey and received positive feedback for its simplicity and utility.",
     // clientFeedback: "Not applicable as this was a personal project.", // Omitted as per instruction
     imageUrl: "/images/projects/note-it.png", // User needs to add this image to public/images/projects/note-it.png
-    imageHint: "notes app",
+    imageHint: "edit icon",
     tags: ["HTML", "CSS", "JavaScript", "Web App", "Productivity", "Self Project"],
     liveLink: "https://note-it0.netlify.app/",
     repoLink: "https://github.com/MdKasif0/Note_It.git"
@@ -69,3 +69,4 @@ export const allProjects: Project[] = [
 export const getProjectBySlug = (slug: string): Project | undefined => {
   return allProjects.find(project => project.slug === slug);
 };
+
