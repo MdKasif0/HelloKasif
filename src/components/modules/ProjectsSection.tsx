@@ -27,9 +27,9 @@ export default function ProjectsSection() {
   return (
     <section id="projects" className="py-16 md:py-24 animate-in fade-in duration-500">
       <div className="text-center mb-16 animate-in fade-in slide-in-from-bottom-5 duration-700">
-        <h2 className="text-4xl md:text-5xl font-bold tracking-tight">Featured Creations</h2>
+        <h2 className="text-4xl md:text-5xl font-bold tracking-tight">A Peek at My Work</h2>
         <p className="text-lg text-muted-foreground mt-3 max-w-2xl mx-auto text-balance">
-          A glimpse into some of my key projects. Dive into detailed case studies for a deeper look.
+          Here are a couple of projects I've enjoyed building. There's more to see on the full projects page!
         </p>
       </div>
       <div className="grid md:grid-cols-1 lg:grid-cols-1 gap-8 xl:gap-10">
@@ -108,5 +108,4 @@ export default function ProjectsSection() {
     </section>
   );
 }
-
     

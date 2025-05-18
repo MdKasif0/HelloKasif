@@ -13,7 +13,7 @@ import { allProjects, type Project } from '@/lib/project-data';
 import type { Metadata } from 'next';
 import BackToTopButton from '@/components/interactive/BackToTopButton';
 
-const pageTitle = 'All Projects & Case Studies by Jane Doe';
+const pageTitle = 'Projects & Case Studies | Jane Doe | PersonaVerse';
 const pageDescription = 'Explore a collection of innovative projects and in-depth case studies by Jane Doe, showcasing skills in web development, AI integration, and UI/UX design within PersonaVerse.';
 
 export const metadata: Metadata = {
@@ -54,9 +54,9 @@ export default function AllProjectsPage() {
       <Header />
       <main className="container mx-auto px-4 py-16 md:py-24 relative z-10 min-h-[calc(100vh-8rem)]">
         <div className="text-center mb-16 animate-in fade-in slide-in-from-bottom-5 duration-700">
-          <h1 className="text-4xl md:text-5xl font-bold tracking-tight">My Creations</h1>
+          <h1 className="text-4xl md:text-5xl font-bold tracking-tight">Work I'm Proud Of</h1>
           <p className="text-lg text-muted-foreground mt-3 max-w-2xl mx-auto text-balance">
-            A showcase of projects where technology meets creativity. Each case study dives into the problem, process, and solution.
+            Here's a look at some projects where I've blended technology with creative problem-solving. Each one tells a story.
           </p>
         </div>
         <div className="grid md:grid-cols-1 lg:grid-cols-1 gap-8 xl:gap-10">

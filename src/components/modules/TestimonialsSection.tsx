@@ -31,9 +31,9 @@ export default function TestimonialsSection() {
   return (
     <section id="testimonials" className="py-16 md:py-24 animate-in fade-in duration-500">
       <div className="text-center mb-16 animate-in fade-in slide-in-from-bottom-5 duration-700">
-        <h2 className="text-4xl md:text-5xl font-bold tracking-tight">Trusted by Collaborators</h2>
+        <h2 className="text-4xl md:text-5xl font-bold tracking-tight">Hear From Others</h2>
          <p className="text-lg text-muted-foreground mt-3 max-w-2xl mx-auto text-balance">
-          Hear what others have to say about our work together.
+          I've been lucky to work with some amazing people. Here's a kind word from one of them.
         </p>
       </div>
       <div className="max-w-2xl mx-auto">
@@ -89,5 +89,4 @@ export default function TestimonialsSection() {
     </section>
   );
 }
-
     

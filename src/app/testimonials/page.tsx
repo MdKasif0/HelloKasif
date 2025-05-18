@@ -9,7 +9,7 @@ import { Quote, Star } from 'lucide-react';
 import type { Metadata } from 'next';
 import BackToTopButton from '@/components/interactive/BackToTopButton';
 
-const pageTitle = 'Testimonials | What Collaborators Say About Jane Doe';
+const pageTitle = 'Kind Words | What People Say About Jane Doe';
 const pageDescription = 'Read testimonials and recommendations from colleagues, clients, and mentors about Jane Doe\'s work, skills, and collaborative spirit in PersonaVerse.';
 
 export const metadata: Metadata = {
@@ -82,9 +82,9 @@ export default function AllTestimonialsPage() {
       <Header />
       <main className="container mx-auto px-4 py-16 md:py-24 relative z-10 min-h-[calc(100vh-8rem)]">
         <div className="text-center mb-16 animate-in fade-in slide-in-from-bottom-5 duration-700">
-          <h1 className="text-4xl md:text-5xl font-bold tracking-tight">Words From Collaborators</h1>
+          <h1 className="text-4xl md:text-5xl font-bold tracking-tight">What Folks Are Saying</h1>
           <p className="text-lg text-muted-foreground mt-3 max-w-2xl mx-auto text-balance">
-            Feedback and insights from people I've had the pleasure of working and learning with.
+            I'm grateful for the opportunity to have worked with so many talented individuals. Here's some of their feedback.
           </p>
         </div>
         <div className="grid md:grid-cols-1 lg:grid-cols-2 gap-8">

@@ -8,7 +8,7 @@ import { CardContent, CardDescription, CardHeader, CardTitle } from '@/component
 import type { Metadata } from 'next';
 import BackToTopButton from '@/components/interactive/BackToTopButton';
 
-const pageTitle = 'My Journey & Timeline | Jane Doe | PersonaVerse';
+const pageTitle = 'My Path So Far | Jane Doe | PersonaVerse';
 const pageDescription = 'Explore the career progression, key milestones, and educational path of Jane Doe, a visionary developer, through a detailed interactive timeline.';
 
 export const metadata: Metadata = {
@@ -85,9 +85,9 @@ export default function FullTimelinePage() {
       <Header />
       <main className="container mx-auto px-4 py-16 md:py-24 relative z-10 min-h-[calc(100vh-8rem)]">
         <div className="text-center mb-20 animate-in fade-in slide-in-from-bottom-5 duration-700">
-          <h1 className="text-4xl md:text-5xl font-bold tracking-tight">My Journey</h1>
+          <h1 className="text-4xl md:text-5xl font-bold tracking-tight">My Path So Far</h1>
           <p className="text-lg text-muted-foreground mt-3 max-w-2xl mx-auto text-balance">
-            A chronological overview of my career milestones and educational background.
+            A look at the key chapters in my professional and educational story.
           </p>
         </div>
         <div className="relative max-w-3xl mx-auto px-4">
