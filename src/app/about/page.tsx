@@ -78,7 +78,7 @@ export default function AboutPage() {
               </CardHeader>
               <CardContent>
                 <p className="text-muted-foreground leading-relaxed text-lg text-balance">
-                  I believe in the transformative power of technology when thoughtfully applied. My passion lies in crafting digital experiences that are not only functional and efficient but also intuitive, memorable, and deeply engaging. I strive to bridge the gap between complex systems and human understanding, creating interfaces that feel natural and empower users. Every line of code, every design choice, is an opportunity to solve a problem elegantly and to make a positive impact. I'm driven by curiosity, a commitment to quality, and the pursuit of innovation that truly serves people.
+                  I'm driven by a simple philosophy: technology and design are at their best when they solve real problems and make people's lives easier. My passion lies in crafting digital experiences that are not just functional or aesthetically pleasing, but are intuitive, empowering, and truly serve the user. This is why I do what I do – to build meaningful solutions that bridge the gap between human needs and technological possibilities.
                 </p>
               </CardContent>
             </InteractiveCard>
