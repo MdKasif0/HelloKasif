@@ -23,23 +23,23 @@ export default function Home() {
 
         <AboutSection />
         
-        <Separator className="my-12 bg-border/30 h-[2px] rounded-full max-w-sm mx-auto" />
+        <Separator className="my-16 md:my-20 bg-border/30 h-[2px] rounded-full max-w-md mx-auto" />
 
         <ProjectsSection />
 
-        <Separator className="my-12 bg-border/30 h-[2px] rounded-full max-w-sm mx-auto" />
+        <Separator className="my-16 md:my-20 bg-border/30 h-[2px] rounded-full max-w-md mx-auto" />
         
         <TestimonialsSection />
 
-        <Separator className="my-12 bg-border/30 h-[2px] rounded-full max-w-sm mx-auto" />
+        <Separator className="my-16 md:my-20 bg-border/30 h-[2px] rounded-full max-w-md mx-auto" />
 
         <TimelineSection />
 
-        <Separator className="my-12 bg-border/30 h-[2px] rounded-full max-w-sm mx-auto" />
+        <Separator className="my-16 md:my-20 bg-border/30 h-[2px] rounded-full max-w-md mx-auto" />
 
         <AchievementsSection />
 
-        <Separator className="my-12 bg-border/30 h-[2px] rounded-full max-w-sm mx-auto" />
+        <Separator className="my-16 md:my-20 bg-border/30 h-[2px] rounded-full max-w-md mx-auto" />
 
         <ContactSection />
       </main>
