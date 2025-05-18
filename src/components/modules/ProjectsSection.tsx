@@ -7,7 +7,7 @@ import Image from 'next/image';
 import { CardContent, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
 import InteractiveCard from '@/components/interactive/InteractiveCard';
 import { Button } from '@/components/ui/button';
-import { ExternalLink, Github, ArrowRight, Eye } from 'lucide-react';
+import { ExternalLink, Github, ArrowRight, Eye, MessageSquareQuote } from 'lucide-react';
 import { Badge } from '@/components/ui/badge';
 import Link from 'next/link';
 import { allProjects } from '@/lib/project-data';
@@ -55,6 +55,14 @@ export default function ProjectsSection() {
             </CardHeader>
             <CardContent className="p-6 pt-0 flex-grow">
               <SectionBlock title="The Challenge">{project.problem}</SectionBlock>
+              {project.clientFeedback && (
+                <div className="mt-4 mb-4 p-3 border-l-4 border-accent bg-accent/10 rounded-r-md">
+                  <h4 className="text-sm font-semibold text-accent mb-1 flex items-center">
+                    <MessageSquareQuote size={16} className="mr-2" /> Client Feedback
+                  </h4>
+                  <blockquote className="text-xs text-muted-foreground italic text-balance">"{project.clientFeedback}"</blockquote>
+                </div>
+              )}
               <div className="mt-6 mb-2">
                 <h4 className="text-md font-semibold text-primary mb-2">Core Technologies:</h4>
                 <div className="flex flex-wrap gap-2">

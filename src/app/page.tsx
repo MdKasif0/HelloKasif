@@ -2,7 +2,7 @@
 import HeroSection from '@/components/modules/HeroSection';
 import AboutSection from '@/components/modules/AboutSection'; // Teaser version
 import ProjectsSection from '@/components/modules/ProjectsSection'; // Teaser version
-import TestimonialsSection from '@/components/modules/TestimonialsSection'; // Teaser version
+// TestimonialsSection is removed from homepage
 import TimelineSection from '@/components/modules/TimelineSection'; // Teaser version
 import AchievementsSection from '@/components/modules/AchievementsSection';
 import ContactSection from '@/components/modules/ContactSection';
@@ -33,10 +33,10 @@ export default function Home() {
 
         <Separator className="my-16 md:my-20 bg-border/30 h-[2px] rounded-full max-w-md mx-auto" />
         
-        {/* Testimonials Section Teaser - links to /testimonials */}
-        <TestimonialsSection />
+        {/* TestimonialsSection has been removed from the homepage flow */}
+        {/* <TestimonialsSection /> */}
 
-        <Separator className="my-16 md:my-20 bg-border/30 h-[2px] rounded-full max-w-md mx-auto" />
+        {/* <Separator className="my-16 md:my-20 bg-border/30 h-[2px] rounded-full max-w-md mx-auto" /> */}
 
         {/* Timeline Section Teaser - links to /timeline */}
         <TimelineSection />

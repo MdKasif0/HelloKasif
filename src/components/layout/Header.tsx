@@ -1,3 +1,4 @@
+
 // src/components/layout/Header.tsx
 'use client';
 
@@ -18,14 +19,14 @@ import { cn } from '@/lib/utils';
 const NAV_ITEMS_CONFIG = [
   { id: 'about', label: 'About', href: '/about' },
   { id: 'projects', label: 'Projects', href: '/projects' },
-  { id: 'testimonials', label: 'Testimonials', href: '/testimonials' },
+  // { id: 'testimonials', label: 'Testimonials', href: '/testimonials' }, // Removed Testimonials link
   { id: 'timeline', label: 'Timeline', href: '/timeline' },
-  { id: 'achievements', label: 'Achievements', href: '/achievements' }, // Added Achievements here
+  { id: 'achievements', label: 'Achievements', href: '/achievements' },
   { id: 'contact', label: 'Contact', href: '/contact' },
 ];
 
 // IDs of sections on the homepage for scrollspy
-const HOMEPAGE_SECTION_IDS = ['hero', 'about', 'projects', 'testimonials', 'timeline', 'achievements', 'contact'];
+const HOMEPAGE_SECTION_IDS = ['hero', 'about', 'projects', /*'testimonials',*/ 'timeline', 'achievements', 'contact']; // Removed testimonials
 
 export default function Header() {
   const { theme, setTheme } = useTheme();
@@ -56,14 +57,15 @@ export default function Header() {
       if (observer.current) {
         observer.current.disconnect();
       }
-      setActiveSection(null);
+      // For non-homepage, active section is determined by NavLink logic based on pathname
+      setActiveSection(null); 
       return;
     }
 
-    const headerHeight = headerRef.current?.offsetHeight || 64;
+    const headerHeight = headerRef.current?.offsetHeight || 64; // Adjust as needed
     const options = {
-      root: null,
-      rootMargin: `-${headerHeight + 20}px 0px -40% 0px`, // Adjust bottom margin to prioritize sections higher in viewport
+      root: null, // relative to document viewport
+      rootMargin: `-${headerHeight + 20}px 0px -40% 0px`, // Adjust top margin for sticky header, bottom margin to trigger earlier
       threshold: 0.01, // A small part of the section needs to be visible
     };
 
@@ -72,9 +74,6 @@ export default function Header() {
       
       entries.forEach(entry => {
         if (entry.isIntersecting) {
-          // Prioritize the one that is most visible or the first one if multiple are barely visible
-          // This simple logic takes the last one that becomes intersecting if scrolling down,
-          // or the first one if scrolling up into a new section.
           currentSection = entry.target.id;
         }
       });
@@ -82,7 +81,7 @@ export default function Header() {
       if (currentSection) {
          setActiveSection(currentSection);
       } else if (window.scrollY < 200) { // Near top, hero or no specific section
-          setActiveSection('hero'); // Or null if you have a distinct hero link
+          setActiveSection('hero'); 
       }
     }, options);
 
@@ -109,14 +108,15 @@ export default function Header() {
     let isActive = false;
 
     if (isHomepage) {
-      targetHref = (id === 'hero' && href === '/') ? '/' : `/#${id}`; // Special handling for hero if it links to /
+      targetHref = (id === 'hero' && href === '/') ? '/' : `/#${id}`;
       isActive = activeSection === id;
     } else {
+      // For subpages, active link is based on path starting with href
       isActive = href !== "/" && pathname.startsWith(href);
       if (href === "/" && pathname === "/") isActive = true; // Home link active on homepage
     }
     
-    const baseClasses = "transition-all hover:-translate-y-0.5 py-1.5 px-2.5 sm:px-3"; // Adjusted padding
+    const baseClasses = "transition-all hover:-translate-y-0.5 py-1.5 px-2.5 sm:px-3";
     const activeClasses = "text-primary font-semibold";
     const inactiveClasses = "text-muted-foreground hover:text-foreground";
     
@@ -131,7 +131,7 @@ export default function Header() {
             variant="ghost" 
             asChild 
             className={cn(
-              "w-full justify-start text-base", // Slightly larger text for mobile
+              "w-full justify-start text-base",
               baseClasses,
               isActive ? activeClasses : inactiveClasses
             )}
@@ -161,8 +161,8 @@ export default function Header() {
       ref={headerRef} 
       className={cn(
         "sticky top-0 z-50 w-full border-b border-border/40 bg-background/80 backdrop-blur-lg supports-[backdrop-filter]:bg-background/60",
-        "transition-shadow duration-300 ease-in-out", // Added for smooth shadow transition
-        isScrolled ? "shadow-lg" : "shadow-none" // Apply shadow when scrolled
+        "transition-shadow duration-300 ease-in-out", 
+        isScrolled ? "shadow-lg" : "shadow-none" 
       )}
     >
       <div className="container flex h-16 max-w-screen-2xl items-center justify-between px-4 sm:px-6 lg:px-8">
@@ -171,8 +171,8 @@ export default function Header() {
           <span className="font-sans text-xl font-bold tracking-tight sm:text-2xl group-hover:text-primary transition-colors">PersonaVerse</span>
         </Link>
         
-        <div className="flex items-center gap-0.5 sm:gap-1"> {/* Reduced gap slightly */}
-          <nav className="hidden items-center gap-0.5 sm:gap-1 sm:flex"> {/* Reduced gap slightly */}
+        <div className="flex items-center gap-0.5 sm:gap-1">
+          <nav className="hidden items-center gap-0.5 sm:gap-1 sm:flex">
             {NAV_ITEMS_CONFIG.map(item => (
               <NavLink key={item.id} id={item.id} href={item.href}>
                 {item.label}
@@ -186,7 +186,7 @@ export default function Header() {
               size="icon"
               onClick={toggleTheme}
               aria-label="Toggle theme"
-              className="text-muted-foreground hover:text-foreground transition-all hover:scale-110 hover:-translate-y-0.5 ml-1" // Added small margin
+              className="text-muted-foreground hover:text-foreground transition-all hover:scale-110 hover:-translate-y-0.5 ml-1"
             >
               {theme === 'dark' ? <Sun size={20} /> : <Moon size={20} />}
             </Button>
@@ -201,7 +201,7 @@ export default function Header() {
                 </Button>
               </SheetTrigger>
               <SheetContent side="right" className="w-[280px] bg-background/95 backdrop-blur-md pt-12">
-                <nav className="flex flex-col gap-2"> {/* Reduced gap */}
+                <nav className="flex flex-col gap-2"> 
                    {NAV_ITEMS_CONFIG.map(item => (
                     <NavLink key={item.id} id={item.id} href={item.href} isMobile>
                       {item.label}
