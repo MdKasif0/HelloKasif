@@ -7,7 +7,7 @@ import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
 import InteractiveCard from "@/components/interactive/InteractiveCard";
 import { CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { SendHorizonal } from "lucide-react"; // Using SendHorizonal for a more dynamic feel
+import { SendHorizonal, Mail } from "lucide-react"; // Using SendHorizonal for a more dynamic feel, added Mail
 import { useForm, type SubmitHandler } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
@@ -57,7 +57,7 @@ export default function ContactSection() {
         <CardHeader className="p-6">
           <CardTitle className="text-3xl">Send a Signal</CardTitle>
           <CardDescription className="text-muted-foreground mt-1">
-            Have a project, question, or just want to say hello? Drop me a line.
+            Have a project, question, or just want to say hello? Drop me a line using the form below, or reach out directly at <a href="mailto:jane.doe@example.com" className="text-primary hover:underline">jane.doe@example.com</a>.
           </CardDescription>
         </CardHeader>
         <CardContent className="p-6">

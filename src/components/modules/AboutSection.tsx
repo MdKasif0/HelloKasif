@@ -2,7 +2,9 @@
 import InteractiveCard from '@/components/interactive/InteractiveCard';
 import { CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import Image from 'next/image';
-import { Lightbulb, Cpu, Palette } from 'lucide-react'; // Icons: Lightbulb for philosophy, Cpu for skills, Palette for design sense
+import { Lightbulb, Cpu, Palette, Download, Briefcase, GraduationCap } from 'lucide-react'; // Added Download, Briefcase, GraduationCap
+import { Button } from '@/components/ui/button';
+import Link from 'next/link';
 
 export default function AboutSection() {
   return (
@@ -12,18 +14,25 @@ export default function AboutSection() {
         <InteractiveCard className="lg:col-span-1 p-0 animate-in fade-in slide-in-from-left-10 duration-700">
           <Image
             src="https://placehold.co/600x750.png" 
-            alt="Your Name - Digital Architect"
+            alt="Jane Doe - Digital Architect"
             width={600}
             height={750}
             className="rounded-t-xl object-cover w-full h-auto"
             data-ai-hint="futuristic developer portrait"
           />
           <CardHeader className="p-6">
-            <CardTitle className="text-3xl text-center">Your Name</CardTitle>
+            <CardTitle className="text-3xl text-center">Jane Doe</CardTitle>
             <CardDescription className="text-center text-primary mt-1">
-              Digital Craftsman & Visionary Developer
+              Visionary Developer & Digital Artisan
             </CardDescription>
           </CardHeader>
+           <CardContent className="p-6 pt-0 text-center">
+             <Button asChild size="lg" className="w-full bg-gradient-to-r from-primary to-accent hover:from-primary/90 hover:to-accent/90 text-primary-foreground group rounded-lg shadow-md hover:shadow-primary/40 transition-all duration-300 transform hover:scale-105">
+                <Link href="/placeholder-resume.pdf" target="_blank" rel="noopener noreferrer">
+                  Download Resume <Download size={18} className="ml-2" />
+                </Link>
+              </Button>
+           </CardContent>
         </InteractiveCard>
 
         <div className="lg:col-span-2 space-y-8">
@@ -38,6 +47,17 @@ export default function AboutSection() {
             </CardContent>
           </InteractiveCard>
 
+          <InteractiveCard className="animate-in fade-in slide-in-from-right-10 duration-700 delay-300">
+            <CardHeader>
+              <CardTitle className="flex items-center gap-3 text-2xl"><GraduationCap className="h-7 w-7 text-primary" /> Education & Background</CardTitle>
+            </CardHeader>
+            <CardContent>
+              <p className="text-muted-foreground leading-relaxed text-lg">
+                Graduated with a [Your Degree] in [Your Major] from [Your University]. My academic journey laid the foundation for a passion in [Your Field], complemented by continuous self-learning and exploration of emerging technologies. My background includes diverse experiences that have shaped my problem-solving skills and creative approach.
+              </p>
+            </CardContent>
+          </InteractiveCard>
+          
           <InteractiveCard className="animate-in fade-in slide-in-from-right-10 duration-700 delay-400">
             <CardHeader>
               <CardTitle className="flex items-center gap-3 text-2xl"><Cpu className="h-7 w-7 text-primary" /> Core Skills</CardTitle>
@@ -57,6 +77,7 @@ export default function AboutSection() {
               </ul>
             </CardContent>
           </InteractiveCard>
+
            <InteractiveCard className="animate-in fade-in slide-in-from-right-10 duration-700 delay-600">
             <CardHeader>
               <CardTitle className="flex items-center gap-3 text-2xl"><Palette className="h-7 w-7 text-primary" /> Design & Interaction</CardTitle>
