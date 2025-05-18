@@ -27,6 +27,7 @@ export default function AboutSection() {
             </CardDescription>
           </CardHeader>
            <CardContent className="p-6 pt-0 text-center">
+             {/* User will need to place their actual resume PDF at /public/placeholder-resume.pdf or update this link */}
              <Button asChild size="lg" className="w-full bg-gradient-to-r from-primary to-accent hover:from-primary/90 hover:to-accent/90 text-primary-foreground group rounded-lg shadow-md hover:shadow-primary/40 transition-all duration-300 transform hover:scale-105">
                 <Link href="/placeholder-resume.pdf" target="_blank" rel="noopener noreferrer">
                   Download Resume <Download size={18} className="ml-2" />
