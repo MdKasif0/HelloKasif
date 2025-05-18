@@ -13,8 +13,8 @@ import { allProjects, type Project } from '@/lib/project-data';
 import type { Metadata } from 'next';
 import BackToTopButton from '@/components/interactive/BackToTopButton';
 
-const pageTitle = 'Projects & Case Studies | Jane Doe | PersonaVerse';
-const pageDescription = 'Explore a collection of innovative projects and in-depth case studies by Jane Doe, showcasing skills in web development, AI integration, and UI/UX design within PersonaVerse.';
+const pageTitle = 'Projects & Case Studies | Md Kasif Uddin | HelloKasif';
+const pageDescription = 'Explore a collection of innovative projects and in-depth case studies by Md Kasif Uddin, showcasing skills in web development, AI integration, and UI/UX design within HelloKasif.';
 
 export const metadata: Metadata = {
   title: pageTitle,
@@ -29,7 +29,7 @@ export const metadata: Metadata = {
         url: '/og-image-projects.png', // Replace with a specific OG image for the projects page
         width: 1200,
         height: 630,
-        alt: 'Jane Doe - Project Showcase',
+        alt: 'Md Kasif Uddin - Project Showcase',
       },
     ],
   },

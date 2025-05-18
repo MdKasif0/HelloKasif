@@ -1,3 +1,4 @@
+
 // src/components/layout/Footer.tsx
 import { Github, Linkedin, Twitter, FileText } from 'lucide-react'; // Added FileText for Now page
 import Link from 'next/link';
@@ -9,28 +10,28 @@ export default function Footer() {
       <div className="container mx-auto px-4">
         <div className="flex justify-center gap-6 mb-6">
           <a 
-            href="#" // Updated to placeholder
+            href="#" 
             target="_blank" 
             rel="noopener noreferrer" 
-            aria-label="Jane Doe's GitHub profile (update link)" // Updated aria-label
+            aria-label="Md Kasif Uddin's GitHub profile (update link)" 
             className="text-muted-foreground hover:text-primary transition-all hover:scale-125 hover:-translate-y-1"
           >
             <Github size={24} />
           </a>
           <a 
-            href="#" // Updated to placeholder
+            href="#" 
             target="_blank" 
             rel="noopener noreferrer" 
-            aria-label="Jane Doe's LinkedIn profile (update link)" // Updated aria-label
+            aria-label="Md Kasif Uddin's LinkedIn profile (update link)" 
             className="text-muted-foreground hover:text-primary transition-all hover:scale-125 hover:-translate-y-1"
           >
             <Linkedin size={24} />
           </a>
           <a 
-            href="#" // Updated to placeholder
+            href="#" 
             target="_blank" 
             rel="noopener noreferrer" 
-            aria-label="Jane Doe's Twitter profile (update link)" // Updated aria-label
+            aria-label="Md Kasif Uddin's Twitter profile (update link)" 
             className="text-muted-foreground hover:text-primary transition-all hover:scale-125 hover:-translate-y-1"
           >
             <Twitter size={24} />
@@ -45,7 +46,7 @@ export default function Footer() {
           </Link>
         </nav>
         <p className="text-sm text-muted-foreground">
-          &copy; {currentYear} PersonaVerse. Crafted with passion & pixels.
+          &copy; {currentYear} HelloKasif. Crafted with passion & pixels.
         </p>
       </div>
     </footer>

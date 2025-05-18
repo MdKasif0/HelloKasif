@@ -9,8 +9,8 @@ import { Quote, Star } from 'lucide-react';
 import type { Metadata } from 'next';
 import BackToTopButton from '@/components/interactive/BackToTopButton';
 
-const pageTitle = 'Kind Words | What People Say About Jane Doe';
-const pageDescription = 'Read testimonials and recommendations from colleagues, clients, and mentors about Jane Doe\'s work, skills, and collaborative spirit in PersonaVerse.';
+const pageTitle = 'Kind Words | What People Say About Md Kasif Uddin';
+const pageDescription = 'Read testimonials and recommendations from colleagues, clients, and mentors about Md Kasif Uddin\'s work, skills, and collaborative spirit at HelloKasif.';
 
 export const metadata: Metadata = {
   title: pageTitle,
@@ -25,7 +25,7 @@ export const metadata: Metadata = {
         url: '/og-image-testimonials.png', // Replace with a specific OG image for testimonials
         width: 1200,
         height: 630,
-        alt: 'Jane Doe - Testimonials',
+        alt: 'Md Kasif Uddin - Testimonials',
       },
     ],
   },
@@ -44,7 +44,7 @@ const allTestimonials = [
     role: "Lead Developer @ TechSolutions",
     avatarUrl: "https://placehold.co/100x100.png",
     avatarHint: "professional portrait",
-    quote: "Jane is an incredibly talented developer with a keen eye for detail and a passion for creating intuitive user experiences. Their ability to tackle complex problems with innovative solutions and maintain high code quality is truly commendable. A true asset to any team!",
+    quote: "Kasif is an incredibly talented developer with a keen eye for detail and a passion for creating intuitive user experiences. Their ability to tackle complex problems with innovative solutions and maintain high code quality is truly commendable. A true asset to any team!",
     rating: 5,
   },
   {
@@ -53,7 +53,7 @@ const allTestimonials = [
     role: "Project Manager @ Innovate Inc.",
     avatarUrl: "https://placehold.co/100x100.png",
     avatarHint: "corporate headshot",
-    quote: "Working with Jane was a fantastic experience. Their proactive approach, clear communication, and commitment to quality are second to none. They consistently delivered beyond expectations and played a crucial role in our project's success. Highly recommended.",
+    quote: "Working with Kasif was a fantastic experience. Their proactive approach, clear communication, and commitment to quality are second to none. They consistently delivered beyond expectations and played a crucial role in our project's success. Highly recommended.",
     rating: 5,
   },
   {
@@ -62,7 +62,7 @@ const allTestimonials = [
     role: "Professor of Computer Science @ Tech University",
     avatarUrl: "https://placehold.co/100x100.png",
     avatarHint: "academic profile",
-    quote: "Jane consistently demonstrated exceptional problem-solving skills and a deep understanding of complex computer science concepts during their studies. Their curiosity and drive to learn are remarkable. A bright future undoubtedly lies ahead!",
+    quote: "Kasif consistently demonstrated exceptional problem-solving skills and a deep understanding of complex computer science concepts during their studies. Their curiosity and drive to learn are remarkable. A bright future undoubtedly lies ahead!",
     rating: 5,
   },
   {
@@ -71,7 +71,7 @@ const allTestimonials = [
     role: "CEO @ StartupX",
     avatarUrl: "https://placehold.co/100x100.png",
     avatarHint: "entrepreneur headshot",
-    quote: "Jane's contributions to our early-stage product were invaluable. Their technical expertise and creative input helped shape our platform into something truly special. A pleasure to work with.",
+    quote: "Kasif's contributions to our early-stage product were invaluable. Their technical expertise and creative input helped shape our platform into something truly special. A pleasure to work with.",
     rating: 4,
   },
 ];

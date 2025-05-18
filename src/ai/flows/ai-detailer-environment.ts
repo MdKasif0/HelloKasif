@@ -1,3 +1,4 @@
+
 // src/ai/flows/ai-detailer-environment.ts
 'use server';
 
@@ -42,6 +43,14 @@ export async function aiDetailerEnvironmentGeneration(
   return aiDetailerEnvironmentGenerationFlow(input);
 }
 
+// Example site content for the portfolio
+const portfolioSiteContent = `
+  HelloKasif: An interactive and immersive portfolio by Md Kasif Uddin.
+  This digital space showcases skills in Next.js, Tailwind CSS, TypeScript, and cutting-edge AI integration.
+  Featured projects include innovative web applications, design explorations, and AI/ML concepts.
+  The overall theme is futuristic, sophisticated, and deeply engaging, inviting users to explore a world of digital craftsmanship.
+`;
+
 const aiDetailerEnvironmentGenerationPrompt = ai.definePrompt({
   name: 'aiDetailerEnvironmentGenerationPrompt',
   input: {schema: AIDetailerEnvironmentGenerationInputSchema},
@@ -60,7 +69,9 @@ const aiDetailerEnvironmentGenerationFlow = ai.defineFlow(
     outputSchema: AIDetailerEnvironmentGenerationOutputSchema,
   },
   async input => {
-    const {output} = await aiDetailerEnvironmentGenerationPrompt(input);
+    // If siteContent is not provided in input, use the default portfolioSiteContent
+    const contentToUse = input.siteContent || portfolioSiteContent;
+    const {output} = await aiDetailerEnvironmentGenerationPrompt({ siteContent: contentToUse });
     return output!;
   }
 );

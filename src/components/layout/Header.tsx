@@ -57,7 +57,6 @@ export default function Header() {
     if (!isHomepage || !mounted) {
       if (observer.current) {
         observer.current.disconnect();
-        setActiveSection(null); 
       }
       // For non-homepage, active section is determined by NavLink logic based on pathname
       const currentNavItem = NAV_ITEMS_CONFIG.find(item => item.href !== "/" && pathname.startsWith(item.href));
@@ -117,11 +116,10 @@ export default function Header() {
     let isActive = false;
 
     if (isHomepage) {
-      targetHref = (id === 'hero' && href === '/') ? '/' : `/#${id}`; // Ensure hero section on homepage is just /
+      targetHref = (id === 'hero' && href === '/') ? '/' : `/#${id}`; 
       isActive = activeSection === id;
     } else {
       // For subpages, active link is based on path starting with href
-      // Or if the current pathname exactly matches the href (for '/')
       isActive = (href !== "/" && pathname.startsWith(href)) || (href === "/" && pathname === "/");
     }
     
@@ -177,7 +175,7 @@ export default function Header() {
       <div className="container flex h-16 max-w-screen-2xl items-center justify-between px-4 sm:px-6 lg:px-8">
         <Link href="/" className="flex items-center gap-2 group" onClick={() => isHomepage && setActiveSection('hero')}>
           <CodeXml className="h-7 w-7 text-primary transition-transform group-hover:rotate-[25deg] group-hover:scale-110" />
-          <span className="font-sans text-xl font-bold tracking-tight sm:text-2xl group-hover:text-primary transition-colors">PersonaVerse</span>
+          <span className="font-sans text-xl font-bold tracking-tight sm:text-2xl group-hover:text-primary transition-colors">HelloKasif</span>
         </Link>
         
         <div className="flex items-center gap-0.5 sm:gap-1">
@@ -228,4 +226,3 @@ export default function Header() {
     </header>
   );
 }
-

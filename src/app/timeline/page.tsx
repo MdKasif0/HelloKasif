@@ -8,8 +8,8 @@ import { CardContent, CardDescription, CardHeader, CardTitle } from '@/component
 import type { Metadata } from 'next';
 import BackToTopButton from '@/components/interactive/BackToTopButton';
 
-const pageTitle = 'My Path So Far | Jane Doe | PersonaVerse';
-const pageDescription = 'Explore the career progression, key milestones, and educational path of Jane Doe, a visionary developer, through a detailed interactive timeline.';
+const pageTitle = 'My Path So Far | Md Kasif Uddin | HelloKasif';
+const pageDescription = 'Explore the career progression, key milestones, and educational path of Md Kasif Uddin, an aspiring developer, through a detailed interactive timeline on HelloKasif.';
 
 export const metadata: Metadata = {
   title: pageTitle,
@@ -24,7 +24,7 @@ export const metadata: Metadata = {
         url: '/og-image-timeline.png', // Replace with a specific OG image for timeline
         width: 1200,
         height: 630,
-        alt: 'Jane Doe - Career Timeline',
+        alt: 'Md Kasif Uddin - Career Timeline',
       },
     ],
   },
@@ -42,14 +42,14 @@ const allTimelineEvents = [
     icon: Flag,
     date: "Present",
     title: "Exploring New Frontiers",
-    description: "Currently seeking challenging opportunities to leverage my skills in Next.js, AI, and spatial UI to build innovative digital products. Open to collaborations and full-time roles contributing to impactful projects.",
+    description: "Currently seeking challenging opportunities to leverage my skills in Next.js, AI, and web development to build innovative digital products. Open to collaborations and learning opportunities contributing to impactful projects.",
     category: "career",
   },
   {
     id: 2,
     icon: Briefcase,
     date: "2021 - 2023",
-    title: "Senior Frontend Developer @ FutureScape",
+    title: "Senior Frontend Developer @ FutureScape (Example Entry)",
     description: "Led the development of a cutting-edge data visualization platform, enhancing user insights through intuitive interfaces. Specialized in React, TypeScript, and performance optimization. Mentored junior developers and championed best practices in code quality and agile methodologies.",
     category: "career",
   },
@@ -57,7 +57,7 @@ const allTimelineEvents = [
     id: 3,
     icon: Briefcase,
     date: "2019 - 2021",
-    title: "Software Engineer @ CodeCrafters",
+    title: "Software Engineer @ CodeCrafters (Example Entry)",
     description: "Developed and maintained scalable web applications using Node.js and React. Contributed to full-stack development cycles, from API design to frontend implementation, within an agile team environment. Focused on delivering robust and user-friendly solutions.",
     category: "career",
   },
@@ -65,7 +65,7 @@ const allTimelineEvents = [
     id: 4,
     icon: GraduationCap,
     date: "2015 - 2019",
-    title: "B.S. in Computer Science @ Tech University",
+    title: "B.S. in Computer Science @ Tech University (Example Entry)",
     description: "Graduated with honors. Specialized in software engineering, artificial intelligence, and human-computer interaction. Actively participated in the university coding club, leading several award-winning hackathon projects.",
     category: "education",
   },
@@ -73,7 +73,7 @@ const allTimelineEvents = [
     id: 5,
     icon: Briefcase,
     date: "2014 - 2015",
-    title: "Intern Software Developer @ InnovateStartups",
+    title: "Intern Software Developer @ InnovateStartups (Example Entry)",
     description: "Gained initial industry experience working on a variety of web development tasks, including front-end UI enhancements and back-end script development. Contributed to a fast-paced startup environment and learned foundational software development practices.",
     category: "career",
   }

@@ -24,8 +24,8 @@ const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'http://localhost:3000'; // 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl), // Crucial for canonical URLs and absolute OG URLs
   title: {
-    default: 'Md Kasif Uddin | Portfolio | Aspiring Developer',
-    template: '%s | Md Kasif Uddin | Portfolio',
+    default: 'HelloKasif | Md Kasif Uddin | Aspiring Developer',
+    template: '%s | HelloKasif | Md Kasif Uddin',
   },
   description: 'Interactive portfolio of Md Kasif Uddin, a Grade 12th PCM student exploring web development and AI/ML.',
   authors: [{ name: 'Md Kasif Uddin', url: siteUrl }],
@@ -33,21 +33,21 @@ export const metadata: Metadata = {
     type: 'website',
     locale: 'en_US',
     url: siteUrl,
-    title: 'Md Kasif Uddin | Portfolio | Aspiring Developer',
+    title: 'HelloKasif | Md Kasif Uddin | Aspiring Developer',
     description: 'Explore the projects and journey of Md Kasif Uddin, an aspiring developer.',
     images: [
       {
         url: `/og-image.png`, // Relative to public folder, metadataBase will make it absolute
         width: 1200,
         height: 630,
-        alt: 'Portfolio Banner by Md Kasif Uddin',
+        alt: 'HelloKasif Banner by Md Kasif Uddin',
       },
     ],
-    siteName: 'Portfolio by Md Kasif Uddin',
+    siteName: 'HelloKasif by Md Kasif Uddin',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Md Kasif Uddin | Portfolio | Aspiring Developer',
+    title: 'HelloKasif | Md Kasif Uddin | Aspiring Developer',
     description: 'Discover Md Kasif Uddin\'s interactive portfolio.',
     // creator: '@YourTwitterHandle', // Uncomment and replace if you have a Twitter handle
     images: [`/twitter-image.png`], // Relative to public folder, metadataBase will make it absolute
