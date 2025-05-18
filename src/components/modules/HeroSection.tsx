@@ -30,7 +30,7 @@ export default function HeroSection() {
       <Button 
         asChild 
         size="lg" 
-        className="bg-gradient-to-r from-primary to-accent hover:from-primary/90 hover:to-accent/90 text-primary-foreground group rounded-lg px-8 py-3 text-lg shadow-lg hover:shadow-primary/40 transition-all duration-300 transform hover:scale-105 animate-in fade-in slide-in-from-bottom-8_duration-700_delay-400 animate-float"
+        className="bg-gradient-to-r from-primary to-accent hover:from-primary/90 hover:to-accent/90 text-primary-foreground group rounded-lg px-8 py-3 text-lg shadow-lg hover:shadow-primary/40 transition-all duration-300 transform hover:scale-105 animate-in fade-in slide-in-from-bottom-8_duration-700_delay-400"
       >
         <Link href="#about">
           Begin Exploration <ArrowDown className="ml-2 h-5 w-5 transition-transform group-hover:translate-y-1" />
