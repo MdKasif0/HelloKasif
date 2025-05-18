@@ -2,7 +2,7 @@
 import InteractiveCard from '@/components/interactive/InteractiveCard';
 import { CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import Image from 'next/image';
-import { Lightbulb, Cpu, Palette, Download, Briefcase, GraduationCap } from 'lucide-react'; // Added Download, Briefcase, GraduationCap
+import { Lightbulb, Cpu, Palette, Download, Briefcase, GraduationCap, Sparkles } from 'lucide-react'; // Added Sparkles
 import { Button } from '@/components/ui/button';
 import Link from 'next/link';
 
@@ -78,7 +78,7 @@ export default function AboutSection() {
             </CardContent>
           </InteractiveCard>
 
-           <InteractiveCard className="animate-in fade-in slide-in-from-right-10 duration-700 delay-600">
+           <InteractiveCard className="animate-in fade-in slide-in-from-right-10 duration-700 delay-500">
             <CardHeader>
               <CardTitle className="flex items-center gap-3 text-2xl"><Palette className="h-7 w-7 text-primary" /> Design & Interaction</CardTitle>
             </CardHeader>
@@ -86,6 +86,23 @@ export default function AboutSection() {
               <p className="text-muted-foreground leading-relaxed text-lg">
                 Passionate about creating visually stunning and intuitive interfaces. I focus on subtle animations, adaptive depth, and interactive elements to build immersive digital environments that captivate and guide the user.
               </p>
+            </CardContent>
+          </InteractiveCard>
+
+          <InteractiveCard className="animate-in fade-in slide-in-from-right-10 duration-700 delay-600">
+            <CardHeader>
+              <CardTitle className="flex items-center gap-3 text-2xl"><Sparkles className="h-7 w-7 text-primary" /> Currently Exploring</CardTitle>
+            </CardHeader>
+            <CardContent>
+              <p className="text-muted-foreground leading-relaxed text-lg mb-3">
+                Always curious and learning! Here's a peek into what's currently capturing my attention:
+              </p>
+              <ul className="list-disc list-inside text-muted-foreground space-y-1 text-lg">
+                <li>Advanced AI integrations with Genkit.</li>
+                <li>The nuances of WebAssembly for performance.</li>
+                <li>Reading "Designing Data-Intensive Applications".</li>
+                <li>Perfecting my sourdough starter (a delicious challenge!).</li>
+              </ul>
             </CardContent>
           </InteractiveCard>
         </div>
