@@ -20,35 +20,34 @@ export interface Project {
 export const allProjects: Project[] = [
   {
     id: 1,
-    slug: "imaginate-ai", // Updated slug
+    slug: "imaginate-ai",
     title: "Imaginate",
     problem: "Creating a seamless web app that allows users to generate high-quality images using text prompts, leveraging AI models while ensuring smooth user experience.",
     myRole: "I independently handled the entire development of the project — from UI/UX design to backend integration with Hugging Face APIs. I also iteratively improved the product based on testing and feedback.",
     process: "I began by outlining the key features of the app, starting with a minimal interface to generate images from text input. Over time, I added more advanced features, enhanced styling, and improved loading feedback. Assistance from ChatGPT and Gemini helped troubleshoot issues and refine functionality.",
     solution: "An AI-powered web app that lets users generate images using text prompts through Hugging Face APIs. The app features a clean UI, responsive design, and dynamic loading states for better user experience.",
     result: "The final product is a fully functional and visually appealing AI image generator. It performs reliably and has been positively received for its simplicity and effectiveness.",
-    // clientFeedback is null, so it's omitted
     imageUrl: "https://imaginate-ai.netlify.app/preview.png",
-    imageHint: "AI image generation", // Adjusted hint to two words
+    imageHint: "AI generation",
     tags: ["Html", "CSS", "JavaScript", "Hugging Face"],
     liveLink: "https://imaginate-ai.netlify.app/",
     repoLink: "https://github.com/MdKasif0/Imaginate",
   },
   {
     id: 2,
-    slug: "chrono-scape",
-    title: "Chrono Scape",
-    problem: "Complex datasets were difficult to interpret using traditional 2D charts, limiting insights and decision-making.",
-    myRole: "Senior Frontend Engineer. Focused on developing the core visualization components using D3.js and integrating real-time data streams via WebSockets.",
-    process: "Explored various data visualization techniques. Developed custom D3.js components for adaptive depth perception. Implemented WebSocket integration for live data updates. Optimized rendering for large datasets.",
-    solution: "Chrono Scape: A dynamic data visualization tool offering adaptive depth perception for exploring complex, multi-dimensional datasets in real-time.",
-    result: "Enabled users to identify previously unseen patterns and correlations, leading to a 15% improvement in data-driven decision-making speed. Praised for its performance and clarity.",
-    clientFeedback: "The depth and clarity Chrono Scape provides are unparalleled. It's become an indispensable tool for our analysts.",
-    imageUrl: "https://placehold.co/600x400.png",
-    imageHint: "data visualization",
-    tags: ["React", "D3.js", "WebSockets", "UX Design", "Performance"],
-    liveLink: "#",
-    repoLink: "#",
+    slug: "note-it-app",
+    title: "Note It",
+    problem: "Users needed a simple, efficient way to manage daily notes and tasks without relying on complex third-party applications or cumbersome setups.",
+    myRole: "As a personal learning initiative, I undertook the complete design and development of this web application. My goal was to build a practical tool while honing my fundamental web development skills.",
+    process: "The project started with a structural outline, focusing on core functionalities like adding, viewing, and deleting notes and tasks. I then iteratively enhanced the user interface and expanded features based on self-testing and usability principles, aiming for an intuitive experience.",
+    solution: "A lightweight and responsive note-taking web application built with HTML, CSS, and JavaScript. 'Note It' provides a clean interface for users to effortlessly manage their notes and track tasks.",
+    result: "The outcome is a fully functional, aesthetically pleasing, and user-friendly note-taking web app. This self-driven project was instrumental in my learning journey and received positive feedback for its simplicity and utility.",
+    // clientFeedback: "Not applicable as this was a personal project.", // Omitted as per instruction
+    imageUrl: "/images/projects/note-it.png", // User needs to add this image to public/images/projects/note-it.png
+    imageHint: "notes app",
+    tags: ["HTML", "CSS", "JavaScript", "Web App", "Productivity", "Self Project"],
+    liveLink: "https://note-it0.netlify.app/",
+    repoLink: "https://github.com/MdKasif0/Note_It.git"
   },
   {
     id: 3,
