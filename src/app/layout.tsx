@@ -4,6 +4,7 @@ import './globals.css';
 import MainLayout from '@/components/layout/MainLayout';
 import { Toaster } from "@/components/ui/toaster"; // For contact form feedback
 import { ThemeProvider } from '@/components/providers/ThemeProvider';
+import GoogleAnalytics from '@/components/analytics/GoogleAnalytics'; // Added Google Analytics
 
 const geistSans = Geist({ // Correct usage for variable fonts
   variable: '--font-geist-sans',
@@ -41,6 +42,7 @@ export default function RootLayout({
             <Toaster />
           </MainLayout>
         </ThemeProvider>
+        <GoogleAnalytics />
       </body>
     </html>
   );
