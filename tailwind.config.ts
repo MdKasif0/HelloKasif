@@ -8,6 +8,16 @@ export default {
     "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
   theme: {
+    container: {
+      center: true,
+      padding: {
+        DEFAULT: '1rem',
+        sm: '2rem',
+        lg: '4rem',
+        xl: '5rem',
+        '2xl': '6rem',
+      },
+    },
   	extend: {
   		colors: {
   			background: 'hsl(var(--background))',
@@ -64,8 +74,13 @@ export default {
   		borderRadius: {
   			lg: 'var(--radius)',
   			md: 'calc(var(--radius) - 2px)',
-  			sm: 'calc(var(--radius) - 4px)'
+  			sm: 'calc(var(--radius) - 4px)',
+        xl: "calc(var(--radius) + 4px)", // Added for larger radius cards
   		},
+      fontFamily: {
+        sans: ["var(--font-geist-sans)"],
+        mono: ["var(--font-geist-mono)"],
+      },
   		keyframes: {
   			'accordion-down': {
   				from: {
@@ -82,11 +97,16 @@ export default {
   				to: {
   					height: '0'
   				}
-  			}
+  			},
+        'gradient-pulse': { // For hero text gradient animation
+          '0%, 100%': { 'background-position': '0% 50%' },
+          '50%': { 'background-position': '100% 50%' },
+        },
   		},
   		animation: {
   			'accordion-down': 'accordion-down 0.2s ease-out',
-  			'accordion-up': 'accordion-up 0.2s ease-out'
+  			'accordion-up': 'accordion-up 0.2s ease-out',
+        'gradient-pulse': 'gradient-pulse 5s ease infinite', // For hero text
   		}
   	}
   },
