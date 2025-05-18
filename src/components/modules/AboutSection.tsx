@@ -19,6 +19,7 @@ export default function AboutSection() {
             height={750}
             className="rounded-t-xl object-cover w-full h-auto"
             data-ai-hint="futuristic developer portrait"
+            priority // Added for LCP optimization
           />
           <CardHeader className="p-6">
             <CardTitle className="text-3xl text-center">Jane Doe</CardTitle>
