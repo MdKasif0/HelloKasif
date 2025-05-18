@@ -6,11 +6,34 @@ import { Briefcase, GraduationCap, Flag } from 'lucide-react';
 import InteractiveCard from '@/components/interactive/InteractiveCard';
 import { CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import type { Metadata } from 'next';
-import BackToTopButton from '@/components/interactive/BackToTopButton'; // Added
+import BackToTopButton from '@/components/interactive/BackToTopButton';
+
+const pageTitle = 'My Journey & Timeline | Jane Doe | PersonaVerse';
+const pageDescription = 'Explore the career progression, key milestones, and educational path of Jane Doe, a visionary developer, through a detailed interactive timeline.';
 
 export const metadata: Metadata = {
-  title: 'My Journey | Timeline | PersonaVerse',
-  description: 'Explore the career progression and educational path of Jane Doe, detailing key milestones and experiences.',
+  title: pageTitle,
+  description: pageDescription,
+  openGraph: {
+    title: pageTitle,
+    description: pageDescription,
+    url: '/timeline',
+    type: 'website',
+     images: [
+      {
+        url: '/og-image-timeline.png', // Replace with a specific OG image for timeline
+        width: 1200,
+        height: 630,
+        alt: 'Jane Doe - Career Timeline',
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: pageTitle,
+    description: pageDescription,
+    images: ['/twitter-image-timeline.png'], // Replace with a specific Twitter image for timeline
+  },
 };
 
 const allTimelineEvents = [

@@ -11,17 +11,40 @@ import { Badge } from '@/components/ui/badge';
 import Link from 'next/link';
 import { allProjects, type Project } from '@/lib/project-data';
 import type { Metadata } from 'next';
-import BackToTopButton from '@/components/interactive/BackToTopButton'; // Added
+import BackToTopButton from '@/components/interactive/BackToTopButton';
+
+const pageTitle = 'All Projects & Case Studies by Jane Doe';
+const pageDescription = 'Explore a collection of innovative projects and in-depth case studies by Jane Doe, showcasing skills in web development, AI integration, and UI/UX design within PersonaVerse.';
 
 export const metadata: Metadata = {
-  title: 'All Projects | Case Studies | PersonaVerse',
-  description: 'Explore a collection of innovative projects and case studies by Jane Doe, showcasing skills in web development, AI, and UI/UX design.',
+  title: pageTitle,
+  description: pageDescription,
+  openGraph: {
+    title: pageTitle,
+    description: pageDescription,
+    url: '/projects',
+    type: 'website',
+    images: [
+      {
+        url: '/og-image-projects.png', // Replace with a specific OG image for the projects page
+        width: 1200,
+        height: 630,
+        alt: 'Jane Doe - Project Showcase',
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: pageTitle,
+    description: pageDescription,
+    images: ['/twitter-image-projects.png'], // Replace with a specific Twitter image for the projects page
+  },
 };
 
 const SectionBlock = ({ title, children }: { title: string, children: React.ReactNode }) => (
   <div className="mb-4">
     <h4 className="text-md font-semibold text-primary mb-1">{title}</h4>
-    <p className="text-muted-foreground leading-relaxed text-sm">{children}</p>
+    <p className="text-muted-foreground leading-relaxed text-sm text-balance">{children}</p>
   </div>
 );
 
@@ -66,7 +89,7 @@ export default function AllProjectsPage() {
                     <h4 className="text-md font-semibold text-accent mb-1 flex items-center">
                       <MessageSquareQuote size={18} className="mr-2" /> Client Feedback
                     </h4>
-                    <blockquote className="text-sm text-muted-foreground italic">"{project.clientFeedback}"</blockquote>
+                    <blockquote className="text-sm text-muted-foreground italic text-balance">"{project.clientFeedback}"</blockquote>
                   </div>
                 )}
 

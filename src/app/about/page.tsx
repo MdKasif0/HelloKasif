@@ -9,11 +9,34 @@ import { Lightbulb, Cpu, Palette, Download, GraduationCap, Sparkles } from 'luci
 import { Button } from '@/components/ui/button';
 import Link from 'next/link';
 import type { Metadata } from 'next';
-import BackToTopButton from '@/components/interactive/BackToTopButton'; // Added
+import BackToTopButton from '@/components/interactive/BackToTopButton';
+
+const pageTitle = 'About Jane Doe | Visionary Developer & Digital Artisan';
+const pageDescription = 'Learn more about Jane Doe, her philosophy, skills, background, and journey as a visionary developer and digital artisan based in PersonaVerse.';
 
 export const metadata: Metadata = {
-  title: 'About Jane Doe | Visionary Developer | PersonaVerse',
-  description: 'Learn more about Jane Doe, her philosophy, skills, background, and journey as a visionary developer and digital artisan.',
+  title: pageTitle,
+  description: pageDescription,
+  openGraph: {
+    title: pageTitle,
+    description: pageDescription,
+    url: '/about', // metadataBase in layout.tsx will prepend the siteURL
+    type: 'profile',
+    images: [
+      {
+        url: '/og-image-about.png', // Replace with a specific OG image for the about page
+        width: 1200,
+        height: 630,
+        alt: 'Jane Doe - About Me',
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: pageTitle,
+    description: pageDescription,
+    images: ['/twitter-image-about.png'], // Replace with a specific Twitter image for the about page
+  },
 };
 
 export default function AboutPage() {
@@ -54,7 +77,7 @@ export default function AboutPage() {
                 <CardTitle className="flex items-center gap-3 text-2xl"><Lightbulb className="h-7 w-7 text-primary" /> My Philosophy</CardTitle>
               </CardHeader>
               <CardContent>
-                <p className="text-muted-foreground leading-relaxed text-lg">
+                <p className="text-muted-foreground leading-relaxed text-lg text-balance">
                   I believe in the transformative power of technology when thoughtfully applied. My passion lies in crafting digital experiences that are not only functional and efficient but also intuitive, memorable, and deeply engaging. I strive to bridge the gap between complex systems and human understanding, creating interfaces that feel natural and empower users. Every line of code, every design choice, is an opportunity to solve a problem elegantly and to make a positive impact. I'm driven by curiosity, a commitment to quality, and the pursuit of innovation that truly serves people.
                 </p>
               </CardContent>
@@ -65,7 +88,7 @@ export default function AboutPage() {
                 <CardTitle className="flex items-center gap-3 text-2xl"><GraduationCap className="h-7 w-7 text-primary" /> Education & Background</CardTitle>
               </CardHeader>
               <CardContent>
-                <p className="text-muted-foreground leading-relaxed text-lg">
+                <p className="text-muted-foreground leading-relaxed text-lg text-balance">
                   My journey into the digital realm began with a Bachelor of Science in Computer Science from Tech University, where I graduated with honors. This foundational experience equipped me with a strong understanding of software engineering principles, data structures, algorithms, and the theoretical underpinnings of computation. Beyond formal education, I am a lifelong learner, constantly exploring emerging technologies, design patterns, and development methodologies to stay at the forefront of this ever-evolving field.
                 </p>
               </CardContent>
@@ -97,7 +120,7 @@ export default function AboutPage() {
                 <CardTitle className="flex items-center gap-3 text-2xl"><Palette className="h-7 w-7 text-primary" /> Design & Interaction Philosophy</CardTitle>
               </CardHeader>
               <CardContent>
-                <p className="text-muted-foreground leading-relaxed text-lg">
+                <p className="text-muted-foreground leading-relaxed text-lg text-balance">
                   I focus on creating intuitive and aesthetically pleasing user interfaces. This involves thoughtful use of microinteractions, subtle animations, adaptive depth, and clear visual hierarchies to guide users and make digital environments feel more alive and responsive. I believe that good design is not just about how it looks, but how it feels and functions, ultimately enhancing the user's ability to achieve their goals effortlessly.
                 </p>
               </CardContent>
@@ -108,7 +131,7 @@ export default function AboutPage() {
                 <CardTitle className="flex items-center gap-3 text-2xl"><Sparkles className="h-7 w-7 text-primary" /> Currently Exploring</CardTitle>
               </CardHeader>
               <CardContent>
-                <p className="text-muted-foreground leading-relaxed text-lg mb-3">
+                <p className="text-muted-foreground leading-relaxed text-lg mb-3 text-balance">
                   The world of technology is constantly evolving, and so is my skillset. I'm currently delving deeper into advanced AI prompting techniques, exploring the potential of WebAssembly for performance-critical applications, and studying scalable architectures for data-intensive systems. I'm also passionate about ethical AI development and its societal implications.
                 </p>
               </CardContent>

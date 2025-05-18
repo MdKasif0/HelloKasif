@@ -1,3 +1,4 @@
+
 import type {Metadata} from 'next';
 import { Geist, Geist_Mono } from 'next/font/google'; // Correct import for next/font/google
 import './globals.css';
@@ -21,9 +22,12 @@ const geistMono = Geist_Mono({ // Correct usage for variable fonts
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'http://localhost:3000'; // Define a default or use env var
 
 export const metadata: Metadata = {
-  title: 'Jane Doe | PersonaVerse | Interactive Portfolio',
-  description: 'An immersive and interactive portfolio experience by Jane Doe, a visionary creator and developer.',
-  metadataBase: new URL(siteUrl),
+  metadataBase: new URL(siteUrl), // Crucial for canonical URLs and absolute OG URLs
+  title: {
+    default: 'Jane Doe | PersonaVerse | Interactive Portfolio',
+    template: '%s | Jane Doe | PersonaVerse',
+  },
+  description: 'An immersive and interactive portfolio experience by Jane Doe, a visionary creator and developer. Explore innovative projects, skills, and insights.',
   authors: [{ name: 'Jane Doe', url: siteUrl }],
   openGraph: {
     type: 'website',
@@ -33,10 +37,10 @@ export const metadata: Metadata = {
     description: 'Explore the innovative projects and digital craftsmanship of Jane Doe.',
     images: [
       {
-        url: `${siteUrl}/og-image.png`, // IMPORTANT: Replace with your actual OG image path
+        url: `/og-image.png`, // Relative to public folder, metadataBase will make it absolute
         width: 1200,
         height: 630,
-        alt: 'PersonaVerse Portfolio Banner',
+        alt: 'PersonaVerse Portfolio Banner by Jane Doe',
       },
     ],
     siteName: 'PersonaVerse by Jane Doe',
@@ -45,12 +49,15 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Jane Doe | PersonaVerse | Interactive Portfolio',
     description: 'Discover Jane Doe\'s interactive portfolio showcasing visionary development and design.',
-    // Uncomment and replace with your Twitter handle if you have one
-    // creator: '@yourTwitterHandle', 
-    images: [`${siteUrl}/twitter-image.png`], // IMPORTANT: Replace with your actual Twitter image path
+    // creator: '@JaneDoeDev', // Uncomment and replace if you have a Twitter handle
+    images: [`/twitter-image.png`], // Relative to public folder, metadataBase will make it absolute
   },
-  // Consider adding a few relevant keywords if desired, though their impact is minimal nowadays
-  // keywords: ['Next.js', 'React', 'Tailwind CSS', 'Portfolio', 'Developer', 'AI', 'Jane Doe'],
+  // keywords: ['Next.js', 'React', 'Tailwind CSS', 'Portfolio', 'Developer', 'AI', 'Jane Doe', 'Web Developer', 'Full Stack Developer'],
+  // Consider adding a favicon link here if you have one in your public folder
+  // icons: {
+  //   icon: '/favicon.ico',
+  //   apple: '/apple-touch-icon.png',
+  // },
 };
 
 export default function RootLayout({

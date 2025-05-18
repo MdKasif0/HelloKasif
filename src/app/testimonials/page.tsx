@@ -7,11 +7,34 @@ import InteractiveCard from '@/components/interactive/InteractiveCard';
 import { CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Quote, Star } from 'lucide-react';
 import type { Metadata } from 'next';
-import BackToTopButton from '@/components/interactive/BackToTopButton'; // Added
+import BackToTopButton from '@/components/interactive/BackToTopButton';
+
+const pageTitle = 'Testimonials | What Collaborators Say About Jane Doe';
+const pageDescription = 'Read testimonials and recommendations from colleagues, clients, and mentors about Jane Doe\'s work, skills, and collaborative spirit in PersonaVerse.';
 
 export const metadata: Metadata = {
-  title: 'Testimonials | What Collaborators Say | PersonaVerse',
-  description: 'Read testimonials and recommendations from colleagues, clients, and mentors about Jane Doe\'s work and skills.',
+  title: pageTitle,
+  description: pageDescription,
+  openGraph: {
+    title: pageTitle,
+    description: pageDescription,
+    url: '/testimonials',
+    type: 'website',
+    images: [
+      {
+        url: '/og-image-testimonials.png', // Replace with a specific OG image for testimonials
+        width: 1200,
+        height: 630,
+        alt: 'Jane Doe - Testimonials',
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: pageTitle,
+    description: pageDescription,
+    images: ['/twitter-image-testimonials.png'], // Replace with a specific Twitter image
+  },
 };
 
 const allTestimonials = [
@@ -76,9 +99,10 @@ export default function AllTestimonialsPage() {
                   <Image
                     src={testimonial.avatarUrl}
                     alt={testimonial.name}
-                    fill // Changed from layout="fill" objectFit="cover"
-                    style={{ objectFit: 'cover' }} // Ensure this style is applied
+                    fill 
+                    style={{ objectFit: 'cover' }} 
                     data-ai-hint={testimonial.avatarHint}
+                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw" // Example sizes, adjust as needed
                   />
                 </div>
                 <CardTitle className="text-xl">{testimonial.name}</CardTitle>

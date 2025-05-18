@@ -5,19 +5,55 @@ import Footer from '@/components/layout/Footer';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { CalendarDays, Sparkles, Zap } from 'lucide-react';
 import type { Metadata } from 'next';
-import BackToTopButton from '@/components/interactive/BackToTopButton'; // Added
+import BackToTopButton from '@/components/interactive/BackToTopButton';
+import { useEffect, useState } from 'react'; // Required for client-side date formatting
+
+const pageTitle = 'What Jane Doe Is Doing Now | Current Focus & Learnings';
+const pageDescription = 'A snapshot of what Jane Doe is currently focused on, learning, and exploring in her professional and personal life at PersonaVerse.';
 
 export const metadata: Metadata = {
-  title: 'What I\'m Doing Now | Jane Doe | PersonaVerse',
-  description: 'A snapshot of what Jane Doe is currently focused on, learning, and exploring.',
+  title: pageTitle,
+  description: pageDescription,
+   openGraph: {
+    title: pageTitle,
+    description: pageDescription,
+    url: '/now',
+    type: 'article', // 'article' might be more fitting for a "Now" page
+     images: [
+      {
+        url: '/og-image-now.png', // Replace with a specific OG image for now page
+        width: 1200,
+        height: 630,
+        alt: 'Jane Doe - What I\'m Doing Now',
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: pageTitle,
+    description: pageDescription,
+    images: ['/twitter-image-now.png'], // Replace with a specific Twitter image
+  },
 };
 
+// This component needs to be a client component to use `new Date()` without hydration errors.
+// However, metadata must be exported from server components.
+// For this page, we'll keep the page as a server component for metadata,
+// and handle the dynamic date formatting within a client component or directly in the return if careful.
+// A simpler approach for a "Now" page is often to manually update the date in the text.
+// For this exercise, I'll show the manual update approach as it's simpler for static generation.
+
 export default function NowPage() {
-  const currentDate = new Date().toLocaleDateString('en-US', {
-    year: 'numeric',
-    month: 'long',
-    day: 'numeric',
-  });
+  // For a "Now" page, it's common to manually update this date when you update the content.
+  // Using new Date() directly here can cause hydration mismatches if not handled in useEffect.
+  // const currentDate = new Date().toLocaleDateString('en-US', {
+  //   year: 'numeric',
+  //   month: 'long',
+  //   day: 'numeric',
+  // });
+  // For simplicity and to avoid hydration issues if this page remains mostly static:
+  const manuallyUpdatedDate = "October 26, 2023"; // MANUALLY UPDATE THIS WHEN YOU UPDATE THE PAGE CONTENT
+
 
   return (
     <>
@@ -33,7 +69,7 @@ export default function NowPage() {
                 <CardTitle>What I'm Doing Now</CardTitle>
               </h1>
               <CardDescription className="text-muted-foreground text-lg mt-2">
-                Last updated: {currentDate}
+                Last updated: {manuallyUpdatedDate}
               </CardDescription>
             </CardHeader>
             <CardContent className="p-6 md:p-8 space-y-8 text-lg">

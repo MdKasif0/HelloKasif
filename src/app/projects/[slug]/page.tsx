@@ -11,7 +11,7 @@ import { Card, CardContent, CardFooter, CardHeader, CardTitle } from '@/componen
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import { ArrowLeft, ExternalLink, Github, MessageSquareQuote } from 'lucide-react';
-import BackToTopButton from '@/components/interactive/BackToTopButton'; // Added
+import BackToTopButton from '@/components/interactive/BackToTopButton';
 
 type Props = {
   params: { slug: string };
@@ -34,40 +34,52 @@ export async function generateMetadata(
       title: 'Project Not Found | PersonaVerse',
     };
   }
+  
+  // const previousImages = (await parent).openGraph?.images || []
 
   const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'http://localhost:3000';
-  const ogImageUrl = project.imageUrl.startsWith('http') ? project.imageUrl : `${siteUrl}/${project.imageUrl}`;
+  // Ensure imageUrl for OG is absolute. If it's already absolute, use it. Otherwise, prepend siteUrl.
+  // Assuming project.imageUrl are relative paths like '/images/project-nova.png' or absolute https://placehold.co links
+  const ogImageUrl = project.imageUrl.startsWith('http') 
+    ? project.imageUrl 
+    : `${siteUrl}${project.imageUrl.startsWith('/') ? project.imageUrl : '/' + project.imageUrl}`;
 
 
   return {
     title: `${project.title} | Case Study | PersonaVerse`,
-    description: project.problem, // Use project problem as description
+    description: project.problem, // Use project problem as a concise description for SEO
     openGraph: {
-      title: `${project.title} | PersonaVerse`,
-      description: project.problem,
-      url: `${siteUrl}/projects/${project.slug}`,
+      // ...((await parent).openGraph || {}), // Inherit from parent if needed, but often override
+      title: `${project.title} | PersonaVerse Projects`,
+      description: `Deep dive into the ${project.title} project: problem, process, solution, and results. Technologies used: ${project.tags.join(', ')}.`,
+      url: `/projects/${project.slug}`, // metadataBase in layout.tsx handles the base
+      type: 'article', // More specific than 'website' for a project page
       images: [
         {
-          url: ogImageUrl,
-          width: 600, // Assuming placeholder dimensions, adjust if needed
-          height: 400,
-          alt: project.title,
+          url: ogImageUrl, // Use the potentially prefixed URL
+          width: project.imageUrl.includes('placehold.co') ? 600 : 1200, // Adjust dimensions based on actual images
+          height: project.imageUrl.includes('placehold.co') ? 400 : 630,
+          alt: `Cover image for ${project.title}`,
         },
+        // ...previousImages, // If you want to add to, not replace, parent images
       ],
+      // publishedTime: project.publishDate, // If you add publishDate to your project data
+      // authors: ['Jane Doe'], // Can be defined here or inherited
     },
     twitter: {
+      // ...((await parent).twitter || {}),
       card: 'summary_large_image',
-      title: `${project.title} | PersonaVerse`,
+      title: `${project.title} | PersonaVerse Projects`,
       description: project.problem,
-      images: [ogImageUrl],
+      images: [ogImageUrl], // Use the same logic for Twitter images
     },
   };
 }
 
 const SectionBlock = ({ title, children }: { title: string, children: React.ReactNode }) => (
-  <div className="mb-6">
-    <h2 className="text-2xl font-semibold text-primary mb-2">{title}</h2>
-    <div className="prose prose-invert text-muted-foreground max-w-none leading-relaxed dark:prose-invert">
+  <div className="mb-8">
+    <h2 className="text-2xl md:text-3xl font-semibold text-primary mb-3">{title}</h2>
+    <div className="prose prose-lg dark:prose-invert text-muted-foreground max-w-none leading-relaxed space-y-4">
       {typeof children === 'string' ? <p>{children}</p> : children}
     </div>
   </div>
@@ -87,13 +99,13 @@ export default function ProjectPage({ params }: Props) {
       <main className="container mx-auto px-4 py-16 md:py-24 relative z-10 min-h-[calc(100vh-8rem)]">
         <div className="max-w-4xl mx-auto">
           <Button variant="outline" asChild className="mb-8 group">
-            <Link href="/projects"> {/* Changed link to /projects */}
+            <Link href="/projects">
               <ArrowLeft className="mr-2 h-4 w-4 transition-transform group-hover:-translate-x-1" />
               Back to All Projects
             </Link>
           </Button>
 
-          <article>
+          <article className="animate-in fade-in slide-in-from-bottom-5 duration-700">
             <header className="mb-10">
               <h1 className="text-4xl md:text-5xl font-bold tracking-tight mb-4 text-balance">
                 {project.title}
@@ -101,7 +113,7 @@ export default function ProjectPage({ params }: Props) {
               <div className="relative overflow-hidden rounded-xl shadow-2xl mb-8 aspect-video w-full">
                 <Image
                   src={project.imageUrl}
-                  alt={project.title}
+                  alt={`Cover image for ${project.title}`}
                   fill
                   className="object-cover"
                   data-ai-hint={project.imageHint}
@@ -123,7 +135,7 @@ export default function ProjectPage({ params }: Props) {
                     <h3 className="text-xl font-semibold text-accent mb-2 flex items-center">
                       <MessageSquareQuote size={22} className="mr-2" /> Client Feedback
                     </h3>
-                    <blockquote className="text-muted-foreground italic text-lg">
+                    <blockquote className="text-muted-foreground italic text-lg text-balance">
                       "{project.clientFeedback}"
                     </blockquote>
                   </div>
@@ -140,22 +152,24 @@ export default function ProjectPage({ params }: Props) {
                   </div>
                 </div>
               </CardContent>
-              <CardFooter className="p-6 md:p-8 pt-4 flex flex-wrap gap-4 justify-start items-center border-t border-border/50">
-                {project.liveLink && project.liveLink !== "#" && (
-                  <Button variant="default" asChild className="bg-gradient-to-r from-accent to-purple-600 hover:from-accent/90 hover:to-purple-600/90 text-accent-foreground">
-                    <a href={project.liveLink} target="_blank" rel="noopener noreferrer">
-                      View Live Demo <ExternalLink size={16} className="ml-2" />
-                    </a>
-                  </Button>
-                )}
-                {project.repoLink && project.repoLink !== "#" && (
-                  <Button variant="outline" asChild className="text-muted-foreground hover:text-accent">
-                    <a href={project.repoLink} target="_blank" rel="noopener noreferrer">
-                      <Github size={20} className="mr-2" /> View Source
-                    </a>
-                  </Button>
-                )}
-              </CardFooter>
+              {(project.liveLink && project.liveLink !== "#") || (project.repoLink && project.repoLink !== "#") ? (
+                <CardFooter className="p-6 md:p-8 pt-4 flex flex-wrap gap-4 justify-start items-center border-t border-border/50">
+                  {project.liveLink && project.liveLink !== "#" && (
+                    <Button variant="default" asChild className="bg-gradient-to-r from-accent to-purple-600 hover:from-accent/90 hover:to-purple-600/90 text-accent-foreground">
+                      <a href={project.liveLink} target="_blank" rel="noopener noreferrer">
+                        View Live Demo <ExternalLink size={16} className="ml-2" />
+                      </a>
+                    </Button>
+                  )}
+                  {project.repoLink && project.repoLink !== "#" && (
+                    <Button variant="outline" asChild className="text-muted-foreground hover:text-accent">
+                      <a href={project.repoLink} target="_blank" rel="noopener noreferrer">
+                        <Github size={20} className="mr-2" /> View Source
+                      </a>
+                    </Button>
+                  )}
+                </CardFooter>
+              ) : null}
             </Card>
           </article>
         </div>
