@@ -9,28 +9,28 @@ export default function Footer() {
       <div className="container mx-auto px-4">
         <div className="flex justify-center gap-6 mb-6">
           <a 
-            href="https://github.com" 
+            href="#" // Updated to placeholder
             target="_blank" 
             rel="noopener noreferrer" 
-            aria-label="GitHub" 
+            aria-label="Jane Doe's GitHub profile (update link)" // Updated aria-label
             className="text-muted-foreground hover:text-primary transition-all hover:scale-125 hover:-translate-y-1"
           >
             <Github size={24} />
           </a>
           <a 
-            href="https://linkedin.com" 
+            href="#" // Updated to placeholder
             target="_blank" 
             rel="noopener noreferrer" 
-            aria-label="LinkedIn" 
+            aria-label="Jane Doe's LinkedIn profile (update link)" // Updated aria-label
             className="text-muted-foreground hover:text-primary transition-all hover:scale-125 hover:-translate-y-1"
           >
             <Linkedin size={24} />
           </a>
           <a 
-            href="https://twitter.com" 
+            href="#" // Updated to placeholder
             target="_blank" 
             rel="noopener noreferrer" 
-            aria-label="Twitter"
+            aria-label="Jane Doe's Twitter profile (update link)" // Updated aria-label
             className="text-muted-foreground hover:text-primary transition-all hover:scale-125 hover:-translate-y-1"
           >
             <Twitter size={24} />
