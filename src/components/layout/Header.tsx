@@ -13,20 +13,21 @@ import {
   SheetContent,
   SheetClose,
   SheetTrigger,
+  SheetHeader,
+  SheetTitle,
 } from "@/components/ui/sheet";
 import { cn } from '@/lib/utils';
 
 const NAV_ITEMS_CONFIG = [
   { id: 'about', label: 'About', href: '/about' },
   { id: 'projects', label: 'Projects', href: '/projects' },
-  // { id: 'testimonials', label: 'Testimonials', href: '/testimonials' }, // Removed Testimonials link
   { id: 'timeline', label: 'Timeline', href: '/timeline' },
   { id: 'achievements', label: 'Achievements', href: '/achievements' },
   { id: 'contact', label: 'Contact', href: '/contact' },
 ];
 
 // IDs of sections on the homepage for scrollspy
-const HOMEPAGE_SECTION_IDS = ['hero', 'about', 'projects', /*'testimonials',*/ 'timeline', 'achievements', 'contact']; // Removed testimonials
+const HOMEPAGE_SECTION_IDS = ['hero', 'about', 'projects', 'timeline', 'achievements', 'contact'];
 
 export default function Header() {
   const { theme, setTheme } = useTheme();
@@ -56,31 +57,39 @@ export default function Header() {
     if (!isHomepage || !mounted) {
       if (observer.current) {
         observer.current.disconnect();
+        setActiveSection(null); 
       }
       // For non-homepage, active section is determined by NavLink logic based on pathname
-      setActiveSection(null); 
+      const currentNavItem = NAV_ITEMS_CONFIG.find(item => item.href !== "/" && pathname.startsWith(item.href));
+      if (currentNavItem) {
+        setActiveSection(currentNavItem.id);
+      } else if (pathname === "/") {
+        setActiveSection("hero"); // Default to hero for homepage if no specific section matches
+      } else {
+        setActiveSection(null);
+      }
       return;
     }
 
-    const headerHeight = headerRef.current?.offsetHeight || 64; // Adjust as needed
+    // IntersectionObserver logic for homepage scrollspy
+    const headerHeight = headerRef.current?.offsetHeight || 64; 
     const options = {
-      root: null, // relative to document viewport
-      rootMargin: `-${headerHeight + 20}px 0px -40% 0px`, // Adjust top margin for sticky header, bottom margin to trigger earlier
-      threshold: 0.01, // A small part of the section needs to be visible
+      root: null, 
+      rootMargin: `-${headerHeight + 20}px 0px -40% 0px`, 
+      threshold: 0.01, 
     };
 
     observer.current = new IntersectionObserver((entries) => {
-      let currentSection: string | null = null;
-      
+      let currentSectionId: string | null = null;
       entries.forEach(entry => {
         if (entry.isIntersecting) {
-          currentSection = entry.target.id;
+          currentSectionId = entry.target.id;
         }
       });
 
-      if (currentSection) {
-         setActiveSection(currentSection);
-      } else if (window.scrollY < 200) { // Near top, hero or no specific section
+      if (currentSectionId) {
+         setActiveSection(currentSectionId);
+      } else if (window.scrollY < 200 && HOMEPAGE_SECTION_IDS.includes('hero')) { 
           setActiveSection('hero'); 
       }
     }, options);
@@ -96,7 +105,7 @@ export default function Header() {
     return () => {
       currentObserver?.disconnect();
     };
-  }, [isHomepage, mounted]);
+  }, [isHomepage, mounted, pathname]);
 
 
   const toggleTheme = () => {
@@ -108,12 +117,12 @@ export default function Header() {
     let isActive = false;
 
     if (isHomepage) {
-      targetHref = (id === 'hero' && href === '/') ? '/' : `/#${id}`;
+      targetHref = (id === 'hero' && href === '/') ? '/' : `/#${id}`; // Ensure hero section on homepage is just /
       isActive = activeSection === id;
     } else {
       // For subpages, active link is based on path starting with href
-      isActive = href !== "/" && pathname.startsWith(href);
-      if (href === "/" && pathname === "/") isActive = true; // Home link active on homepage
+      // Or if the current pathname exactly matches the href (for '/')
+      isActive = (href !== "/" && pathname.startsWith(href)) || (href === "/" && pathname === "/");
     }
     
     const baseClasses = "transition-all hover:-translate-y-0.5 py-1.5 px-2.5 sm:px-3";
@@ -200,7 +209,10 @@ export default function Header() {
                   <span className="sr-only">Open menu</span>
                 </Button>
               </SheetTrigger>
-              <SheetContent side="right" className="w-[280px] bg-background/95 backdrop-blur-md pt-12">
+              <SheetContent side="right" className="w-[280px] bg-background/95 backdrop-blur-md pt-6">
+                <SheetHeader className="mb-4 border-b pb-4">
+                  <SheetTitle className="text-center text-lg font-semibold">Menu</SheetTitle>
+                </SheetHeader>
                 <nav className="flex flex-col gap-2"> 
                    {NAV_ITEMS_CONFIG.map(item => (
                     <NavLink key={item.id} id={item.id} href={item.href} isMobile>
@@ -216,3 +228,4 @@ export default function Header() {
     </header>
   );
 }
+
