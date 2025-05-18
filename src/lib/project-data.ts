@@ -20,19 +20,19 @@ export interface Project {
 export const allProjects: Project[] = [
   {
     id: 1,
-    slug: "project-nova",
-    title: "Project Nova",
-    problem: "Users faced overwhelming information in a vast digital library, struggling to find relevant content efficiently.",
-    myRole: "Lead Developer & UI/UX Architect. Spearheaded the AI engine development, front-end implementation (Next.js), and overall user experience strategy.",
-    process: "Conducted user research to identify pain points. Designed and prototyped a spatial navigation concept. Developed AI algorithms for dynamic content personalization. Iteratively tested and refined based on user feedback.",
-    solution: "Project Nova: An innovative platform featuring an intuitive 3D interface and AI-driven content suggestions that adapt to individual user behavior and preferences.",
-    result: "Led to a 40% increase in user engagement, a 25% reduction in time-to-find content, and overwhelmingly positive feedback on the novel user interface.",
-    clientFeedback: "Nova has transformed how we interact with our data. Jane's vision and execution were exceptional!",
-    imageUrl: "https://placehold.co/600x400.png",
-    imageHint: "abstract futuristic",
-    tags: ["Next.js", "AI", "Tailwind CSS", "Spatial UI", "Genkit"],
-    liveLink: "#",
-    repoLink: "#",
+    slug: "imaginate-ai", // Updated slug
+    title: "Imaginate",
+    problem: "Creating a seamless web app that allows users to generate high-quality images using text prompts, leveraging AI models while ensuring smooth user experience.",
+    myRole: "I independently handled the entire development of the project — from UI/UX design to backend integration with Hugging Face APIs. I also iteratively improved the product based on testing and feedback.",
+    process: "I began by outlining the key features of the app, starting with a minimal interface to generate images from text input. Over time, I added more advanced features, enhanced styling, and improved loading feedback. Assistance from ChatGPT and Gemini helped troubleshoot issues and refine functionality.",
+    solution: "An AI-powered web app that lets users generate images using text prompts through Hugging Face APIs. The app features a clean UI, responsive design, and dynamic loading states for better user experience.",
+    result: "The final product is a fully functional and visually appealing AI image generator. It performs reliably and has been positively received for its simplicity and effectiveness.",
+    // clientFeedback is null, so it's omitted
+    imageUrl: "https://imaginate-ai.netlify.app/preview.png",
+    imageHint: "AI image generation", // Adjusted hint to two words
+    tags: ["Html", "CSS", "JavaScript", "Hugging Face"],
+    liveLink: "https://imaginate-ai.netlify.app/",
+    repoLink: "https://github.com/MdKasif0/Imaginate",
   },
   {
     id: 2,
