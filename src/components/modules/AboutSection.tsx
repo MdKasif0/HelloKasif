@@ -1,17 +1,17 @@
 
 // src/components/modules/AboutSection.tsx
+// This is now the HOMEPAGE version of the About Section (teaser)
 import InteractiveCard from '@/components/interactive/InteractiveCard';
 import { CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import Image from 'next/image';
-import { Lightbulb, Cpu, Palette, Download, Briefcase, GraduationCap, Sparkles } from 'lucide-react';
+import { ArrowRight, UserCircle } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import Link from 'next/link';
 
 export default function AboutSection() {
   return (
     <section id="about" className="py-16 md:py-24 animate-in fade-in duration-500">
-      <h2 className="text-4xl md:text-5xl font-bold text-center mb-16 tracking-tight animate-in fade-in slide-in-from-bottom-5 duration-700">The Architect Behind the Verse</h2>
-      <div className="grid md:grid-cols-1 lg:grid-cols-3 gap-8 items-start">
+      <div className="grid md:grid-cols-1 lg:grid-cols-3 gap-8 items-center">
         <InteractiveCard className="lg:col-span-1 p-0 animate-in fade-in slide-in-from-left-10 duration-700">
           <Image
             src="https://placehold.co/600x750.png" 
@@ -28,77 +28,25 @@ export default function AboutSection() {
               Visionary Developer & Digital Artisan
             </CardDescription>
           </CardHeader>
-           <CardContent className="p-6 pt-0 text-center">
-             <Button asChild size="lg" className="w-full bg-gradient-to-r from-primary to-accent hover:from-primary/90 hover:to-accent/90 text-primary-foreground group rounded-lg shadow-md hover:shadow-primary/40 transition-all duration-300 transform hover:scale-105">
-                <Link href="/placeholder-resume.pdf" target="_blank" rel="noopener noreferrer">
-                  Download Resume <Download size={18} className="ml-2" />
-                </Link>
-              </Button>
-           </CardContent>
         </InteractiveCard>
 
-        <div className="lg:col-span-2 space-y-8">
-          <InteractiveCard className="animate-in fade-in slide-in-from-right-10 duration-700 delay-200">
+        <div className="lg:col-span-2 space-y-8 animate-in fade-in slide-in-from-right-10 duration-700 delay-200">
+          <InteractiveCard>
             <CardHeader>
-              <CardTitle className="flex items-center gap-3 text-2xl"><Lightbulb className="h-7 w-7 text-primary" /> My Philosophy</CardTitle>
+              <CardTitle className="flex items-center gap-3 text-2xl">
+                <UserCircle className="h-7 w-7 text-primary" />
+                Meet the Architect
+              </CardTitle>
             </CardHeader>
             <CardContent>
-              <p className="text-muted-foreground leading-relaxed text-lg">
-                I craft digital experiences that are not only functional but also memorable and deeply engaging, fusing technology with human-centric design.
+              <p className="text-muted-foreground leading-relaxed text-lg mb-6 text-balance">
+                I craft digital experiences that fuse technology with human-centric design, building bridges between complex systems and intuitive interaction. My passion is to create solutions that are not only functional but also memorable and deeply engaging.
               </p>
-            </CardContent>
-          </InteractiveCard>
-
-          <InteractiveCard className="animate-in fade-in slide-in-from-right-10 duration-700 delay-300">
-            <CardHeader>
-              <CardTitle className="flex items-center gap-3 text-2xl"><GraduationCap className="h-7 w-7 text-primary" /> Education & Background</CardTitle>
-            </CardHeader>
-            <CardContent>
-              <p className="text-muted-foreground leading-relaxed text-lg">
-                A [Your Degree] in [Your Major] from [Your University] laid my foundation, which I continuously build upon by exploring emerging technologies.
-              </p>
-            </CardContent>
-          </InteractiveCard>
-          
-          <InteractiveCard className="animate-in fade-in slide-in-from-right-10 duration-700 delay-400">
-            <CardHeader>
-              <CardTitle className="flex items-center gap-3 text-2xl"><Cpu className="h-7 w-7 text-primary" /> Core Skills</CardTitle>
-            </CardHeader>
-            <CardContent>
-              <ul className="grid grid-cols-2 gap-x-6 gap-y-3 text-muted-foreground text-lg">
-                {[
-                  "Next.js & React", "TypeScript", "Tailwind CSS", 
-                  "Node.js", "AI & Genkit", "Spatial UI/UX",
-                  "Server Components", "Performance Optimization"
-                ].map(skill => (
-                  <li key={skill} className="flex items-center">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-check-circle-2 mr-2 text-accent flex-shrink-0"><path d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z"/><path d="m9 12 2 2 4-4"/></svg>
-                    {skill}
-                  </li>
-                ))}
-              </ul>
-            </CardContent>
-          </InteractiveCard>
-
-           <InteractiveCard className="animate-in fade-in slide-in-from-right-10 duration-700 delay-500">
-            <CardHeader>
-              <CardTitle className="flex items-center gap-3 text-2xl"><Palette className="h-7 w-7 text-primary" /> Design & Interaction</CardTitle>
-            </CardHeader>
-            <CardContent>
-              <p className="text-muted-foreground leading-relaxed text-lg">
-                I focus on subtle animations, adaptive depth, and interactive elements to build immersive digital environments that captivate users.
-              </p>
-            </CardContent>
-          </InteractiveCard>
-
-          <InteractiveCard className="animate-in fade-in slide-in-from-right-10 duration-700 delay-600">
-            <CardHeader>
-              <CardTitle className="flex items-center gap-3 text-2xl"><Sparkles className="h-7 w-7 text-primary" /> Currently Exploring</CardTitle>
-            </CardHeader>
-            <CardContent>
-              <p className="text-muted-foreground leading-relaxed text-lg mb-3">
-                Always learning! Currently delving into advanced AI, WebAssembly, and data-intensive application design.
-              </p>
+              <Button asChild size="lg" className="w-full sm:w-auto bg-gradient-to-r from-primary to-accent hover:from-primary/90 hover:to-accent/90 text-primary-foreground group">
+                <Link href="/about">
+                  Learn More About Me <ArrowRight size={18} className="ml-2 transition-transform group-hover:translate-x-1" />
+                </Link>
+              </Button>
             </CardContent>
           </InteractiveCard>
         </div>
@@ -106,3 +54,5 @@ export default function AboutSection() {
     </section>
   );
 }
+
+    

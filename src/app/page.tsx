@@ -1,8 +1,9 @@
+
 import HeroSection from '@/components/modules/HeroSection';
-import AboutSection from '@/components/modules/AboutSection';
-import ProjectsSection from '@/components/modules/ProjectsSection';
-import TestimonialsSection from '@/components/modules/TestimonialsSection';
-import TimelineSection from '@/components/modules/TimelineSection';
+import AboutSection from '@/components/modules/AboutSection'; // Teaser version
+import ProjectsSection from '@/components/modules/ProjectsSection'; // Teaser version
+import TestimonialsSection from '@/components/modules/TestimonialsSection'; // Teaser version
+import TimelineSection from '@/components/modules/TimelineSection'; // Teaser version
 import AchievementsSection from '@/components/modules/AchievementsSection';
 import ContactSection from '@/components/modules/ContactSection';
 import EnvironmentDisplay from '@/components/ai/EnvironmentDisplay';
@@ -21,29 +22,36 @@ export default function Home() {
            <EnvironmentDisplay />
         </div>
 
-        <AboutSection />
+        {/* About Section Teaser - links to /about */}
+        <AboutSection /> 
         
         <Separator className="my-16 md:my-20 bg-border/30 h-[2px] rounded-full max-w-md mx-auto" />
 
+        {/* Projects Section Teaser - links to /projects */}
         <ProjectsSection />
 
         <Separator className="my-16 md:my-20 bg-border/30 h-[2px] rounded-full max-w-md mx-auto" />
         
+        {/* Testimonials Section Teaser - links to /testimonials */}
         <TestimonialsSection />
 
         <Separator className="my-16 md:my-20 bg-border/30 h-[2px] rounded-full max-w-md mx-auto" />
 
+        {/* Timeline Section Teaser - links to /timeline */}
         <TimelineSection />
 
         <Separator className="my-16 md:my-20 bg-border/30 h-[2px] rounded-full max-w-md mx-auto" />
 
-        <AchievementsSection />
+        <AchievementsSection /> {/* This can remain as is if it's already concise, or link to /achievements if we create that page later */}
 
         <Separator className="my-16 md:my-20 bg-border/30 h-[2px] rounded-full max-w-md mx-auto" />
 
+        {/* Contact Section - links to /contact */}
         <ContactSection />
       </main>
       <Footer />
     </>
   );
 }
+
+    

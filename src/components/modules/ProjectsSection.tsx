@@ -1,33 +1,37 @@
 
 // src/components/modules/ProjectsSection.tsx
+// This is now the HOMEPAGE version of the Projects Section (teaser)
 'use client';
 
 import Image from 'next/image';
 import { CardContent, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
 import InteractiveCard from '@/components/interactive/InteractiveCard';
 import { Button } from '@/components/ui/button';
-import { ExternalLink, Github, MessageSquareQuote, ChevronDown, ChevronUp, ArrowRight } from 'lucide-react';
+import { ExternalLink, Github, ArrowRight, Eye } from 'lucide-react';
 import { Badge } from '@/components/ui/badge';
-import { useState } from 'react';
 import Link from 'next/link';
-import { allProjects } from '@/lib/project-data'; // Import project data
+import { allProjects } from '@/lib/project-data';
 
-const INITIAL_PROJECTS_COUNT = 2;
+const INITIAL_PROJECTS_COUNT_HOMEPAGE = 2; // Show only 2 on homepage
 
 const SectionBlock = ({ title, children }: { title: string, children: React.ReactNode }) => (
   <div className="mb-4">
     <h4 className="text-md font-semibold text-primary mb-1">{title}</h4>
-    <p className="text-muted-foreground leading-relaxed text-sm">{children}</p>
+    <p className="text-muted-foreground leading-relaxed text-sm text-balance">{children}</p>
   </div>
 );
 
 export default function ProjectsSection() {
-  const [showAllProjects, setShowAllProjects] = useState(false);
-  const projectsToShow = showAllProjects ? allProjects : allProjects.slice(0, INITIAL_PROJECTS_COUNT);
+  const projectsToShow = allProjects.slice(0, INITIAL_PROJECTS_COUNT_HOMEPAGE);
 
   return (
     <section id="projects" className="py-16 md:py-24 animate-in fade-in duration-500">
-      <h2 className="text-4xl md:text-5xl font-bold text-center mb-16 tracking-tight animate-in fade-in slide-in-from-bottom-5 duration-700">My Creations: Case Studies</h2>
+      <div className="text-center mb-16 animate-in fade-in slide-in-from-bottom-5 duration-700">
+        <h2 className="text-4xl md:text-5xl font-bold tracking-tight">Featured Creations</h2>
+        <p className="text-lg text-muted-foreground mt-3 max-w-2xl mx-auto text-balance">
+          A glimpse into some of my key projects. Dive into detailed case studies for a deeper look.
+        </p>
+      </div>
       <div className="grid md:grid-cols-1 lg:grid-cols-1 gap-8 xl:gap-10">
         {projectsToShow.map((project, index) => (
           <InteractiveCard 
@@ -50,30 +54,16 @@ export default function ProjectsSection() {
               <CardTitle className="text-3xl mb-2">{project.title}</CardTitle>
             </CardHeader>
             <CardContent className="p-6 pt-0 flex-grow">
-              <SectionBlock title="The Problem">{project.problem}</SectionBlock>
-              <SectionBlock title="My Role">{project.myRole}</SectionBlock>
-              {/* Hiding Process, Solution, Result for summary view. These will be on the detail page. */}
-              {/* <SectionBlock title="The Process">{project.process}</SectionBlock> */}
-              {/* <SectionBlock title="The Solution">{project.solution}</SectionBlock> */}
-              {/* <SectionBlock title="The Result">{project.result}</SectionBlock> */}
-              
-              {project.clientFeedback && (
-                <div className="mt-4 mb-4 p-4 border-l-4 border-accent bg-accent/10 rounded-r-md">
-                  <h4 className="text-md font-semibold text-accent mb-1 flex items-center">
-                    <MessageSquareQuote size={18} className="mr-2" /> Client Feedback
-                  </h4>
-                  <blockquote className="text-sm text-muted-foreground italic">"{project.clientFeedback}"</blockquote>
-                </div>
-              )}
-
+              <SectionBlock title="The Challenge">{project.problem}</SectionBlock>
               <div className="mt-6 mb-2">
-                <h4 className="text-md font-semibold text-primary mb-2">Technologies Used:</h4>
+                <h4 className="text-md font-semibold text-primary mb-2">Core Technologies:</h4>
                 <div className="flex flex-wrap gap-2">
-                  {project.tags.map((tag) => (
+                  {project.tags.slice(0, 3).map((tag) => ( // Show a few key tags
                     <Badge key={tag} variant="secondary" className="bg-primary/10 text-primary border-primary/30 hover:bg-primary/20">
                       {tag}
                     </Badge>
                   ))}
+                  {project.tags.length > 3 && <Badge variant="outline">+{project.tags.length-3} more</Badge>}
                 </div>
               </div>
             </CardContent>
@@ -101,19 +91,22 @@ export default function ProjectsSection() {
           </InteractiveCard>
         ))}
       </div>
-      {allProjects.length > INITIAL_PROJECTS_COUNT && (
+      {allProjects.length > INITIAL_PROJECTS_COUNT_HOMEPAGE && (
         <div className="text-center mt-12">
           <Button
-            onClick={() => setShowAllProjects(!showAllProjects)}
+            asChild
             variant="outline"
             size="lg"
             className="group border-primary/50 text-primary hover:bg-primary/10 hover:text-primary hover:border-primary transition-all duration-300 transform hover:scale-105"
           >
-            {showAllProjects ? "Show Fewer Projects" : "View More Projects"}
-            {showAllProjects ? <ChevronUp className="ml-2 h-5 w-5" /> : <ChevronDown className="ml-2 h-5 w-5" />}
+            <Link href="/projects">
+              Explore All Projects <Eye className="ml-2 h-5 w-5" />
+            </Link>
           </Button>
         </div>
       )}
     </section>
   );
 }
+
+    

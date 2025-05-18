@@ -1,19 +1,21 @@
+
 // src/components/modules/TimelineSection.tsx
+// This is now the HOMEPAGE version of the Timeline Section (teaser)
 'use client';
 
-import { Briefcase, GraduationCap, Flag, ChevronDown, ChevronUp } from 'lucide-react';
+import { Briefcase, GraduationCap, Flag, GanttChartSquare } from 'lucide-react';
 import InteractiveCard from '@/components/interactive/InteractiveCard';
 import { CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
-import { useState } from 'react';
+import Link from 'next/link';
 
-const allTimelineEvents = [
+const homepageTimelineEvents = [ // Keep a small set for homepage, full set on /timeline page
   {
     id: 1,
     icon: Flag,
     date: "Present",
     title: "Exploring New Frontiers",
-    description: "Currently seeking challenging opportunities to leverage my skills in Next.js, AI, and spatial UI to build innovative digital products. Open to collaborations and full-time roles.",
+    description: "Currently seeking challenging opportunities to leverage my skills in Next.js, AI, and spatial UI to build innovative digital products.",
     category: "career",
   },
   {
@@ -21,36 +23,23 @@ const allTimelineEvents = [
     icon: Briefcase,
     date: "2021 - 2023",
     title: "Senior Frontend Developer @ FutureScape",
-    description: "Led the development of a cutting-edge data visualization platform. Specialized in React, TypeScript, and performance optimization. Mentored junior developers.",
+    description: "Led the development of a cutting-edge data visualization platform. Specialized in React, TypeScript, and performance optimization.",
     category: "career",
   },
-  {
-    id: 3,
-    icon: Briefcase,
-    date: "2019 - 2021",
-    title: "Software Engineer @ CodeCrafters",
-    description: "Developed and maintained scalable web applications using Node.js and React. Contributed to full-stack development cycles and agile methodologies.",
-    category: "career",
-  },
-  {
-    id: 4,
-    icon: GraduationCap,
-    date: "2015 - 2019",
-    title: "B.S. in Computer Science @ Tech University",
-    description: "Graduated with honors. Focused on software engineering, artificial intelligence, and human-computer interaction. Active member of the coding club.",
-    category: "education",
-  },
+  // Full list will be on /timeline page
 ];
 
-const INITIAL_TIMELINE_EVENTS_COUNT = 2;
-
 export default function TimelineSection() {
-  const [showAllEvents, setShowAllEvents] = useState(false);
-  const eventsToShow = showAllEvents ? allTimelineEvents : allTimelineEvents.slice(0, INITIAL_TIMELINE_EVENTS_COUNT);
+  const eventsToShow = homepageTimelineEvents;
 
   return (
     <section id="timeline" className="py-16 md:py-24 animate-in fade-in duration-500">
-      <h2 className="text-4xl md:text-5xl font-bold text-center mb-20 tracking-tight animate-in fade-in slide-in-from-bottom-5 duration-700">My Journey</h2>
+       <div className="text-center mb-20 animate-in fade-in slide-in-from-bottom-5 duration-700">
+        <h2 className="text-4xl md:text-5xl font-bold tracking-tight">My Journey So Far</h2>
+        <p className="text-lg text-muted-foreground mt-3 max-w-2xl mx-auto text-balance">
+          Key milestones from my career and educational path.
+        </p>
+      </div>
       <div className="relative container max-w-3xl mx-auto px-4">
         {/* The timeline line */}
         <div className="absolute top-0 h-full w-1 bg-border left-1/2 -translate-x-1/2 hidden md:block"></div>
@@ -88,19 +77,20 @@ export default function TimelineSection() {
           </div>
         ))}
       </div>
-      {allTimelineEvents.length > INITIAL_TIMELINE_EVENTS_COUNT && (
-        <div className="text-center mt-12 md:mt-16">
+      <div className="text-center mt-12 md:mt-16">
           <Button
-            onClick={() => setShowAllEvents(!showAllEvents)}
+            asChild
             variant="outline"
             size="lg"
             className="group border-primary/50 text-primary hover:bg-primary/10 hover:text-primary hover:border-primary transition-all duration-300 transform hover:scale-105"
           >
-            {showAllEvents ? "Show Less" : "View Full Journey"}
-            {showAllEvents ? <ChevronUp className="ml-2 h-5 w-5" /> : <ChevronDown className="ml-2 h-5 w-5" />}
+            <Link href="/timeline">
+              View Full Journey <GanttChartSquare className="ml-2 h-5 w-5" />
+            </Link>
           </Button>
         </div>
-      )}
     </section>
   );
 }
+
+    
