@@ -1,4 +1,3 @@
-
 // src/components/layout/Header.tsx
 'use client';
 
@@ -21,12 +20,12 @@ const NAV_ITEMS_CONFIG = [
   { id: 'projects', label: 'Projects', href: '/projects' },
   { id: 'testimonials', label: 'Testimonials', href: '/testimonials' },
   { id: 'timeline', label: 'Timeline', href: '/timeline' },
-  { id: 'achievements', label: 'Achievements', href: '/achievements' },
+  { id: 'achievements', label: 'Achievements', href: '/achievements' }, // Added Achievements here
   { id: 'contact', label: 'Contact', href: '/contact' },
 ];
 
 // IDs of sections on the homepage for scrollspy
-const HOMEPAGE_SECTION_IDS = ['about', 'projects', 'testimonials', 'timeline', 'achievements', 'contact'];
+const HOMEPAGE_SECTION_IDS = ['hero', 'about', 'projects', 'testimonials', 'timeline', 'achievements', 'contact'];
 
 export default function Header() {
   const { theme, setTheme } = useTheme();
@@ -35,6 +34,7 @@ export default function Header() {
   const [activeSection, setActiveSection] = useState<string | null>(null);
   const observer = useRef<IntersectionObserver | null>(null);
   const headerRef = useRef<HTMLElement>(null);
+  const [isScrolled, setIsScrolled] = useState(false);
 
   const isHomepage = pathname === '/';
 
@@ -43,45 +43,47 @@ export default function Header() {
   }, []);
 
   useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 10); // Set to true if scrolled more than 10px
+    };
+    window.addEventListener('scroll', handleScroll);
+    handleScroll(); // Call on mount to check initial scroll position
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  useEffect(() => {
     if (!isHomepage || !mounted) {
       if (observer.current) {
         observer.current.disconnect();
       }
-      setActiveSection(null); // Clear active section when not on homepage or not mounted
+      setActiveSection(null);
       return;
     }
 
-    const headerHeight = headerRef.current?.offsetHeight || 64; // Default header height
+    const headerHeight = headerRef.current?.offsetHeight || 64;
     const options = {
       root: null,
-      rootMargin: `-${headerHeight + 20}px 0px 0px 0px`, // Offset by header height + a bit more
-      threshold: 0.2, // Trigger when 20% of the section is visible
+      rootMargin: `-${headerHeight + 20}px 0px -40% 0px`, // Adjust bottom margin to prioritize sections higher in viewport
+      threshold: 0.01, // A small part of the section needs to be visible
     };
 
     observer.current = new IntersectionObserver((entries) => {
       let currentSection: string | null = null;
-      let maxRatio = 0;
-
+      
       entries.forEach(entry => {
-        if (entry.isIntersecting && entry.intersectionRatio > maxRatio) {
-          maxRatio = entry.intersectionRatio;
+        if (entry.isIntersecting) {
+          // Prioritize the one that is most visible or the first one if multiple are barely visible
+          // This simple logic takes the last one that becomes intersecting if scrolling down,
+          // or the first one if scrolling up into a new section.
           currentSection = entry.target.id;
         }
       });
-      
-      // Fallback to first section if nothing is actively "most" intersecting (e.g. at top of page)
-      // Or if scrolling up past all sections that would meet threshold
-      if (currentSection) {
-        setActiveSection(currentSection);
-      } else {
-         // If no section is intersecting, check scroll position
-        if (window.scrollY < 200) { // Near the top, likely hero
-            setActiveSection(null); // No specific section, or hero
-        }
-        // If scrolling down and no section is "active", the last activeSection will persist
-        // If scrolling up and no section is "active", we might want to clear it or set to previous
-      }
 
+      if (currentSection) {
+         setActiveSection(currentSection);
+      } else if (window.scrollY < 200) { // Near top, hero or no specific section
+          setActiveSection('hero'); // Or null if you have a distinct hero link
+      }
     }, options);
 
     const { current: currentObserver } = observer;
@@ -95,7 +97,7 @@ export default function Header() {
     return () => {
       currentObserver?.disconnect();
     };
-  }, [isHomepage, mounted, pathname]);
+  }, [isHomepage, mounted]);
 
 
   const toggleTheme = () => {
@@ -103,18 +105,18 @@ export default function Header() {
   };
 
   const NavLink = ({ id, href, children, isMobile = false }: { id: string; href: string; children: React.ReactNode, isMobile?: boolean }) => {
-    const targetHref = isHomepage ? `/#${id}` : href;
+    let targetHref = href;
     let isActive = false;
+
     if (isHomepage) {
+      targetHref = (id === 'hero' && href === '/') ? '/' : `/#${id}`; // Special handling for hero if it links to /
       isActive = activeSection === id;
     } else {
-      // For subpages, check if pathname starts with the link's href
-      // Ensure href is not just "/" to avoid highlighting all for home
       isActive = href !== "/" && pathname.startsWith(href);
-      // Special case for the root path if needed, but logo handles home link
+      if (href === "/" && pathname === "/") isActive = true; // Home link active on homepage
     }
-
-    const baseClasses = "transition-all hover:-translate-y-0.5";
+    
+    const baseClasses = "transition-all hover:-translate-y-0.5 py-1.5 px-2.5 sm:px-3"; // Adjusted padding
     const activeClasses = "text-primary font-semibold";
     const inactiveClasses = "text-muted-foreground hover:text-foreground";
     
@@ -129,7 +131,7 @@ export default function Header() {
             variant="ghost" 
             asChild 
             className={cn(
-              "w-full justify-start",
+              "w-full justify-start text-base", // Slightly larger text for mobile
               baseClasses,
               isActive ? activeClasses : inactiveClasses
             )}
@@ -155,15 +157,22 @@ export default function Header() {
   };
   
   return (
-    <header ref={headerRef} className="sticky top-0 z-50 w-full border-b border-border/40 bg-background/80 backdrop-blur-lg supports-[backdrop-filter]:bg-background/60">
+    <header 
+      ref={headerRef} 
+      className={cn(
+        "sticky top-0 z-50 w-full border-b border-border/40 bg-background/80 backdrop-blur-lg supports-[backdrop-filter]:bg-background/60",
+        "transition-shadow duration-300 ease-in-out", // Added for smooth shadow transition
+        isScrolled ? "shadow-lg" : "shadow-none" // Apply shadow when scrolled
+      )}
+    >
       <div className="container flex h-16 max-w-screen-2xl items-center justify-between px-4 sm:px-6 lg:px-8">
-        <Link href="/" className="flex items-center gap-2 group">
+        <Link href="/" className="flex items-center gap-2 group" onClick={() => isHomepage && setActiveSection('hero')}>
           <CodeXml className="h-7 w-7 text-primary transition-transform group-hover:rotate-[25deg] group-hover:scale-110" />
           <span className="font-sans text-xl font-bold tracking-tight sm:text-2xl group-hover:text-primary transition-colors">PersonaVerse</span>
         </Link>
         
-        <div className="flex items-center gap-1">
-          <nav className="hidden items-center gap-1 sm:flex">
+        <div className="flex items-center gap-0.5 sm:gap-1"> {/* Reduced gap slightly */}
+          <nav className="hidden items-center gap-0.5 sm:gap-1 sm:flex"> {/* Reduced gap slightly */}
             {NAV_ITEMS_CONFIG.map(item => (
               <NavLink key={item.id} id={item.id} href={item.href}>
                 {item.label}
@@ -177,7 +186,7 @@ export default function Header() {
               size="icon"
               onClick={toggleTheme}
               aria-label="Toggle theme"
-              className="text-muted-foreground hover:text-foreground transition-all hover:scale-110 hover:-translate-y-0.5"
+              className="text-muted-foreground hover:text-foreground transition-all hover:scale-110 hover:-translate-y-0.5 ml-1" // Added small margin
             >
               {theme === 'dark' ? <Sun size={20} /> : <Moon size={20} />}
             </Button>
@@ -191,8 +200,8 @@ export default function Header() {
                   <span className="sr-only">Open menu</span>
                 </Button>
               </SheetTrigger>
-              <SheetContent side="right" className="w-[280px] bg-background/95 backdrop-blur-md">
-                <nav className="flex flex-col gap-4 pt-8">
+              <SheetContent side="right" className="w-[280px] bg-background/95 backdrop-blur-md pt-12">
+                <nav className="flex flex-col gap-2"> {/* Reduced gap */}
                    {NAV_ITEMS_CONFIG.map(item => (
                     <NavLink key={item.id} id={item.id} href={item.href} isMobile>
                       {item.label}
