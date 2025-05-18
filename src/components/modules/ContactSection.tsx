@@ -1,3 +1,4 @@
+
 // src/components/modules/ContactSection.tsx
 'use client';
 
@@ -57,7 +58,7 @@ export default function ContactSection() {
         <CardHeader className="p-6">
           <CardTitle className="text-3xl">Send a Signal</CardTitle>
           <CardDescription className="text-muted-foreground mt-1">
-            Have a project, question, or just want to say hello? Drop me a line using the form below, or reach out directly at <a href="mailto:jane.doe@example.com" className="text-primary hover:underline">jane.doe@example.com</a>.
+            Have a project, question, or just want to say hello? Drop me a line using the form below, or reach out directly at <a href="mailto:mdkasifuddin.dev@example.com" className="text-primary hover:underline">mdkasifuddin.dev@example.com</a>.
           </CardDescription>
         </CardHeader>
         <CardContent className="p-6">

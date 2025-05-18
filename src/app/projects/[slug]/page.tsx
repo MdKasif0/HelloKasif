@@ -31,47 +31,38 @@ export async function generateMetadata(
 
   if (!project) {
     return {
-      title: 'Project Not Found | PersonaVerse',
+      title: 'Project Not Found | Md Kasif Uddin Portfolio',
     };
   }
   
-  // const previousImages = (await parent).openGraph?.images || []
-
   const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'http://localhost:3000';
-  // Ensure imageUrl for OG is absolute. If it's already absolute, use it. Otherwise, prepend siteUrl.
-  // Assuming project.imageUrl are relative paths like '/images/project-nova.png' or absolute https://placehold.co links
   const ogImageUrl = project.imageUrl.startsWith('http') 
     ? project.imageUrl 
     : `${siteUrl}${project.imageUrl.startsWith('/') ? project.imageUrl : '/' + project.imageUrl}`;
 
-
   return {
-    title: `${project.title} | Case Study | PersonaVerse`,
-    description: project.problem, // Use project problem as a concise description for SEO
+    title: `${project.title} | Case Study | Md Kasif Uddin Portfolio`,
+    description: project.problem, 
     openGraph: {
-      // ...((await parent).openGraph || {}), // Inherit from parent if needed, but often override
-      title: `${project.title} | PersonaVerse Projects`,
+      title: `${project.title} | Md Kasif Uddin Projects`,
       description: `Deep dive into the ${project.title} project: problem, process, solution, and results. Technologies used: ${project.tags.join(', ')}.`,
-      url: `/projects/${project.slug}`, // metadataBase in layout.tsx handles the base
-      type: 'article', // More specific than 'website' for a project page
+      url: `/projects/${project.slug}`, 
+      type: 'article', 
       images: [
         {
-          url: ogImageUrl, // Use the potentially prefixed URL
-          width: project.imageUrl.includes('placehold.co') ? 600 : 1200, // Adjust dimensions based on actual images
+          url: ogImageUrl, 
+          width: project.imageUrl.includes('placehold.co') ? 600 : 1200, 
           height: project.imageUrl.includes('placehold.co') ? 400 : 630,
           alt: `Cover image for ${project.title}`,
         },
-        // ...previousImages, // If you want to add to, not replace, parent images
       ],
-      // publishedTime: project.publishDate, // If you add publishDate to your project data
-      // authors: ['Jane Doe'], // Can be defined here or inherited
+      authors: ['Md Kasif Uddin'], 
     },
     twitter: {
-      // ...((await parent).twitter || {}),
       card: 'summary_large_image',
-      title: `${project.title} | PersonaVerse Projects`,
+      title: `${project.title} | Md Kasif Uddin Projects`,
       description: project.problem,
-      images: [ogImageUrl], // Use the same logic for Twitter images
+      images: [ogImageUrl], 
     },
   };
 }

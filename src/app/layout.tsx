@@ -24,35 +24,35 @@ const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'http://localhost:3000'; // 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl), // Crucial for canonical URLs and absolute OG URLs
   title: {
-    default: 'Jane Doe | PersonaVerse | Interactive Portfolio',
-    template: '%s | Jane Doe | PersonaVerse',
+    default: 'Md Kasif Uddin | Portfolio | Aspiring Developer',
+    template: '%s | Md Kasif Uddin | Portfolio',
   },
-  description: 'An immersive and interactive portfolio experience by Jane Doe, a visionary creator and developer. Explore innovative projects, skills, and insights.',
-  authors: [{ name: 'Jane Doe', url: siteUrl }],
+  description: 'Interactive portfolio of Md Kasif Uddin, a Grade 12th PCM student exploring web development and AI/ML.',
+  authors: [{ name: 'Md Kasif Uddin', url: siteUrl }],
   openGraph: {
     type: 'website',
     locale: 'en_US',
     url: siteUrl,
-    title: 'Jane Doe | PersonaVerse | Interactive Portfolio',
-    description: 'Explore the innovative projects and digital craftsmanship of Jane Doe.',
+    title: 'Md Kasif Uddin | Portfolio | Aspiring Developer',
+    description: 'Explore the projects and journey of Md Kasif Uddin, an aspiring developer.',
     images: [
       {
         url: `/og-image.png`, // Relative to public folder, metadataBase will make it absolute
         width: 1200,
         height: 630,
-        alt: 'PersonaVerse Portfolio Banner by Jane Doe',
+        alt: 'Portfolio Banner by Md Kasif Uddin',
       },
     ],
-    siteName: 'PersonaVerse by Jane Doe',
+    siteName: 'Portfolio by Md Kasif Uddin',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Jane Doe | PersonaVerse | Interactive Portfolio',
-    description: 'Discover Jane Doe\'s interactive portfolio showcasing visionary development and design.',
-    // creator: '@JaneDoeDev', // Uncomment and replace if you have a Twitter handle
+    title: 'Md Kasif Uddin | Portfolio | Aspiring Developer',
+    description: 'Discover Md Kasif Uddin\'s interactive portfolio.',
+    // creator: '@YourTwitterHandle', // Uncomment and replace if you have a Twitter handle
     images: [`/twitter-image.png`], // Relative to public folder, metadataBase will make it absolute
   },
-  // keywords: ['Next.js', 'React', 'Tailwind CSS', 'Portfolio', 'Developer', 'AI', 'Jane Doe', 'Web Developer', 'Full Stack Developer'],
+  // keywords: ['Next.js', 'React', 'Tailwind CSS', 'Portfolio', 'Developer', 'AI', 'Md Kasif Uddin', 'Web Developer', 'Student Developer'],
   // Consider adding a favicon link here if you have one in your public folder
   // icons: {
   //   icon: '/favicon.ico',

@@ -6,8 +6,8 @@ import ContactSectionContent from '@/components/modules/ContactSection';
 import type { Metadata } from 'next';
 import BackToTopButton from '@/components/interactive/BackToTopButton';
 
-const pageTitle = 'Contact Jane Doe | Let\'s Connect | PersonaVerse';
-const pageDescription = 'Get in touch with Jane Doe. Send a message, ask a question, or discuss a potential project. Find contact details and social media links for PersonaVerse.';
+const pageTitle = 'Contact Md Kasif Uddin | Let\'s Connect';
+const pageDescription = 'Get in touch with Md Kasif Uddin. Send a message, ask a question, or discuss a potential project.';
 
 export const metadata: Metadata = {
   title: pageTitle,
@@ -19,10 +19,10 @@ export const metadata: Metadata = {
     type: 'website',
     images: [
       {
-        url: '/og-image-contact.png', // Replace with a specific OG image for contact page
+        url: '/og-image-contact.png', 
         width: 1200,
         height: 630,
-        alt: 'Jane Doe - Contact Me',
+        alt: 'Md Kasif Uddin - Contact Me',
       },
     ],
   },
@@ -30,7 +30,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: pageTitle,
     description: pageDescription,
-    images: ['/twitter-image-contact.png'], // Replace with a specific Twitter image
+    images: ['/twitter-image-contact.png'], 
   },
 };
 

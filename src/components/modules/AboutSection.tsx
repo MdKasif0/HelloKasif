@@ -15,17 +15,17 @@ export default function AboutSection() {
         <InteractiveCard className="lg:col-span-1 p-0 animate-in fade-in slide-in-from-left-10 duration-700">
           <Image
             src="https://placehold.co/600x750.png" 
-            alt="Jane Doe - Digital Architect"
+            alt="Md Kasif Uddin - Aspiring Developer"
             width={600}
             height={750}
             className="rounded-t-xl object-cover w-full h-auto"
-            data-ai-hint="futuristic developer portrait"
+            data-ai-hint="student portrait anime"
             priority
           />
           <CardHeader className="p-6">
-            <CardTitle className="text-3xl text-center">Jane Doe</CardTitle>
+            <CardTitle className="text-3xl text-center">Md Kasif Uddin</CardTitle>
             <CardDescription className="text-center text-primary mt-1">
-              Visionary Developer & Digital Artisan
+              Grade 12th PCM Student & Aspiring Developer
             </CardDescription>
           </CardHeader>
         </InteractiveCard>
@@ -35,12 +35,12 @@ export default function AboutSection() {
             <CardHeader>
               <CardTitle className="flex items-center gap-3 text-2xl">
                 <UserCircle className="h-7 w-7 text-primary" />
-                Meet the Architect
+                Meet the Developer
               </CardTitle>
             </CardHeader>
             <CardContent>
               <p className="text-muted-foreground leading-relaxed text-lg mb-6 text-balance">
-                I craft digital experiences that fuse technology with human-centric design, building bridges between complex systems and intuitive interaction. My passion is to create solutions that are not only functional but also memorable and deeply engaging.
+                As a Grade 12th PCM student, I'm passionate about the intersection of technology and problem-solving, particularly in web development and AI/ML. I'm driven to create impactful digital solutions.
               </p>
               <Button asChild size="lg" className="w-full sm:w-auto bg-gradient-to-r from-primary to-accent hover:from-primary/90 hover:to-accent/90 text-primary-foreground group">
                 <Link href="/about">
@@ -54,5 +54,3 @@ export default function AboutSection() {
     </section>
   );
 }
-
-    
