@@ -1,12 +1,15 @@
 // src/components/modules/ProjectsSection.tsx
+'use client';
+
 import Image from 'next/image';
-import { CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
+import { CardContent, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
 import InteractiveCard from '@/components/interactive/InteractiveCard';
 import { Button } from '@/components/ui/button';
-import { ExternalLink, Github, MessageSquareQuote } from 'lucide-react'; // Added MessageSquareQuote
+import { ExternalLink, Github, MessageSquareQuote, ChevronDown, ChevronUp } from 'lucide-react';
 import { Badge } from '@/components/ui/badge';
+import { useState } from 'react';
 
-const projects = [
+const allProjects = [
   {
     id: 1,
     title: "Project Nova",
@@ -45,7 +48,6 @@ const projects = [
     process: "Researched existing UI frameworks and game engine principles. Developed a component-based architecture using TypeScript and Web Components. Focused on performance and ease of use for developers.",
     solution: "Aether Engine: A modular UI framework designed for creating highly interactive and immersive web environments with a consistent look and feel.",
     result: "Reduced development time for interactive web features by 30%. Adopted by multiple teams, enhancing product quality and developer productivity across the organization.",
-    // clientFeedback: "Optional feedback here", // Example of no feedback
     imageUrl: "https://placehold.co/600x400.png",
     imageHint: "geometric pattern",
     tags: ["TypeScript", "Web Components", "Animation", "Framework Design"],
@@ -53,6 +55,8 @@ const projects = [
     repoLink: "#",
   },
 ];
+
+const INITIAL_PROJECTS_COUNT = 2;
 
 const SectionBlock = ({ title, children }: { title: string, children: React.ReactNode }) => (
   <div className="mb-4">
@@ -62,11 +66,14 @@ const SectionBlock = ({ title, children }: { title: string, children: React.Reac
 );
 
 export default function ProjectsSection() {
+  const [showAllProjects, setShowAllProjects] = useState(false);
+  const projectsToShow = showAllProjects ? allProjects : allProjects.slice(0, INITIAL_PROJECTS_COUNT);
+
   return (
     <section id="projects" className="py-16 md:py-24 animate-in fade-in duration-500">
       <h2 className="text-4xl md:text-5xl font-bold text-center mb-16 tracking-tight animate-in fade-in slide-in-from-bottom-5 duration-700">My Creations: Case Studies</h2>
-      <div className="grid md:grid-cols-1 lg:grid-cols-1 gap-8 xl:gap-10"> {/* Changed to 1 column for better case study readability */}
-        {projects.map((project, index) => (
+      <div className="grid md:grid-cols-1 lg:grid-cols-1 gap-8 xl:gap-10">
+        {projectsToShow.map((project, index) => (
           <InteractiveCard 
             key={project.id} 
             className={`flex flex-col group/project animate-in fade-in slide-in-from-bottom-10 duration-500`}
@@ -128,6 +135,19 @@ export default function ProjectsSection() {
           </InteractiveCard>
         ))}
       </div>
+      {allProjects.length > INITIAL_PROJECTS_COUNT && (
+        <div className="text-center mt-12">
+          <Button
+            onClick={() => setShowAllProjects(!showAllProjects)}
+            variant="outline"
+            size="lg"
+            className="group border-primary/50 text-primary hover:bg-primary/10 hover:text-primary hover:border-primary transition-all duration-300 transform hover:scale-105"
+          >
+            {showAllProjects ? "Show Fewer Projects" : "View More Projects"}
+            {showAllProjects ? <ChevronUp className="ml-2 h-5 w-5" /> : <ChevronDown className="ml-2 h-5 w-5" />}
+          </Button>
+        </div>
+      )}
     </section>
   );
 }

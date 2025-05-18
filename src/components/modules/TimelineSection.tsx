@@ -1,9 +1,13 @@
 // src/components/modules/TimelineSection.tsx
-import { Briefcase, GraduationCap, Flag } from 'lucide-react';
+'use client';
+
+import { Briefcase, GraduationCap, Flag, ChevronDown, ChevronUp } from 'lucide-react';
 import InteractiveCard from '@/components/interactive/InteractiveCard';
 import { CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
+import { Button } from '@/components/ui/button';
+import { useState } from 'react';
 
-const timelineEvents = [
+const allTimelineEvents = [
   {
     id: 1,
     icon: Flag,
@@ -38,7 +42,12 @@ const timelineEvents = [
   },
 ];
 
+const INITIAL_TIMELINE_EVENTS_COUNT = 2;
+
 export default function TimelineSection() {
+  const [showAllEvents, setShowAllEvents] = useState(false);
+  const eventsToShow = showAllEvents ? allTimelineEvents : allTimelineEvents.slice(0, INITIAL_TIMELINE_EVENTS_COUNT);
+
   return (
     <section id="timeline" className="py-16 md:py-24 animate-in fade-in duration-500">
       <h2 className="text-4xl md:text-5xl font-bold text-center mb-20 tracking-tight animate-in fade-in slide-in-from-bottom-5 duration-700">My Journey</h2>
@@ -46,7 +55,7 @@ export default function TimelineSection() {
         {/* The timeline line */}
         <div className="absolute top-0 h-full w-1 bg-border left-1/2 -translate-x-1/2 hidden md:block"></div>
         
-        {timelineEvents.map((event, index) => (
+        {eventsToShow.map((event, index) => (
           <div 
             key={event.id} 
             className={`mb-12 md:mb-16 flex md:items-center w-full animate-in fade-in duration-700`}
@@ -79,6 +88,19 @@ export default function TimelineSection() {
           </div>
         ))}
       </div>
+      {allTimelineEvents.length > INITIAL_TIMELINE_EVENTS_COUNT && (
+        <div className="text-center mt-12 md:mt-16">
+          <Button
+            onClick={() => setShowAllEvents(!showAllEvents)}
+            variant="outline"
+            size="lg"
+            className="group border-primary/50 text-primary hover:bg-primary/10 hover:text-primary hover:border-primary transition-all duration-300 transform hover:scale-105"
+          >
+            {showAllEvents ? "Show Less" : "View Full Journey"}
+            {showAllEvents ? <ChevronUp className="ml-2 h-5 w-5" /> : <ChevronDown className="ml-2 h-5 w-5" />}
+          </Button>
+        </div>
+      )}
     </section>
   );
 }
