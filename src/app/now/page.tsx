@@ -27,7 +27,9 @@ export default function NowPage() {
               <div className="inline-flex items-center justify-center p-3 bg-primary/10 rounded-full mb-4 mx-auto">
                 <CalendarDays className="h-10 w-10 text-primary" />
               </div>
-              <CardTitle className="text-4xl md:text-5xl font-bold tracking-tight">What I'm Doing Now</CardTitle>
+              <h1 className="text-4xl md:text-5xl font-bold tracking-tight">
+                <CardTitle>What I'm Doing Now</CardTitle>
+              </h1>
               <CardDescription className="text-muted-foreground text-lg mt-2">
                 Last updated: {currentDate}
               </CardDescription>

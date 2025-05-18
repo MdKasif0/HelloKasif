@@ -24,6 +24,7 @@ export const metadata: Metadata = {
   title: 'Jane Doe | PersonaVerse | Interactive Portfolio',
   description: 'An immersive and interactive portfolio experience by Jane Doe, a visionary creator and developer.',
   metadataBase: new URL(siteUrl),
+  authors: [{ name: 'Jane Doe', url: siteUrl }],
   openGraph: {
     type: 'website',
     locale: 'en_US',
@@ -32,7 +33,7 @@ export const metadata: Metadata = {
     description: 'Explore the innovative projects and digital craftsmanship of Jane Doe.',
     images: [
       {
-        url: `${siteUrl}/og-image.png`, // Replace with your actual OG image path
+        url: `${siteUrl}/og-image.png`, // IMPORTANT: Replace with your actual OG image path
         width: 1200,
         height: 630,
         alt: 'PersonaVerse Portfolio Banner',
@@ -46,11 +47,10 @@ export const metadata: Metadata = {
     description: 'Discover Jane Doe\'s interactive portfolio showcasing visionary development and design.',
     // Uncomment and replace with your Twitter handle if you have one
     // creator: '@yourTwitterHandle', 
-    images: [`${siteUrl}/twitter-image.png`], // Replace with your actual Twitter image path
+    images: [`${siteUrl}/twitter-image.png`], // IMPORTANT: Replace with your actual Twitter image path
   },
-  // Add more relevant meta tags here like keywords, author etc. if needed
-  // keywords: ['Next.js', 'React', 'Tailwind CSS', 'Portfolio', 'Developer', 'AI'],
-  // authors: [{ name: 'Jane Doe', url: siteUrl }],
+  // Consider adding a few relevant keywords if desired, though their impact is minimal nowadays
+  // keywords: ['Next.js', 'React', 'Tailwind CSS', 'Portfolio', 'Developer', 'AI', 'Jane Doe'],
 };
 
 export default function RootLayout({
