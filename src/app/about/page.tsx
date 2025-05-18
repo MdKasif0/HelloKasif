@@ -9,6 +9,7 @@ import { Lightbulb, Cpu, Palette, Download, GraduationCap, Sparkles } from 'luci
 import { Button } from '@/components/ui/button';
 import Link from 'next/link';
 import type { Metadata } from 'next';
+import BackToTopButton from '@/components/interactive/BackToTopButton'; // Added
 
 export const metadata: Metadata = {
   title: 'About Jane Doe | Visionary Developer | PersonaVerse',
@@ -116,8 +117,7 @@ export default function AboutPage() {
         </div>
       </main>
       <Footer />
+      <BackToTopButton />
     </>
   );
 }
-
-    

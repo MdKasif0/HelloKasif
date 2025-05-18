@@ -1,3 +1,4 @@
+
 // src/components/layout/MainLayout.tsx
 'use client';
 
@@ -5,6 +6,7 @@ import type { ReactNode } from 'react';
 import { useState, useEffect, useRef } from 'react';
 import { cn } from '@/lib/utils';
 import { useTheme } from 'next-themes'; // Import useTheme
+import BackToTopButton from '@/components/interactive/BackToTopButton'; // Added
 
 interface MainLayoutProps {
   children: ReactNode;
@@ -73,6 +75,7 @@ export default function MainLayout({ children, className }: MainLayoutProps) {
       }}
     >
       {children}
+      <BackToTopButton /> {/* Added BackToTopButton */}
     </div>
   );
 }

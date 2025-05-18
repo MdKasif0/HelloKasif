@@ -11,6 +11,7 @@ import { Card, CardContent, CardFooter, CardHeader, CardTitle } from '@/componen
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import { ArrowLeft, ExternalLink, Github, MessageSquareQuote } from 'lucide-react';
+import BackToTopButton from '@/components/interactive/BackToTopButton'; // Added
 
 type Props = {
   params: { slug: string };
@@ -86,7 +87,7 @@ export default function ProjectPage({ params }: Props) {
       <main className="container mx-auto px-4 py-16 md:py-24 relative z-10 min-h-[calc(100vh-8rem)]">
         <div className="max-w-4xl mx-auto">
           <Button variant="outline" asChild className="mb-8 group">
-            <Link href="/#projects">
+            <Link href="/projects"> {/* Changed link to /projects */}
               <ArrowLeft className="mr-2 h-4 w-4 transition-transform group-hover:-translate-x-1" />
               Back to All Projects
             </Link>
@@ -160,6 +161,7 @@ export default function ProjectPage({ params }: Props) {
         </div>
       </main>
       <Footer />
+      <BackToTopButton />
     </>
   );
 }

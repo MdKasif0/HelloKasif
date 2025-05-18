@@ -6,6 +6,7 @@ import { Briefcase, GraduationCap, Flag } from 'lucide-react';
 import InteractiveCard from '@/components/interactive/InteractiveCard';
 import { CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import type { Metadata } from 'next';
+import BackToTopButton from '@/components/interactive/BackToTopButton'; // Added
 
 export const metadata: Metadata = {
   title: 'My Journey | Timeline | PersonaVerse',
@@ -105,8 +106,7 @@ export default function FullTimelinePage() {
         </div>
       </main>
       <Footer />
+      <BackToTopButton />
     </>
   );
 }
-
-    

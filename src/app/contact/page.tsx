@@ -4,6 +4,7 @@ import Header from '@/components/layout/Header';
 import Footer from '@/components/layout/Footer';
 import ContactSectionContent from '@/components/modules/ContactSection'; // Reusing the ContactSection component
 import type { Metadata } from 'next';
+import BackToTopButton from '@/components/interactive/BackToTopButton'; // Added
 
 export const metadata: Metadata = {
   title: 'Contact Jane Doe | Let\'s Connect | PersonaVerse',
@@ -19,8 +20,7 @@ export default function ContactPage() {
         <ContactSectionContent />
       </main>
       <Footer />
+      <BackToTopButton />
     </>
   );
 }
-
-    

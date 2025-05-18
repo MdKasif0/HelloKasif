@@ -10,6 +10,7 @@ import EnvironmentDisplay from '@/components/ai/EnvironmentDisplay';
 import Header from '@/components/layout/Header';
 import Footer from '@/components/layout/Footer';
 import { Separator } from '@/components/ui/separator';
+import BackToTopButton from '@/components/interactive/BackToTopButton'; // Added for homepage too
 
 export default function Home() {
   return (
@@ -50,8 +51,7 @@ export default function Home() {
         <ContactSection />
       </main>
       <Footer />
+      <BackToTopButton /> {/* Ensure it's available on homepage */}
     </>
   );
 }
-
-    

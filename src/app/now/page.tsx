@@ -1,9 +1,11 @@
+
 // src/app/now/page.tsx
 import Header from '@/components/layout/Header';
 import Footer from '@/components/layout/Footer';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { CalendarDays, Sparkles, Zap } from 'lucide-react';
 import type { Metadata } from 'next';
+import BackToTopButton from '@/components/interactive/BackToTopButton'; // Added
 
 export const metadata: Metadata = {
   title: 'What I\'m Doing Now | Jane Doe | PersonaVerse',
@@ -76,6 +78,7 @@ export default function NowPage() {
         </div>
       </main>
       <Footer />
+      <BackToTopButton />
     </>
   );
 }

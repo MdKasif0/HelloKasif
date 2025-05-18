@@ -11,6 +11,7 @@ import { Badge } from '@/components/ui/badge';
 import Link from 'next/link';
 import { allProjects, type Project } from '@/lib/project-data';
 import type { Metadata } from 'next';
+import BackToTopButton from '@/components/interactive/BackToTopButton'; // Added
 
 export const metadata: Metadata = {
   title: 'All Projects | Case Studies | PersonaVerse',
@@ -106,8 +107,7 @@ export default function AllProjectsPage() {
         </div>
       </main>
       <Footer />
+      <BackToTopButton />
     </>
   );
 }
-
-    

@@ -7,6 +7,7 @@ import InteractiveCard from '@/components/interactive/InteractiveCard';
 import { CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Quote, Star } from 'lucide-react';
 import type { Metadata } from 'next';
+import BackToTopButton from '@/components/interactive/BackToTopButton'; // Added
 
 export const metadata: Metadata = {
   title: 'Testimonials | What Collaborators Say | PersonaVerse',
@@ -106,8 +107,7 @@ export default function AllTestimonialsPage() {
         </div>
       </main>
       <Footer />
+      <BackToTopButton />
     </>
   );
 }
-
-    
