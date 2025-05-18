@@ -3,7 +3,7 @@
 import InteractiveCard from '@/components/interactive/InteractiveCard';
 import { CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import Image from 'next/image';
-import { Lightbulb, Cpu, Palette, Download, Briefcase, GraduationCap, Sparkles } from 'lucide-react'; // Added Sparkles
+import { Lightbulb, Cpu, Palette, Download, Briefcase, GraduationCap, Sparkles } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import Link from 'next/link';
 
@@ -20,7 +20,7 @@ export default function AboutSection() {
             height={750}
             className="rounded-t-xl object-cover w-full h-auto"
             data-ai-hint="futuristic developer portrait"
-            priority // Added for LCP optimization
+            priority
           />
           <CardHeader className="p-6">
             <CardTitle className="text-3xl text-center">Jane Doe</CardTitle>
@@ -44,7 +44,7 @@ export default function AboutSection() {
             </CardHeader>
             <CardContent>
               <p className="text-muted-foreground leading-relaxed text-lg">
-                I believe in crafting digital experiences that are not only functional but also memorable and deeply engaging. My approach fuses cutting-edge technology with human-centric design to build solutions that resonate, inspire, and push the boundaries of what's possible on the web.
+                I craft digital experiences that are not only functional but also memorable and deeply engaging, fusing technology with human-centric design.
               </p>
             </CardContent>
           </InteractiveCard>
@@ -55,7 +55,7 @@ export default function AboutSection() {
             </CardHeader>
             <CardContent>
               <p className="text-muted-foreground leading-relaxed text-lg">
-                Graduated with a [Your Degree] in [Your Major] from [Your University]. My academic journey laid the foundation for a passion in [Your Field], complemented by continuous self-learning and exploration of emerging technologies. My background includes diverse experiences that have shaped my problem-solving skills and creative approach.
+                A [Your Degree] in [Your Major] from [Your University] laid my foundation, which I continuously build upon by exploring emerging technologies.
               </p>
             </CardContent>
           </InteractiveCard>
@@ -86,7 +86,7 @@ export default function AboutSection() {
             </CardHeader>
             <CardContent>
               <p className="text-muted-foreground leading-relaxed text-lg">
-                Passionate about creating visually stunning and intuitive interfaces. I focus on subtle animations, adaptive depth, and interactive elements to build immersive digital environments that captivate and guide the user.
+                I focus on subtle animations, adaptive depth, and interactive elements to build immersive digital environments that captivate users.
               </p>
             </CardContent>
           </InteractiveCard>
@@ -97,14 +97,8 @@ export default function AboutSection() {
             </CardHeader>
             <CardContent>
               <p className="text-muted-foreground leading-relaxed text-lg mb-3">
-                Always curious and learning! Here's a peek into what's currently capturing my attention:
+                Always learning! Currently delving into advanced AI, WebAssembly, and data-intensive application design.
               </p>
-              <ul className="list-disc list-inside text-muted-foreground space-y-1 text-lg">
-                <li>Advanced AI integrations with Genkit.</li>
-                <li>The nuances of WebAssembly for performance.</li>
-                <li>Reading "Designing Data-Intensive Applications".</li>
-                <li>Perfecting my sourdough starter (a delicious challenge!).</li>
-              </ul>
             </CardContent>
           </InteractiveCard>
         </div>

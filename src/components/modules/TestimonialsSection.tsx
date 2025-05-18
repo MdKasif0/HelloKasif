@@ -1,3 +1,4 @@
+
 // src/components/modules/TestimonialsSection.tsx
 import Image from 'next/image';
 import InteractiveCard from '@/components/interactive/InteractiveCard';
@@ -34,51 +35,62 @@ const testimonials = [
   },
 ];
 
+const highlightedTestimonial = testimonials[0]; // Show only the first testimonial for the homepage highlight
+
 export default function TestimonialsSection() {
+  if (!highlightedTestimonial) {
+    return null; // Or some fallback if no testimonials exist
+  }
+
   return (
     <section id="testimonials" className="py-16 md:py-24 animate-in fade-in duration-500">
       <h2 className="text-4xl md:text-5xl font-bold text-center mb-16 tracking-tight animate-in fade-in slide-in-from-bottom-5 duration-700">Words From Collaborators</h2>
-      <div className="grid md:grid-cols-1 lg:grid-cols-3 gap-8">
-        {testimonials.map((testimonial, index) => (
+      <div className="max-w-2xl mx-auto"> {/* Centering the single testimonial */}
           <InteractiveCard 
-            key={testimonial.id} 
+            key={highlightedTestimonial.id} 
             className={`flex flex-col animate-in fade-in slide-in-from-bottom-10 duration-500`}
-            style={{ animationDelay: `${index * 150}ms` }}
           >
             <CardHeader className="p-6 items-center text-center">
               <div className="relative w-24 h-24 mb-4 rounded-full overflow-hidden shadow-lg border-2 border-primary/50">
                 <Image
-                  src={testimonial.avatarUrl}
-                  alt={testimonial.name}
+                  src={highlightedTestimonial.avatarUrl}
+                  alt={highlightedTestimonial.name}
                   layout="fill"
                   objectFit="cover"
-                  data-ai-hint={testimonial.avatarHint}
+                  data-ai-hint={highlightedTestimonial.avatarHint}
                 />
               </div>
-              <CardTitle className="text-xl">{testimonial.name}</CardTitle>
-              <CardDescription className="text-primary">{testimonial.role}</CardDescription>
+              <CardTitle className="text-xl">{highlightedTestimonial.name}</CardTitle>
+              <CardDescription className="text-primary">{highlightedTestimonial.role}</CardDescription>
             </CardHeader>
             <CardContent className="p-6 pt-0 text-center flex-grow">
               <Quote className="mx-auto h-8 w-8 text-accent mb-4 transform rotate-180" />
               <p className="text-muted-foreground italic text-balance leading-relaxed">
-                "{testimonial.quote}"
+                "{highlightedTestimonial.quote}"
               </p>
             </CardContent>
-            {testimonial.rating && (
+            {highlightedTestimonial.rating && (
               <CardContent className="p-6 pt-0 mt-auto">
                 <div className="flex justify-center gap-1 mt-4">
-                  {Array(testimonial.rating).fill(0).map((_, i) => (
+                  {Array(highlightedTestimonial.rating).fill(0).map((_, i) => (
                     <Star key={i} className="h-5 w-5 text-yellow-400 fill-yellow-400" />
                   ))}
-                  {Array(5 - testimonial.rating).fill(0).map((_, i) => (
-                     <Star key={i + testimonial.rating} className="h-5 w-5 text-muted-foreground/50" />
+                  {Array(5 - highlightedTestimonial.rating).fill(0).map((_, i) => (
+                     <Star key={i + highlightedTestimonial.rating} className="h-5 w-5 text-muted-foreground/50" />
                   ))}
                 </div>
               </CardContent>
             )}
           </InteractiveCard>
-        ))}
       </div>
+      {/* 
+        Consider adding a button here later if you want to link to a page with all testimonials:
+        <div className="text-center mt-12">
+          <Button variant="outline" asChild>
+            <Link href="/testimonials">View All Testimonials</Link>
+          </Button>
+        </div> 
+      */}
     </section>
   );
 }
