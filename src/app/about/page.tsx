@@ -4,7 +4,7 @@ import Footer from '@/components/layout/Footer';
 import InteractiveCard from '@/components/interactive/InteractiveCard';
 import { CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import Image from 'next/image';
-import { Lightbulb, Cpu, Palette, Download, GraduationCap, Sparkles, UserCircle, Code2, Brain, GitMerge, CheckCircle2, MonitorPlay } from 'lucide-react';
+import { Lightbulb, Cpu, Palette, Download, Eye, GraduationCap, Sparkles, UserCircle, Code2, Brain, GitMerge, CheckCircle2, MonitorPlay } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import Link from 'next/link';
 import type { Metadata } from 'next';
@@ -39,7 +39,7 @@ export const metadata: Metadata = {
 };
 
 const skillsData = [
-  { category: "Programming Languages", skills: ["Basic Java", "Python"], icon: Code2 },
+  { category: "Programming Languages", skills: ["Basic Java", "Python", "JavaScript"], icon: Code2 },
   { category: "Web Technologies", skills: ["HTML", "CSS", "JavaScript"], icon: MonitorPlay },
   { category: "Tools & Platforms", skills: ["Git", "GitHub", "Netlify"], icon: GitMerge },
   { category: "Learning", skills: ["Basics of AI/ML integration with web apps"], icon: Brain },
@@ -59,7 +59,7 @@ export default function AboutPage() {
               width={600}
               height={750}
               className="rounded-t-xl object-cover w-full h-auto"
-              data-ai-hint="student portrait"
+              data-ai-hint="student portrait anime"
               priority
             />
             <CardHeader className="p-6">
@@ -68,10 +68,15 @@ export default function AboutPage() {
                 Grade 12th PCM Student & Aspiring Developer
               </CardDescription>
             </CardHeader>
-            <CardContent className="p-6 pt-0 text-center">
+            <CardContent className="p-6 pt-0 text-center space-y-3">
               <Button asChild size="lg" className="w-full bg-gradient-to-r from-orange-400 via-pink-500 to-fuchsia-500 text-black font-semibold hover:opacity-90 group rounded-lg shadow-md hover:shadow-pink-500/40 transition-all duration-300 transform hover:scale-105">
-                <Link href="/KasifUddin_Resume.pdf" target="_blank" rel="noopener noreferrer">
+                <Link href="/KasifUddin_Resume.pdf" target="_blank" rel="noopener noreferrer" download>
                   Download Resume <Download size={18} className="ml-2" />
+                </Link>
+              </Button>
+              <Button asChild variant="outline" size="lg" className="w-full group">
+                <Link href="/KasifUddin_Resume.pdf" target="_blank" rel="noopener noreferrer">
+                  View Resume Online <Eye size={18} className="ml-2" />
                 </Link>
               </Button>
             </CardContent>

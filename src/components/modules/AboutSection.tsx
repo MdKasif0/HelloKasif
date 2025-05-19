@@ -3,7 +3,7 @@
 import InteractiveCard from '@/components/interactive/InteractiveCard';
 import { CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import Image from 'next/image';
-import { ArrowRight, UserCircle } from 'lucide-react';
+import { ArrowRight, UserCircle, Download } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import Link from 'next/link';
 
@@ -27,6 +27,13 @@ export default function AboutSection() {
               Grade 12th PCM Student & Aspiring Developer
             </CardDescription>
           </CardHeader>
+          <CardContent className="p-6 pt-0 text-center">
+             <Button asChild size="lg" className="w-full bg-gradient-to-r from-orange-400 via-pink-500 to-fuchsia-500 text-black font-semibold hover:opacity-90 group rounded-lg shadow-md hover:shadow-pink-500/40 transition-all duration-300 transform hover:scale-105">
+                <Link href="/KasifUddin_Resume.pdf" target="_blank" rel="noopener noreferrer" download>
+                  Download Resume <Download size={18} className="ml-2" />
+                </Link>
+              </Button>
+          </CardContent>
         </InteractiveCard>
 
         <div className="lg:col-span-2 space-y-8 animate-in fade-in slide-in-from-right-10 duration-700 delay-200">
