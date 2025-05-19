@@ -1,4 +1,3 @@
-
 // src/app/projects/page.tsx
 import Header from '@/components/layout/Header';
 import Footer from '@/components/layout/Footer';
@@ -26,7 +25,7 @@ export const metadata: Metadata = {
     type: 'website',
     images: [
       {
-        url: '/og-image-projects.png', // Replace with a specific OG image for the projects page
+        url: '/og-image-projects.png', 
         width: 1200,
         height: 630,
         alt: 'Md Kasif Uddin - Project Showcase',
@@ -37,7 +36,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: pageTitle,
     description: pageDescription,
-    images: ['/twitter-image-projects.png'], // Replace with a specific Twitter image for the projects page
+    images: ['/twitter-image-projects.png'], 
   },
 };
 
@@ -105,7 +104,7 @@ export default function AllProjectsPage() {
                 </div>
               </CardContent>
               <CardFooter className="p-6 pt-4 flex flex-wrap gap-4 justify-start items-center border-t border-border/50 mt-auto">
-                <Button variant="default" asChild className="bg-gradient-to-r from-primary to-accent hover:from-primary/90 hover:to-accent/90 text-primary-foreground group">
+                <Button variant="default" asChild className="bg-gradient-to-r from-orange-400 via-pink-500 to-fuchsia-500 text-black font-semibold hover:opacity-90 group">
                   <Link href={`/projects/${project.slug}`}>
                     View Full Case Study <ArrowRight size={16} className="ml-2 transition-transform group-hover:translate-x-1" />
                   </Link>

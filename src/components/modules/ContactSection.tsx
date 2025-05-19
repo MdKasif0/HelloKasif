@@ -7,7 +7,7 @@ import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
 import InteractiveCard from "@/components/interactive/InteractiveCard";
 import { CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { SendHorizonal, Mail } from "lucide-react"; // Using SendHorizonal for a more dynamic feel, added Mail
+import { SendHorizonal, Mail } from "lucide-react"; 
 import { useForm, type SubmitHandler } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
@@ -93,7 +93,7 @@ export default function ContactSection() {
             <Button 
               type="submit" 
               disabled={isSubmitting}
-              className="w-full bg-gradient-to-r from-accent to-purple-600 hover:from-accent/90 hover:to-purple-600/90 text-accent-foreground text-lg py-3 rounded-lg shadow-md hover:shadow-accent/40 transition-all duration-300 transform hover:scale-105"
+              className="w-full bg-gradient-to-r from-orange-400 via-pink-500 to-fuchsia-500 text-black font-semibold hover:opacity-90 text-lg py-3 rounded-lg shadow-md hover:shadow-pink-500/40 transition-all duration-300 transform hover:scale-105"
             >
               {isSubmitting ? "Transmitting..." : (
                 <>

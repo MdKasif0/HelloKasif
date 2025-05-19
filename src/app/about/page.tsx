@@ -1,4 +1,3 @@
-
 // src/app/about/page.tsx
 import Header from '@/components/layout/Header';
 import Footer from '@/components/layout/Footer';
@@ -63,7 +62,7 @@ export default function AboutPage() {
               </CardDescription>
             </CardHeader>
             <CardContent className="p-6 pt-0 text-center">
-              <Button asChild size="lg" className="w-full bg-gradient-to-r from-primary to-accent hover:from-primary/90 hover:to-accent/90 text-primary-foreground group rounded-lg shadow-md hover:shadow-primary/40 transition-all duration-300 transform hover:scale-105">
+              <Button asChild size="lg" className="w-full bg-gradient-to-r from-orange-400 via-pink-500 to-fuchsia-500 text-black font-semibold hover:opacity-90 group rounded-lg shadow-md hover:shadow-pink-500/40 transition-all duration-300 transform hover:scale-105">
                 <Link href="/KasifUddin_Resume.pdf" target="_blank" rel="noopener noreferrer">
                   Download Resume <Download size={18} className="ml-2" />
                 </Link>

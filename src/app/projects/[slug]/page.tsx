@@ -1,4 +1,3 @@
-
 // src/app/projects/[slug]/page.tsx
 import type { Metadata, ResolvingMetadata } from 'next';
 import { notFound } from 'next/navigation';
@@ -146,7 +145,7 @@ export default function ProjectPage({ params }: Props) {
               {(project.liveLink && project.liveLink !== "#") || (project.repoLink && project.repoLink !== "#") ? (
                 <CardFooter className="p-6 md:p-8 pt-4 flex flex-wrap gap-4 justify-start items-center border-t border-border/50">
                   {project.liveLink && project.liveLink !== "#" && (
-                    <Button variant="default" asChild className="bg-gradient-to-r from-accent to-purple-600 hover:from-accent/90 hover:to-purple-600/90 text-accent-foreground">
+                    <Button variant="default" asChild className="bg-gradient-to-r from-orange-400 via-pink-500 to-fuchsia-500 text-black font-semibold hover:opacity-90">
                       <a href={project.liveLink} target="_blank" rel="noopener noreferrer">
                         View Live Demo <ExternalLink size={16} className="ml-2" />
                       </a>

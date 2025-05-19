@@ -30,7 +30,7 @@ export default function NotFound() {
         <Button 
           asChild 
           size="lg" 
-          className="bg-gradient-to-r from-primary to-accent hover:from-primary/90 hover:to-accent/90 text-primary-foreground group rounded-lg px-8 py-3 text-lg shadow-lg hover:shadow-primary/40 transition-all duration-300 transform hover:scale-105"
+          className="bg-gradient-to-r from-orange-400 via-pink-500 to-fuchsia-500 text-black font-semibold hover:opacity-90 group rounded-lg px-8 py-3 text-lg shadow-lg hover:shadow-pink-500/40 transition-all duration-300 transform hover:scale-105"
         >
           <Link href="/">
             <ArrowLeft className="mr-2 h-5 w-5 transition-transform group-hover:-translate-x-1" />

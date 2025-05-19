@@ -1,4 +1,3 @@
-
 // src/components/modules/AboutSection.tsx
 // This is now the HOMEPAGE version of the About Section (teaser)
 import InteractiveCard from '@/components/interactive/InteractiveCard';
@@ -42,7 +41,7 @@ export default function AboutSection() {
               <p className="text-muted-foreground leading-relaxed text-lg mb-6 text-balance">
                 As a Grade 12th PCM student, I'm passionate about the intersection of technology and problem-solving, particularly in web development and AI/ML. I'm driven to create impactful digital solutions.
               </p>
-              <Button asChild size="lg" className="w-full sm:w-auto bg-gradient-to-r from-primary to-accent hover:from-primary/90 hover:to-accent/90 text-primary-foreground group">
+              <Button asChild size="lg" className="w-full sm:w-auto bg-gradient-to-r from-orange-400 via-pink-500 to-fuchsia-500 text-black font-semibold hover:opacity-90 group">
                 <Link href="/about">
                   Learn More About Me <ArrowRight size={18} className="ml-2 transition-transform group-hover:translate-x-1" />
                 </Link>
