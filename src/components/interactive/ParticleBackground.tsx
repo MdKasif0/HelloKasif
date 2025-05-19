@@ -34,7 +34,7 @@ const Particle = ({ windowSize }: ParticleProps) => {
 
   return (
     <motion.div
-      className="absolute rounded-full bg-primary/30 dark:bg-primary/40" // Increased opacity slightly
+      className="absolute rounded-full bg-accent/30 dark:bg-accent/40" // Changed from primary to accent
       initial={{ x: initialX, y: initialY, opacity: 0 }}
       animate={{ 
         x: animateX, 
