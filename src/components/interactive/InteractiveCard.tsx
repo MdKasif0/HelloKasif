@@ -22,7 +22,7 @@ export default function InteractiveCard({ children, className }: InteractiveCard
         "bg-card/70 backdrop-blur-sm border-border/50 shadow-lg rounded-xl overflow-hidden",
         "transform-style-preserve-3d", // transform-style still relevant
         // CSS hover effects for properties Framer Motion isn't handling (like shadow, border)
-        "hover:shadow-lg hover:shadow-green-500/40 hover:border-green-600/70", // Updated green shadow and border
+        "hover:shadow-lg hover:shadow-pink-500/40 hover:border-pink-500/70", // Updated pink shadow and border
         // Framer Motion handles scale and y-translation
         className
       )}
