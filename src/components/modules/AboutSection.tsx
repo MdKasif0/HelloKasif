@@ -13,7 +13,7 @@ export default function AboutSection() {
       <div className="grid md:grid-cols-1 lg:grid-cols-3 gap-8 items-center">
         <InteractiveCard className="lg:col-span-1 p-0 animate-in fade-in slide-in-from-left-10 duration-700">
           <Image
-            src="https://placehold.co/600x750.png" 
+            src="/images/profile.jpg" // Updated to local path
             alt="Md Kasif Uddin - Aspiring Developer"
             width={600}
             height={750}
@@ -39,7 +39,7 @@ export default function AboutSection() {
         <div className="lg:col-span-2 space-y-8 animate-in fade-in slide-in-from-right-10 duration-700 delay-200">
           <InteractiveCard>
             <CardHeader>
-              <CardTitle className="flex items-center gap-3 text-2xl">
+              <CardTitle className="font-mono flex items-center gap-3 text-2xl">
                 <UserCircle className="h-7 w-7 text-primary" />
                 Meet the Developer
               </CardTitle>

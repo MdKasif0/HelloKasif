@@ -19,7 +19,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: pageTitle,
     description: pageDescription,
-    url: '/about', 
+    url: '/about',
     type: 'profile',
     images: [
       {
@@ -54,7 +54,7 @@ export default function AboutPage() {
         <div className="grid md:grid-cols-1 lg:grid-cols-3 gap-8 items-start">
           <InteractiveCard className="lg:col-span-1 p-0 animate-in fade-in slide-in-from-left-10 duration-700">
             <Image
-              src="https://placehold.co/600x750.png"
+              src="/images/profile.jpg" // Updated to local path
               alt="Md Kasif Uddin - Aspiring Developer"
               width={600}
               height={750}
@@ -85,7 +85,7 @@ export default function AboutPage() {
           <div className="lg:col-span-2 space-y-8">
             <InteractiveCard className="animate-in fade-in slide-in-from-right-10 duration-700 delay-200">
               <CardHeader>
-                <CardTitle className="flex items-center gap-3 text-2xl"><Lightbulb className="h-7 w-7 text-primary" /> My Philosophy</CardTitle>
+                <CardTitle className="font-mono flex items-center gap-3 text-2xl"><Lightbulb className="h-7 w-7 text-primary" /> My Philosophy</CardTitle>
               </CardHeader>
               <CardContent>
                 <p className="text-muted-foreground leading-relaxed text-lg text-balance">
@@ -96,7 +96,7 @@ export default function AboutPage() {
 
             <InteractiveCard className="animate-in fade-in slide-in-from-right-10 duration-700 delay-300">
               <CardHeader>
-                <CardTitle className="flex items-center gap-3 text-2xl"><GraduationCap className="h-7 w-7 text-primary" /> Education & Background</CardTitle>
+                <CardTitle className="font-mono flex items-center gap-3 text-2xl"><GraduationCap className="h-7 w-7 text-primary" /> Education & Background</CardTitle>
               </CardHeader>
               <CardContent>
                 <p className="text-muted-foreground leading-relaxed text-lg text-balance">
@@ -107,7 +107,7 @@ export default function AboutPage() {
             
             <InteractiveCard className="animate-in fade-in slide-in-from-right-10 duration-700 delay-400">
               <CardHeader>
-                <CardTitle className="flex items-center gap-3 text-2xl"><Cpu className="h-7 w-7 text-primary" /> Core Skills</CardTitle>
+                <CardTitle className="font-mono flex items-center gap-3 text-2xl"><Cpu className="h-7 w-7 text-primary" /> Core Skills</CardTitle>
               </CardHeader>
               <CardContent className="space-y-6">
                 {skillsData.map((skillCategory) => (
@@ -131,7 +131,7 @@ export default function AboutPage() {
 
             <InteractiveCard className="animate-in fade-in slide-in-from-right-10 duration-700 delay-500">
               <CardHeader>
-                <CardTitle className="flex items-center gap-3 text-2xl"><Palette className="h-7 w-7 text-primary" /> Design & Interaction Philosophy</CardTitle>
+                <CardTitle className="font-mono flex items-center gap-3 text-2xl"><Palette className="h-7 w-7 text-primary" /> Design & Interaction Philosophy</CardTitle>
               </CardHeader>
               <CardContent>
                 <p className="text-muted-foreground leading-relaxed text-lg text-balance">
@@ -142,7 +142,7 @@ export default function AboutPage() {
 
             <InteractiveCard className="animate-in fade-in slide-in-from-right-10 duration-700 delay-600">
               <CardHeader>
-                <CardTitle className="flex items-center gap-3 text-2xl"><Sparkles className="h-7 w-7 text-primary" /> Currently Exploring</CardTitle>
+                <CardTitle className="font-mono flex items-center gap-3 text-2xl"><Sparkles className="h-7 w-7 text-primary" /> Currently Exploring</CardTitle>
               </CardHeader>
               <CardContent>
                 <p className="text-muted-foreground leading-relaxed text-lg mb-3 text-balance">
