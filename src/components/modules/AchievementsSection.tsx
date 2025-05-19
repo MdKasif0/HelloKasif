@@ -1,43 +1,42 @@
 // src/components/modules/AchievementsSection.tsx
 import InteractiveCard from '@/components/interactive/InteractiveCard';
 import { CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import { Award, BadgeCheck, Zap, TrendingUp } from 'lucide-react'; // Added Zap, TrendingUp
+import { Award, BadgeCheck, Zap, TrendingUp, Rocket, Github, FlaskConical, GraduationCap } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import Link from 'next/link';
 
-const achievements = [
+interface Achievement {
+  icon: React.ElementType;
+  title: string;
+  description: string;
+  link?: string;
+}
+
+const achievements: Achievement[] = [
   {
-    id: 1,
-    icon: Award,
-    title: "Innovation Award 2023",
-    description: "Recognized for developing a groundbreaking AI-driven accessibility tool.",
-    source: "Tech Innovators Guild",
-    link: "#",
-  },
-  {
-    id: 2,
-    icon: BadgeCheck,
-    title: "Certified Kubernetes Administrator (CKA)",
-    description: "Successfully passed the rigorous CKA exam, demonstrating expertise in Kubernetes.",
-    source: "Cloud Native Computing Foundation",
-    link: "#",
+    icon: Rocket,
+    title: "Published First Web App – 'Note It'",
+    description: "Developed and deployed a task and note management app using HTML, CSS, and JavaScript.",
+    link: "https://note-it0.netlify.app/"
   },
   {
-    id: 3,
-    icon: Zap,
-    title: "Performance Optimization Challenge Winner",
-    description: "Achieved a 40% performance boost in a company-wide coding challenge.",
-    source: "Internal @ PreviousCompany",
-    link: "#",
+    icon: Github,
+    title: "GitHub Portfolio Established",
+    description: "Created a public GitHub profile to showcase personal projects and collaborate in the open-source community.",
+    link: "https://github.com/MdKasif0"
   },
-   {
-    id: 4,
-    icon: TrendingUp,
-    title: "Top Contributor - Open Source Project X",
-    description: "Consistently ranked among the top contributors for critical bug fixes and feature enhancements.",
-    source: "GitHub Community",
-    link: "#",
+  {
+    icon: FlaskConical,
+    title: "AI/ML Integration Research",
+    description: "Initiated research and prototyping to combine AI/ML technologies with frontend development."
+    // No link provided for this one, so the button won't render
   },
+  {
+    icon: GraduationCap,
+    title: "Academic Excellence in STEM",
+    description: "Pursuing Physics, Chemistry, and Math at Class 12 level with a competitive edge for IIT JEE preparation."
+    // No link provided
+  }
 ];
 
 export default function AchievementsSection() {
@@ -47,7 +46,7 @@ export default function AchievementsSection() {
       <div className="grid md:grid-cols-1 lg:grid-cols-2 gap-8">
         {achievements.map((achievement, index) => (
           <InteractiveCard 
-            key={achievement.id}
+            key={index} // Using index as key since id is not available
             className={`flex flex-col animate-in fade-in slide-in-from-bottom-10 duration-500`}
             style={{ animationDelay: `${index * 150}ms` }}
           >
@@ -55,7 +54,7 @@ export default function AchievementsSection() {
               <achievement.icon className="h-10 w-10 text-primary flex-shrink-0 mt-1" />
               <div>
                 <CardTitle className="text-xl mb-1">{achievement.title}</CardTitle>
-                <p className="text-sm text-muted-foreground">{achievement.source}</p>
+                {/* Source removed as it's not in new data */}
               </div>
             </CardHeader>
             <CardContent className="p-6 pt-0 flex-grow">
@@ -65,7 +64,7 @@ export default function AchievementsSection() {
                <CardContent className="p-6 pt-0 mt-auto">
                 <Button variant="outline" asChild className="w-full sm:w-auto border-accent/50 text-accent hover:bg-accent/10 hover:text-accent hover:border-accent">
                   <Link href={achievement.link} target="_blank" rel="noopener noreferrer">
-                    View Credential
+                    View Link 
                   </Link>
                 </Button>
               </CardContent>

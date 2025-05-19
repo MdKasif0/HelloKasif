@@ -1,8 +1,7 @@
-
 // src/app/timeline/page.tsx
 import Header from '@/components/layout/Header';
 import Footer from '@/components/layout/Footer';
-import { Briefcase, GraduationCap, Flag } from 'lucide-react';
+import { Briefcase, GraduationCap, Flag, Code2, AppWindow, Brain, Search, Lightbulb } from 'lucide-react';
 import InteractiveCard from '@/components/interactive/InteractiveCard';
 import { CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import type { Metadata } from 'next';
@@ -21,7 +20,7 @@ export const metadata: Metadata = {
     type: 'website',
      images: [
       {
-        url: '/og-image-timeline.png', // Replace with a specific OG image for timeline
+        url: '/og-image-timeline.png', 
         width: 1200,
         height: 630,
         alt: 'Md Kasif Uddin - Career Timeline',
@@ -32,50 +31,34 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: pageTitle,
     description: pageDescription,
-    images: ['/twitter-image-timeline.png'], // Replace with a specific Twitter image for timeline
+    images: ['/twitter-image-timeline.png'],
   },
 };
 
 const allTimelineEvents = [
   {
-    id: 1,
-    icon: Flag,
-    date: "Present",
-    title: "Exploring New Frontiers",
-    description: "Currently seeking challenging opportunities to leverage my skills in Next.js, AI, and web development to build innovative digital products. Open to collaborations and learning opportunities contributing to impactful projects.",
-    category: "career",
+    year: "2023",
+    title: "Began Web Development Journey",
+    description: "Started learning HTML, CSS, and JavaScript. Built small projects like to-do apps, calculators, and note-takers to practice concepts.",
+    icon: Code2,
   },
   {
-    id: 2,
-    icon: Briefcase,
-    date: "2021 - 2023",
-    title: "Senior Frontend Developer @ FutureScape (Example Entry)",
-    description: "Led the development of a cutting-edge data visualization platform, enhancing user insights through intuitive interfaces. Specialized in React, TypeScript, and performance optimization. Mentored junior developers and championed best practices in code quality and agile methodologies.",
-    category: "career",
+    year: "2024",
+    title: "Developed 'Note It' Web App",
+    description: "Designed and launched a note-taking web application using core frontend technologies. It featured task management and user-friendly UI.",
+    icon: AppWindow,
   },
   {
-    id: 3,
-    icon: Briefcase,
-    date: "2019 - 2021",
-    title: "Software Engineer @ CodeCrafters (Example Entry)",
-    description: "Developed and maintained scalable web applications using Node.js and React. Contributed to full-stack development cycles, from API design to frontend implementation, within an agile team environment. Focused on delivering robust and user-friendly solutions.",
-    category: "career",
+    year: "2024",
+    title: "Started AI/ML Integration Research",
+    description: "Began exploring how to integrate AI/ML models into web apps using tools like TensorFlow.js and APIs. Working towards combining intelligent backend models with responsive UIs.",
+    icon: Brain,
   },
   {
-    id: 4,
+    year: "2025",
+    title: "Preparing for IIT JEE",
+    description: "Pursuing Class 12 with a strong academic focus while balancing web development and personal tech projects.",
     icon: GraduationCap,
-    date: "2015 - 2019",
-    title: "B.S. in Computer Science @ Tech University (Example Entry)",
-    description: "Graduated with honors. Specialized in software engineering, artificial intelligence, and human-computer interaction. Actively participated in the university coding club, leading several award-winning hackathon projects.",
-    category: "education",
-  },
-   {
-    id: 5,
-    icon: Briefcase,
-    date: "2014 - 2015",
-    title: "Intern Software Developer @ InnovateStartups (Example Entry)",
-    description: "Gained initial industry experience working on a variety of web development tasks, including front-end UI enhancements and back-end script development. Contributed to a fast-paced startup environment and learned foundational software development practices.",
-    category: "career",
   }
 ];
 
@@ -96,7 +79,7 @@ export default function FullTimelinePage() {
           
           {allTimelineEvents.map((event, index) => (
             <div 
-              key={event.id} 
+              key={index} 
               className={`mb-12 md:mb-16 flex md:items-center w-full animate-in fade-in duration-700`}
               style={{ animationDelay: `${index * 150}ms` }}
             >
@@ -112,9 +95,9 @@ export default function FullTimelinePage() {
                        <div className="flex items-center justify-center w-10 h-10 rounded-full bg-primary text-primary-foreground shadow-md mr-3">
                           <event.icon size={20} />
                        </div>
-                       <p className="text-sm font-semibold text-primary">{event.date}</p>
+                       <p className="text-sm font-semibold text-primary">{event.year}</p>
                     </div>
-                    <p className="text-sm font-semibold text-primary hidden md:block">{event.date}</p>
+                    <p className="text-sm font-semibold text-primary hidden md:block">{event.year}</p>
                     <CardTitle className="text-2xl mt-1">{event.title}</CardTitle>
                   </CardHeader>
                   <CardContent className="p-6 pt-0">

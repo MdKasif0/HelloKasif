@@ -4,13 +4,13 @@ import Footer from '@/components/layout/Footer';
 import InteractiveCard from '@/components/interactive/InteractiveCard';
 import { CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import Image from 'next/image';
-import { Lightbulb, Cpu, Palette, Download, GraduationCap, Sparkles, UserCircle } from 'lucide-react';
+import { Lightbulb, Cpu, Palette, Download, GraduationCap, Sparkles, UserCircle, Code2, Brain, GitMerge, CheckCircle2, MonitorPlay } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import Link from 'next/link';
 import type { Metadata } from 'next';
 import BackToTopButton from '@/components/interactive/BackToTopButton';
 
-const pageTitle = 'About Md Kasif Uddin | Aspiring Developer & Student';
+const pageTitle = 'About Md Kasif Uddin | Aspiring Developer & Student | HelloKasif';
 const pageDescription = 'Learn more about Md Kasif Uddin, his philosophy, skills, background, and journey as an aspiring developer and Grade 12th PCM student.';
 
 export const metadata: Metadata = {
@@ -38,6 +38,13 @@ export const metadata: Metadata = {
   },
 };
 
+const skillsData = [
+  { category: "Programming Languages", skills: ["Basic Java", "Python"], icon: Code2 },
+  { category: "Web Technologies", skills: ["HTML", "CSS", "JavaScript"], icon: MonitorPlay },
+  { category: "Tools & Platforms", skills: ["Git", "GitHub", "Netlify"], icon: GitMerge },
+  { category: "Learning", skills: ["Basics of AI/ML integration with web apps"], icon: Brain },
+];
+
 export default function AboutPage() {
   return (
     <>
@@ -52,7 +59,7 @@ export default function AboutPage() {
               width={600}
               height={750}
               className="rounded-t-xl object-cover w-full h-auto"
-              data-ai-hint="student portrait anime"
+              data-ai-hint="student portrait"
               priority
             />
             <CardHeader className="p-6">
@@ -77,7 +84,7 @@ export default function AboutPage() {
               </CardHeader>
               <CardContent>
                 <p className="text-muted-foreground leading-relaxed text-lg text-balance">
-                  I believe technology is a powerful tool for solving real-world problems and creating innovative solutions. My passion lies in exploring how web development and artificial intelligence can be combined to build intuitive and impactful applications. I'm driven by curiosity and a desire to continuously learn and grow in this dynamic field.
+                  I believe in continuous learning and applying knowledge through real-world projects. As a budding developer, I find purpose in creating solutions that are practical, accessible, and scalable. Curiosity and consistency drive my journey in the tech world.
                 </p>
               </CardContent>
             </InteractiveCard>
@@ -88,7 +95,7 @@ export default function AboutPage() {
               </CardHeader>
               <CardContent>
                 <p className="text-muted-foreground leading-relaxed text-lg text-balance">
-                  I am currently a Grade 12th student focusing on Physics, Chemistry, and Mathematics (PCM). This foundational knowledge in science and math fuels my analytical thinking and problem-solving approach to technology. I am actively self-learning and building projects to gain practical experience in software development.
+                  I am currently a Class 12 student pursuing PCM (Physics, Chemistry, Mathematics) and preparing for India's prestigious IIT entrance examination. Alongside academics, I dedicate time to learning web technologies and exploring AI/ML integration.
                 </p>
               </CardContent>
             </InteractiveCard>
@@ -97,18 +104,23 @@ export default function AboutPage() {
               <CardHeader>
                 <CardTitle className="flex items-center gap-3 text-2xl"><Cpu className="h-7 w-7 text-primary" /> Core Skills</CardTitle>
               </CardHeader>
-              <CardContent>
-                <ul className="grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-4 text-muted-foreground text-lg">
-                  {[
-                    "Basic Java", "Python", "JavaScript", "Web Development (HTML, CSS)", 
-                    "AI/ML Concepts", "Problem Solving", "Logical Thinking", "Continuous Learning"
-                  ].map(skill => (
-                    <li key={skill} className="flex items-start">
-                      <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-check-circle-2 mr-2 mt-1 text-accent flex-shrink-0"><path d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z"/><path d="m9 12 2 2 4-4"/></svg>
-                      <span>{skill}</span>
-                    </li>
-                  ))}
-                </ul>
+              <CardContent className="space-y-6">
+                {skillsData.map((skillCategory) => (
+                  <div key={skillCategory.category}>
+                    <h3 className="text-xl font-semibold text-foreground mb-2 flex items-center">
+                      <skillCategory.icon className="h-6 w-6 mr-2 text-accent" />
+                      {skillCategory.category}
+                    </h3>
+                    <ul className="grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-3 text-muted-foreground text-lg">
+                      {skillCategory.skills.map(skill => (
+                        <li key={skill} className="flex items-start">
+                          <CheckCircle2 size={18} className="mr-2 mt-1 text-primary flex-shrink-0" />
+                          <span>{skill}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                ))}
               </CardContent>
             </InteractiveCard>
 
@@ -118,7 +130,7 @@ export default function AboutPage() {
               </CardHeader>
               <CardContent>
                 <p className="text-muted-foreground leading-relaxed text-lg text-balance">
-                  I aim to create user interfaces that are clean, intuitive, and user-friendly. While still learning, I focus on clear information hierarchy and responsive design to ensure a good experience across devices. I believe good design should make technology accessible and enjoyable to use.
+                   I focus on simplicity and functionality in UI/UX. My aim is to build interfaces that are user-centric and minimalistic, especially for utility-driven apps like note-taking and productivity tools.
                 </p>
               </CardContent>
             </InteractiveCard>
@@ -129,7 +141,7 @@ export default function AboutPage() {
               </CardHeader>
               <CardContent>
                 <p className="text-muted-foreground leading-relaxed text-lg mb-3 text-balance">
-                  I'm actively deepening my understanding of Artificial Intelligence and Machine Learning, and how these technologies can be integrated into web applications to create smarter and more personalized user experiences. I'm also exploring frameworks like Next.js and React.
+                  I’m currently exploring ways to integrate AI and ML models into web applications, learning about APIs, model deployment, and real-time AI interactions in frontend apps.
                 </p>
               </CardContent>
             </InteractiveCard>

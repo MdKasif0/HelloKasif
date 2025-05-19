@@ -1,32 +1,26 @@
-
 // src/components/modules/TimelineSection.tsx
 // This is now the HOMEPAGE version of the Timeline Section (teaser)
 'use client';
 
-import { Briefcase, GraduationCap, Flag, GanttChartSquare } from 'lucide-react';
+import { Briefcase, GraduationCap, Flag, GanttChartSquare, Code2, AppWindow, Brain } from 'lucide-react';
 import InteractiveCard from '@/components/interactive/InteractiveCard';
 import { CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import Link from 'next/link';
 
-const homepageTimelineEvents = [ // Keep a small set for homepage, full set on /timeline page
+const homepageTimelineEvents = [ 
   {
-    id: 1,
-    icon: Flag,
-    date: "Present",
-    title: "Exploring New Frontiers",
-    description: "Currently seeking challenging opportunities to leverage my skills in Next.js, AI, and spatial UI to build innovative digital products.",
-    category: "career",
+    year: "2023",
+    title: "Began Web Development Journey",
+    description: "Started learning HTML, CSS, and JavaScript. Built small projects to practice concepts.",
+    icon: Code2,
   },
   {
-    id: 2,
-    icon: Briefcase,
-    date: "2021 - 2023",
-    title: "Senior Frontend Developer @ FutureScape",
-    description: "Led the development of a cutting-edge data visualization platform. Specialized in React, TypeScript, and performance optimization.",
-    category: "career",
+    year: "2024",
+    title: "Developed 'Note It' Web App",
+    description: "Designed and launched a note-taking web application using core frontend technologies.",
+    icon: AppWindow,
   },
-  // Full list will be on /timeline page
 ];
 
 export default function TimelineSection() {
@@ -35,9 +29,9 @@ export default function TimelineSection() {
   return (
     <section id="timeline" className="py-16 md:py-24 animate-in fade-in duration-500">
        <div className="text-center mb-20 animate-in fade-in slide-in-from-bottom-5 duration-700">
-        <h2 className="text-4xl md:text-5xl font-bold tracking-tight">A Glimpse of My Path</h2>
+        <h2 className="text-4xl md:text-5xl font-bold tracking-tight">My Path So Far</h2>
         <p className="text-lg text-muted-foreground mt-3 max-w-2xl mx-auto text-balance">
-          Key milestones from my career and educational journey. See the full story on my timeline page.
+          Key milestones from my journey. See the full story on my timeline page.
         </p>
       </div>
       <div className="relative container max-w-3xl mx-auto px-4">
@@ -46,7 +40,7 @@ export default function TimelineSection() {
         
         {eventsToShow.map((event, index) => (
           <div 
-            key={event.id} 
+            key={index} 
             className={`mb-12 md:mb-16 flex md:items-center w-full animate-in fade-in duration-700`}
             style={{ animationDelay: `${index * 200}ms` }}
           >
@@ -62,9 +56,9 @@ export default function TimelineSection() {
                      <div className="flex items-center justify-center w-10 h-10 rounded-full bg-primary text-primary-foreground shadow-md mr-3">
                         <event.icon size={20} />
                      </div>
-                     <p className="text-sm font-semibold text-primary">{event.date}</p>
+                     <p className="text-sm font-semibold text-primary">{event.year}</p>
                   </div>
-                  <p className="text-sm font-semibold text-primary hidden md:block">{event.date}</p>
+                  <p className="text-sm font-semibold text-primary hidden md:block">{event.year}</p>
                   <CardTitle className="text-2xl mt-1">{event.title}</CardTitle>
                 </CardHeader>
                 <CardContent className="p-6 pt-0">
@@ -92,4 +86,3 @@ export default function TimelineSection() {
     </section>
   );
 }
-    

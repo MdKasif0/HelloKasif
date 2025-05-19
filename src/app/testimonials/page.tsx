@@ -1,16 +1,15 @@
-
 // src/app/testimonials/page.tsx
 import Header from '@/components/layout/Header';
 import Footer from '@/components/layout/Footer';
 import Image from 'next/image';
 import InteractiveCard from '@/components/interactive/InteractiveCard';
 import { CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
-import { Quote, Star } from 'lucide-react';
+import { Quote } from 'lucide-react'; // Removed Star as rating is not in new data
 import type { Metadata } from 'next';
 import BackToTopButton from '@/components/interactive/BackToTopButton';
 
-const pageTitle = 'Kind Words | What People Say About Md Kasif Uddin';
-const pageDescription = 'Read testimonials and recommendations from colleagues, clients, and mentors about Md Kasif Uddin\'s work, skills, and collaborative spirit at HelloKasif.';
+const pageTitle = 'Kind Words | What People Say About Md Kasif Uddin | HelloKasif';
+const pageDescription = 'Read testimonials and recommendations for Md Kasif Uddin on HelloKasif.';
 
 export const metadata: Metadata = {
   title: pageTitle,
@@ -22,7 +21,7 @@ export const metadata: Metadata = {
     type: 'website',
     images: [
       {
-        url: '/og-image-testimonials.png', // Replace with a specific OG image for testimonials
+        url: '/og-image-testimonials.png',
         width: 1200,
         height: 630,
         alt: 'Md Kasif Uddin - Testimonials',
@@ -33,47 +32,25 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: pageTitle,
     description: pageDescription,
-    images: ['/twitter-image-testimonials.png'], // Replace with a specific Twitter image
+    images: ['/twitter-image-testimonials.png'], 
   },
 };
 
 const allTestimonials = [
   {
-    id: 1,
-    name: "Alex Chen",
-    role: "Lead Developer @ TechSolutions",
-    avatarUrl: "https://placehold.co/100x100.png",
-    avatarHint: "professional portrait",
-    quote: "Kasif is an incredibly talented developer with a keen eye for detail and a passion for creating intuitive user experiences. Their ability to tackle complex problems with innovative solutions and maintain high code quality is truly commendable. A true asset to any team!",
-    rating: 5,
+    name: "Virtual Mentor",
+    role: "AI Assistant (ChatGPT)",
+    avatar: "/avatars/chatgpt.png", // Path for public directory
+    avatarHint: "AI logo",
+    quote: "Kasif shows exceptional curiosity and consistency in learning. His commitment to real-world project development at a young age is impressive and commendable."
   },
   {
-    id: 2,
-    name: "Sarah Miller",
-    role: "Project Manager @ Innovate Inc.",
-    avatarUrl: "https://placehold.co/100x100.png",
-    avatarHint: "corporate headshot",
-    quote: "Working with Kasif was a fantastic experience. Their proactive approach, clear communication, and commitment to quality are second to none. They consistently delivered beyond expectations and played a crucial role in our project's success. Highly recommended.",
-    rating: 5,
-  },
-  {
-    id: 3,
-    name: "Dr. Emily Carter",
-    role: "Professor of Computer Science @ Tech University",
-    avatarUrl: "https://placehold.co/100x100.png",
-    avatarHint: "academic profile",
-    quote: "Kasif consistently demonstrated exceptional problem-solving skills and a deep understanding of complex computer science concepts during their studies. Their curiosity and drive to learn are remarkable. A bright future undoubtedly lies ahead!",
-    rating: 5,
-  },
-  {
-    id: 4,
-    name: "Michael B. Jordan (not the actor!)",
-    role: "CEO @ StartupX",
-    avatarUrl: "https://placehold.co/100x100.png",
-    avatarHint: "entrepreneur headshot",
-    quote: "Kasif's contributions to our early-stage product were invaluable. Their technical expertise and creative input helped shape our platform into something truly special. A pleasure to work with.",
-    rating: 4,
-  },
+    name: "Tech Enthusiast Friend",
+    role: "Peer Reviewer",
+    avatar: "/avatars/friend1.png", // Path for public directory
+    avatarHint: "person icon",
+    quote: "The 'Note It' app by Kasif is clean, functional, and showcases the fundamentals of web development well. It’s inspiring to see such initiative in a student."
+  }
 ];
 
 export default function AllTestimonialsPage() {
@@ -84,25 +61,25 @@ export default function AllTestimonialsPage() {
         <div className="text-center mb-16 animate-in fade-in slide-in-from-bottom-5 duration-700">
           <h1 className="text-4xl md:text-5xl font-bold tracking-tight">What Folks Are Saying</h1>
           <p className="text-lg text-muted-foreground mt-3 max-w-2xl mx-auto text-balance">
-            I'm grateful for the opportunity to have worked with so many talented individuals. Here's some of their feedback.
+            I'm grateful for the opportunity to have collaborated and learned. Here's some feedback.
           </p>
         </div>
         <div className="grid md:grid-cols-1 lg:grid-cols-2 gap-8">
           {allTestimonials.map((testimonial, index) => (
             <InteractiveCard 
-              key={testimonial.id} 
+              key={index} 
               className={`flex flex-col animate-in fade-in slide-in-from-bottom-10 duration-500`}
-              style={{ animationDelay: `${index * 150}ms` }} // Stagger animation
+              style={{ animationDelay: `${index * 150}ms` }}
             >
               <CardHeader className="p-6 items-center text-center">
                 <div className="relative w-24 h-24 mb-4 rounded-full overflow-hidden shadow-lg border-2 border-primary/50">
                   <Image
-                    src={testimonial.avatarUrl}
+                    src={testimonial.avatar} // Assumes images are in public/avatars/
                     alt={testimonial.name}
                     fill 
                     style={{ objectFit: 'cover' }} 
                     data-ai-hint={testimonial.avatarHint}
-                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw" // Example sizes, adjust as needed
+                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                   />
                 </div>
                 <CardTitle className="text-xl">{testimonial.name}</CardTitle>
@@ -114,20 +91,13 @@ export default function AllTestimonialsPage() {
                   "{testimonial.quote}"
                 </p>
               </CardContent>
-              {testimonial.rating && (
-                <CardContent className="p-6 pt-0 mt-auto">
-                  <div className="flex justify-center gap-1 mt-4">
-                    {Array(testimonial.rating).fill(0).map((_, i) => (
-                      <Star key={i} className="h-5 w-5 text-yellow-400 fill-yellow-400" />
-                    ))}
-                    {Array(5 - testimonial.rating).fill(0).map((_, i) => (
-                       <Star key={i + testimonial.rating} className="h-5 w-5 text-muted-foreground/50" />
-                    ))}
-                  </div>
-                </CardContent>
-              )}
+              {/* Rating display removed as it's not in the new data */}
             </InteractiveCard>
           ))}
+        </div>
+        {/* Reminder for user to place avatar images */}
+        <div className="text-center mt-12 text-sm text-muted-foreground">
+            Note: Ensure avatar images (e.g., <code>chatgpt.png</code>, <code>friend1.png</code>) are placed in the <code>public/avatars/</code> directory.
         </div>
       </main>
       <Footer />
