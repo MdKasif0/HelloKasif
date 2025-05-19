@@ -10,7 +10,15 @@ export default function BackToTopButton() {
   const [isVisible, setIsVisible] = useState(false);
 
   const toggleVisibility = () => {
-    if (window.scrollY > 300) {
+    const scrollableHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+    if (scrollableHeight <= 0) { // Page is not scrollable or barely scrollable
+      setIsVisible(false);
+      return;
+    }
+    // Calculate the scroll percentage
+    const scrollPercentage = (window.scrollY / scrollableHeight) * 100;
+
+    if (scrollPercentage > 20) {
       setIsVisible(true);
     } else {
       setIsVisible(false);
@@ -36,10 +44,9 @@ export default function BackToTopButton() {
   return (
     <Button
       variant="outline"
-      size="icon"
       onClick={scrollToTop}
       className={cn(
-        "fixed bottom-8 right-8 z-50 rounded-full p-2.5 shadow-xl transition-all duration-300 ease-in-out transform",
+        "fixed bottom-8 right-8 z-50 h-12 w-12 rounded-full p-3 shadow-xl transition-all duration-300 ease-in-out transform", // Adjusted size and padding
         "border-2 border-primary/50 bg-background/80 backdrop-blur-md text-primary",
         "hover:bg-primary hover:text-primary-foreground hover:scale-110 hover:border-primary hover:shadow-primary/30",
         isVisible
@@ -48,7 +55,7 @@ export default function BackToTopButton() {
       )}
       aria-label="Scroll to top"
     >
-      <ArrowUp className="h-5 w-5" />
+      <ArrowUp className="h-6 w-6" /> {/* Adjusted icon size */}
     </Button>
   );
 }
