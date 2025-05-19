@@ -1,4 +1,3 @@
-
 // src/components/interactive/BackToTopButton.tsx
 'use client';
 
@@ -27,6 +26,8 @@ export default function BackToTopButton() {
 
   useEffect(() => {
     window.addEventListener('scroll', toggleVisibility);
+    // Call on mount to set initial state if page is already scrolled
+    toggleVisibility(); 
     return () => {
       window.removeEventListener('scroll', toggleVisibility);
     };
@@ -38,12 +39,16 @@ export default function BackToTopButton() {
       size="icon"
       onClick={scrollToTop}
       className={cn(
-        "fixed bottom-6 right-6 z-50 rounded-full p-2 shadow-lg transition-opacity duration-300 bg-card/80 backdrop-blur-md hover:bg-primary/20 border-primary/30 text-primary hover:border-primary",
-        isVisible ? "opacity-100" : "opacity-0 pointer-events-none"
+        "fixed bottom-8 right-8 z-50 rounded-full p-2.5 shadow-xl transition-all duration-300 ease-in-out transform",
+        "border-2 border-primary/50 bg-background/80 backdrop-blur-md text-primary",
+        "hover:bg-primary hover:text-primary-foreground hover:scale-110 hover:border-primary hover:shadow-primary/30",
+        isVisible
+          ? "opacity-100 translate-y-0 scale-100"
+          : "opacity-0 translate-y-5 scale-90 pointer-events-none"
       )}
       aria-label="Scroll to top"
     >
-      <ArrowUp className="h-6 w-6" />
+      <ArrowUp className="h-5 w-5" />
     </Button>
   );
 }
