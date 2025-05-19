@@ -28,7 +28,7 @@ export const allProjects: Project[] = [
     solution: "An AI-powered web app that lets users generate images using text prompts through Hugging Face APIs. The app features a clean UI, responsive design, and dynamic loading states for better user experience.",
     result: "The final product is a fully functional and visually appealing AI image generator. It performs reliably and has been positively received for its simplicity and effectiveness.",
     imageUrl: "https://imaginate-ai.netlify.app/preview.png",
-    imageHint: "AI generation",
+    imageHint: "AI interface", // Updated hint
     tags: ["Html", "CSS", "JavaScript", "Hugging Face"],
     liveLink: "https://imaginate-ai.netlify.app/",
     repoLink: "https://github.com/MdKasif0/Imaginate",
@@ -42,9 +42,8 @@ export const allProjects: Project[] = [
     process: "The project started with a structural outline, focusing on core functionalities like adding, viewing, and deleting notes and tasks. I then iteratively enhanced the user interface and expanded features based on self-testing and usability principles, aiming for an intuitive experience.",
     solution: "A lightweight and responsive note-taking web application built with HTML, CSS, and JavaScript. 'Note It' provides a clean interface for users to effortlessly manage their notes and track tasks.",
     result: "The outcome is a fully functional, aesthetically pleasing, and user-friendly note-taking web app. This self-driven project was instrumental in my learning journey and received positive feedback for its simplicity and utility.",
-    // clientFeedback: "Not applicable as this was a personal project.", // Omitted as per instruction
-    imageUrl: "/images/projects/note-it.png", // User needs to add this image to public/images/projects/note-it.png
-    imageHint: "edit icon",
+    imageUrl: "/images/projects/note-it.png",
+    imageHint: "UI code", // Updated hint
     tags: ["HTML", "CSS", "JavaScript", "Web App", "Productivity", "Self Project"],
     liveLink: "https://note-it0.netlify.app/",
     repoLink: "https://github.com/MdKasif0/Note_It.git"
@@ -59,7 +58,7 @@ export const allProjects: Project[] = [
     solution: "Aether Engine: A modular UI framework designed for creating highly interactive and immersive web environments with a consistent look and feel.",
     result: "Reduced development time for interactive web features by 30%. Adopted by multiple teams, enhancing product quality and developer productivity across the organization.",
     imageUrl: "https://placehold.co/600x400.png",
-    imageHint: "geometric pattern",
+    imageHint: "abstract code", // Updated hint
     tags: ["TypeScript", "Web Components", "Animation", "Framework Design"],
     liveLink: "#",
     repoLink: "#",
