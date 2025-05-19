@@ -1,3 +1,4 @@
+
 // src/app/projects/[slug]/page.tsx
 import type { Metadata, ResolvingMetadata } from 'next';
 import { notFound } from 'next/navigation';
@@ -44,10 +45,10 @@ export async function generateMetadata(
 
   return {
     title: pageTitle,
-    description: project.problem, // Using the project problem as the short meta description
+    description: project.problem, 
     openGraph: {
-      title: pageTitle, // More specific title for OG
-      description: pageDescription, // Detailed OG description
+      title: pageTitle, 
+      description: pageDescription, 
       url: `/projects/${project.slug}`, 
       type: 'article', 
       images: [
@@ -63,7 +64,7 @@ export async function generateMetadata(
     twitter: {
       card: 'summary_large_image',
       title: pageTitle,
-      description: project.problem, // Shorter description for Twitter
+      description: project.problem, 
       images: [ogImageUrl], 
     },
   };
@@ -110,7 +111,7 @@ export default function ProjectPage({ params }: Props) {
                   fill
                   className="object-cover"
                   data-ai-hint={project.imageHint}
-                  priority // This is likely above the fold
+                  priority 
                 />
               </div>
             </header>
@@ -148,14 +149,14 @@ export default function ProjectPage({ params }: Props) {
               {(project.liveLink && project.liveLink !== "#") || (project.repoLink && project.repoLink !== "#") ? (
                 <CardFooter className="p-6 md:p-8 pt-4 flex flex-wrap gap-4 justify-start items-center border-t border-border/50">
                   {project.liveLink && project.liveLink !== "#" && (
-                    <Button variant="default" asChild className="bg-gradient-to-r from-orange-400 via-pink-500 to-fuchsia-500 text-black font-semibold hover:opacity-90">
+                    <Button variant="default" asChild className="bg-gradient-to-r from-primary to-accent text-primary-foreground font-semibold hover:opacity-90">
                       <a href={project.liveLink} target="_blank" rel="noopener noreferrer">
                         View Live Demo <ExternalLink size={16} className="ml-2" />
                       </a>
                     </Button>
                   )}
                   {project.repoLink && project.repoLink !== "#" && (
-                    <Button variant="outline" asChild className="text-muted-foreground hover:text-accent">
+                    <Button variant="outline" asChild className="text-accent hover:bg-accent/10 hover:text-accent">
                       <a href={project.repoLink} target="_blank" rel="noopener noreferrer">
                         <Github size={20} className="mr-2" /> View Source
                       </a>
@@ -172,3 +173,4 @@ export default function ProjectPage({ params }: Props) {
     </>
   );
 }
+

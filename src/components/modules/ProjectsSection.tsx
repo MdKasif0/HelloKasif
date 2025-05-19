@@ -1,3 +1,4 @@
+
 // src/components/modules/ProjectsSection.tsx
 // This is now the HOMEPAGE version of the Projects Section (teaser)
 'use client';
@@ -26,7 +27,7 @@ export default function ProjectsSection() {
   return (
     <section id="projects" className="py-16 md:py-24 animate-in fade-in duration-500">
       <div className="text-center mb-16 animate-in fade-in slide-in-from-bottom-5 duration-700">
-        <h2 className="font-mono text-4xl md:text-5xl font-bold tracking-tight">A Peek at My Work</h2>
+        <h2 className="font-mono text-4xl md:text-5xl font-bold tracking-tight">Work I'm Proud Of</h2>
         <p className="text-lg text-muted-foreground mt-3 max-w-2xl mx-auto text-balance">
           Here are a couple of projects I've enjoyed building. There's more to see on the full projects page!
         </p>
@@ -65,7 +66,7 @@ export default function ProjectsSection() {
               <div className="mt-6 mb-2">
                 <h4 className="font-mono text-md font-semibold text-primary mb-2">Core Technologies:</h4>
                 <div className="flex flex-wrap gap-2">
-                  {project.tags.slice(0, 3).map((tag) => ( // Show a few key tags
+                  {project.tags.slice(0, 3).map((tag) => ( 
                     <Badge key={tag} variant="secondary" className="bg-primary/10 text-primary border-primary/30 hover:bg-primary/20">
                       {tag}
                     </Badge>
@@ -81,14 +82,14 @@ export default function ProjectsSection() {
                 </Link>
               </Button>
               {project.liveLink && project.liveLink !== "#" && (
-                <Button variant="outline" asChild className="border-accent/50 text-accent hover:bg-accent/10 hover:text-accent hover:border-accent">
+                <Button variant="outline" asChild className="border-accent bg-muted text-accent hover:bg-accent/10 hover:border-accent">
                   <a href={project.liveLink} target="_blank" rel="noopener noreferrer">
                     Live Demo <ExternalLink size={16} className="ml-2" />
                   </a>
                 </Button>
               )}
               {project.repoLink && project.repoLink !== "#" && (
-                <Button variant="ghost" asChild className="text-muted-foreground hover:text-accent">
+                <Button variant="ghost" asChild className="text-accent hover:bg-accent/10">
                   <a href={project.repoLink} target="_blank" rel="noopener noreferrer">
                     <Github size={20} className="mr-2" /> View Source
                   </a>

@@ -1,3 +1,4 @@
+
 // src/app/projects/page.tsx
 import Header from '@/components/layout/Header';
 import Footer from '@/components/layout/Footer';
@@ -25,7 +26,7 @@ export const metadata: Metadata = {
     type: 'website',
     images: [
       {
-        url: '/og-image-projects.png', // Ensure this image exists in public/og-image-projects.png
+        url: '/og-image-projects.png', 
         width: 1200,
         height: 630,
         alt: 'Md Kasif Uddin - Project Showcase',
@@ -36,7 +37,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: pageTitle,
     description: pageDescription,
-    images: ['/twitter-image-projects.png'], // Ensure this image exists in public/twitter-image-projects.png
+    images: ['/twitter-image-projects.png'], 
   },
 };
 
@@ -63,7 +64,7 @@ export default function AllProjectsPage() {
             <InteractiveCard 
               key={project.id} 
               className={`flex flex-col group/project animate-in fade-in slide-in-from-bottom-10 duration-500`}
-              style={{ animationDelay: `${index * 150}ms` }} // Stagger animation
+              style={{ animationDelay: `${index * 150}ms` }} 
             >
               <div className="relative overflow-hidden rounded-t-xl">
                 <Image
@@ -104,20 +105,20 @@ export default function AllProjectsPage() {
                 </div>
               </CardContent>
               <CardFooter className="p-6 pt-4 flex flex-wrap gap-4 justify-start items-center border-t border-border/50 mt-auto">
-                <Button variant="default" asChild className="bg-gradient-to-r from-orange-400 via-pink-500 to-fuchsia-500 text-black font-semibold hover:opacity-90 group">
+                <Button variant="default" asChild className="bg-gradient-to-r from-primary to-accent hover:from-primary/90 hover:to-accent/90 text-primary-foreground group">
                   <Link href={`/projects/${project.slug}`}>
                     View Full Case Study <ArrowRight size={16} className="ml-2 transition-transform group-hover:translate-x-1" />
                   </Link>
                 </Button>
                 {project.liveLink && project.liveLink !== "#" && (
-                  <Button variant="outline" asChild className="border-accent/50 text-accent hover:bg-accent/10 hover:text-accent hover:border-accent">
+                  <Button variant="outline" asChild className="border-accent bg-muted text-accent hover:bg-accent/10 hover:border-accent">
                     <a href={project.liveLink} target="_blank" rel="noopener noreferrer">
                       Live Demo <ExternalLink size={16} className="ml-2" />
                     </a>
                   </Button>
                 )}
                 {project.repoLink && project.repoLink !== "#" && (
-                  <Button variant="ghost" asChild className="text-muted-foreground hover:text-accent">
+                  <Button variant="ghost" asChild className="text-accent hover:bg-accent/10">
                     <a href={project.repoLink} target="_blank" rel="noopener noreferrer">
                       <Github size={20} className="mr-2" /> View Source
                     </a>
@@ -133,3 +134,4 @@ export default function AllProjectsPage() {
     </>
   );
 }
+

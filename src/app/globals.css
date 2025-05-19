@@ -64,7 +64,7 @@ body {
   }
 
   .dark {
-    /* Dark Theme - Modern "Black" Theme */
+    /* Dark Theme - Modern "Black" Theme with Blue/Teal Accents */
     --background: 0 0% 8%; /* Very dark gray, near black */
     --foreground: 0 0% 95%; /* Off-white */
 
@@ -74,39 +74,39 @@ body {
     --popover: 0 0% 12%; /* Dark gray for popovers */
     --popover-foreground: 0 0% 95%; /* Off-white text for popovers */
 
-    --card: 0 0% 12%; /* Dark gray for cards */
+    --card: 0 0% 12%; /* Dark gray for cards (matches image) */
     --card-foreground: 0 0% 95%; /* Off-white text for cards */
 
     --border: 0 0% 20%; /* Dark gray border */
     --input: 0 0% 18%; /* Dark gray input background */
 
-    --primary: 0 0% 90%; /* Light gray */
-    --primary-foreground: 0 0% 8%; /* Near black (for text on primary buttons) */
+    --primary: 210 100% 56%; /* Bright Blue (e.g., #1c82f1) for titles/elements in cards */
+    --primary-foreground: 0 0% 98%; /* White/Very Light Gray for text on primary */
 
-    --secondary: 0 0% 75%; /* Medium-light gray */
-    --secondary-foreground: 0 0% 8%; /* Near black */
+    --secondary: 210 80% 45%; /* A slightly darker or less saturated blue */
+    --secondary-foreground: 0 0% 98%; /* White/Very Light Gray */
 
-    --accent: 0 0% 98%; /* Almost white */
-    --accent-foreground: 0 0% 8%; /* Near black */
+    --accent: 180 70% 50%; /* Bright Teal/Cyan (e.g., #29c7c7) */
+    --accent-foreground: 0 0% 8%;  /* Dark text for contrast on accent (e.g., for text on teal buttons if needed) */
 
     --destructive: 0 70% 50%; /* A clear red */
     --destructive-foreground: 0 0% 98%; /* White */
 
-    --ring: 0 0% 80%; /* Light gray for focus rings */
+    --ring: 210 100% 65%; /* Primary (blue) color for focus rings */
 
     /* Sidebar variables - Dark Theme */
-    --sidebar-background: 0 0% 6%; /* Even darker gray */
+    --sidebar-background: 0 0% 6%; 
     --sidebar-foreground: 0 0% 90%;
-    --sidebar-primary: 0 0% 90%;
-    --sidebar-primary-foreground: 0 0% 6%;
-    --sidebar-accent: 0 0% 98%;
-    --sidebar-accent-foreground: 0 0% 6%;
+    --sidebar-primary: 210 100% 56%; /* Blue */
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 180 70% 50%; /* Teal */
+    --sidebar-accent-foreground: 0 0% 8%;
     --sidebar-border: 0 0% 15%;
-    --sidebar-ring: 0 0% 80%;
+    --sidebar-ring: 210 100% 65%;
 
-    /* Chart Colors - Dark Theme */
-    --chart-1: 0 0% 90%;  /* Light Gray */
-    --chart-2: 180 70% 60%; /* Bright Teal */
+    /* Chart Colors - Dark Theme (Updated to use new primary/accent) */
+    --chart-1: hsl(var(--primary));  /* Bright Blue */
+    --chart-2: hsl(var(--accent)); /* Bright Teal */
     --chart-3: 210 70% 65%; /* Bright Cool Blue */
     --chart-4: 45 80% 60%;  /* Bright Yellow/Gold */
     --chart-5: 0 0% 75%;  /* Medium-light Gray */
