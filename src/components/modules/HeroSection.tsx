@@ -9,7 +9,7 @@ export default function HeroSection() {
   return (
     <section 
       id="hero" 
-      className="min-h-[calc(100vh-4rem)] flex flex-col justify-center items-center text-center px-4 py-16 sm:py-24 relative -mt-16 pt-16 overflow-hidden" // Added overflow-hidden for animations
+      className="min-h-[calc(100vh-4rem)] flex flex-col justify-center items-center text-center px-4 py-16 sm:py-24 relative -mt-16 pt-16 overflow-hidden"
     >
       <div className="absolute inset-0 -z-10">
         {/* Optional: Add a subtle, large background element here like a very faint nebula or geometric pattern */}
@@ -25,7 +25,7 @@ export default function HeroSection() {
         </span>
       </h1>
       <p className="text-lg sm:text-xl md:text-2xl text-muted-foreground mb-10 max-w-3xl mx-auto text-balance animate-in fade-in slide-in-from-bottom-8 duration-700 delay-200">
-        I craft digital experiences that connect humans with technology.
+        Hello, I’m Md Kasif Uddin — I build AI-powered experiences for the web.
       </p>
       <Button 
         asChild 
