@@ -2,12 +2,12 @@
 import Header from '@/components/layout/Header';
 import Footer from '@/components/layout/Footer';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
-import { CalendarDays, Sparkles, Zap, Brain } from 'lucide-react'; // Added Brain icon
+import { CalendarDays, Brain } from 'lucide-react'; // Added Brain icon
 import type { Metadata } from 'next';
 import BackToTopButton from '@/components/interactive/BackToTopButton';
 
-const pageTitle = 'What Md Kasif Uddin Is Doing Now | Current Focus & Learnings';
-const pageDescription = 'A snapshot of what Md Kasif Uddin is currently focused on, learning, and exploring in his professional and personal life at HelloKasif.';
+const pageTitle = 'What Md Kasif Uddin Is Doing Now | Current Focus | HelloKasif';
+const pageDescription = 'A snapshot of what Md Kasif Uddin is currently focused on, learning, and exploring in his journey with web development and AI/ML on HelloKasif.';
 
 export const metadata: Metadata = {
   title: pageTitle,
@@ -16,10 +16,10 @@ export const metadata: Metadata = {
     title: pageTitle,
     description: pageDescription,
     url: '/now',
-    type: 'article',
+    type: 'article', // 'article' is suitable for a "Now" page
      images: [
       {
-        url: '/og-image-now.png',
+        url: '/og-image-now.png', // Ensure this image exists in public/og-image-now.png
         width: 1200,
         height: 630,
         alt: 'Md Kasif Uddin - What I\'m Doing Now',
@@ -30,13 +30,13 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: pageTitle,
     description: pageDescription,
-    images: ['/twitter-image-now.png'],
+    images: ['/twitter-image-now.png'], // Ensure this image exists in public/twitter-image-now.png
   },
 };
 
 
 export default function NowPage() {
-  const manuallyUpdatedDate = "May 19, 2025"; // Updated date
+  const manuallyUpdatedDate = "May 19, 2025"; // Remember to update this when you update the content
 
   return (
     <>
@@ -64,8 +64,6 @@ export default function NowPage() {
                   Currently, I am focused on exploring and learning how to integrate Artificial Intelligence (AI) and Machine Learning (ML) models into modern web applications. I'm experimenting with various APIs, studying model deployment techniques, and looking into frameworks that bridge the gap between frontend and intelligent backend systems.
                 </p>
               </section>
-
-              {/* You can add other sections like "Personal Goals" or "Reading" back here if needed */}
 
               <p className="text-sm text-center text-muted-foreground/80 pt-6 border-t border-border/30">
                 This page is inspired by <a href="https://nownownow.com/" target="_blank" rel="noopener noreferrer" className="underline hover:text-primary">nownownow.com</a>.

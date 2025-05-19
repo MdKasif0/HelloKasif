@@ -39,12 +39,15 @@ export async function generateMetadata(
     ? project.imageUrl 
     : `${siteUrl}${project.imageUrl.startsWith('/') ? project.imageUrl : '/' + project.imageUrl}`;
 
+  const pageTitle = `${project.title} | Case Study | HelloKasif`;
+  const pageDescription = `Dive into the ${project.title} case study by Md Kasif Uddin. Explore the problem, process, solution, and results. Technologies: ${project.tags.join(', ')}.`;
+
   return {
-    title: `${project.title} | Case Study | HelloKasif | Md Kasif Uddin`,
-    description: project.problem, 
+    title: pageTitle,
+    description: project.problem, // Using the project problem as the short meta description
     openGraph: {
-      title: `${project.title} | HelloKasif Projects`,
-      description: `Deep dive into the ${project.title} project: problem, process, solution, and results. Technologies used: ${project.tags.join(', ')}.`,
+      title: pageTitle, // More specific title for OG
+      description: pageDescription, // Detailed OG description
       url: `/projects/${project.slug}`, 
       type: 'article', 
       images: [
@@ -52,15 +55,15 @@ export async function generateMetadata(
           url: ogImageUrl, 
           width: project.imageUrl.includes('placehold.co') ? 600 : (project.imageUrl.includes('imaginate-ai.netlify.app') ? 1200 : 1200), 
           height: project.imageUrl.includes('placehold.co') ? 400 : (project.imageUrl.includes('imaginate-ai.netlify.app') ? 630 : 630),
-          alt: `Cover image for ${project.title}`,
+          alt: `Cover image for ${project.title} project by Md Kasif Uddin`,
         },
       ],
       authors: ['Md Kasif Uddin'], 
     },
     twitter: {
       card: 'summary_large_image',
-      title: `${project.title} | HelloKasif Projects`,
-      description: project.problem,
+      title: pageTitle,
+      description: project.problem, // Shorter description for Twitter
       images: [ogImageUrl], 
     },
   };

@@ -6,8 +6,8 @@ import ContactSectionContent from '@/components/modules/ContactSection';
 import type { Metadata } from 'next';
 import BackToTopButton from '@/components/interactive/BackToTopButton';
 
-const pageTitle = 'Contact Md Kasif Uddin | Let\'s Connect';
-const pageDescription = 'Get in touch with Md Kasif Uddin. Send a message, ask a question, or discuss a potential project.';
+const pageTitle = 'Contact Md Kasif Uddin | Let\'s Connect | HelloKasif';
+const pageDescription = 'Get in touch with Md Kasif Uddin. Send a message, ask a question, or discuss a potential project through HelloKasif.';
 
 export const metadata: Metadata = {
   title: pageTitle,
@@ -19,7 +19,7 @@ export const metadata: Metadata = {
     type: 'website',
     images: [
       {
-        url: '/og-image-contact.png', 
+        url: '/og-image-contact.png', // Ensure this image exists in public/og-image-contact.png
         width: 1200,
         height: 630,
         alt: 'Md Kasif Uddin - Contact Me',
@@ -30,7 +30,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: pageTitle,
     description: pageDescription,
-    images: ['/twitter-image-contact.png'], 
+    images: ['/twitter-image-contact.png'], // Ensure this image exists in public/twitter-image-contact.png
   },
 };
 

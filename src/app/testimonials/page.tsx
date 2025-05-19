@@ -4,12 +4,12 @@ import Footer from '@/components/layout/Footer';
 import Image from 'next/image';
 import InteractiveCard from '@/components/interactive/InteractiveCard';
 import { CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
-import { Quote } from 'lucide-react'; // Removed Star as rating is not in new data
+import { Quote } from 'lucide-react'; 
 import type { Metadata } from 'next';
 import BackToTopButton from '@/components/interactive/BackToTopButton';
 
-const pageTitle = 'Kind Words | What People Say About Md Kasif Uddin | HelloKasif';
-const pageDescription = 'Read testimonials and recommendations for Md Kasif Uddin on HelloKasif.';
+const pageTitle = 'Kind Words | Testimonials for Md Kasif Uddin | HelloKasif';
+const pageDescription = 'Read testimonials and recommendations for Md Kasif Uddin from mentors and peers, featured on HelloKasif.';
 
 export const metadata: Metadata = {
   title: pageTitle,
@@ -21,7 +21,7 @@ export const metadata: Metadata = {
     type: 'website',
     images: [
       {
-        url: '/og-image-testimonials.png',
+        url: '/og-image-testimonials.png', // Ensure this image exists in public/og-image-testimonials.png
         width: 1200,
         height: 630,
         alt: 'Md Kasif Uddin - Testimonials',
@@ -32,7 +32,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: pageTitle,
     description: pageDescription,
-    images: ['/twitter-image-testimonials.png'], 
+    images: ['/twitter-image-testimonials.png'], // Ensure this image exists in public/twitter-image-testimonials.png
   },
 };
 
@@ -40,14 +40,14 @@ const allTestimonials = [
   {
     name: "Virtual Mentor",
     role: "AI Assistant (ChatGPT)",
-    avatar: "/avatars/chatgpt.png", // Path for public directory
+    avatar: "/avatars/chatgpt.png", // Path for public directory, e.g., public/avatars/chatgpt.png
     avatarHint: "AI logo",
     quote: "Kasif shows exceptional curiosity and consistency in learning. His commitment to real-world project development at a young age is impressive and commendable."
   },
   {
     name: "Tech Enthusiast Friend",
     role: "Peer Reviewer",
-    avatar: "/avatars/friend1.png", // Path for public directory
+    avatar: "/avatars/friend1.png", // Path for public directory, e.g., public/avatars/friend1.png
     avatarHint: "person icon",
     quote: "The 'Note It' app by Kasif is clean, functional, and showcases the fundamentals of web development well. It’s inspiring to see such initiative in a student."
   }
@@ -74,7 +74,7 @@ export default function AllTestimonialsPage() {
               <CardHeader className="p-6 items-center text-center">
                 <div className="relative w-24 h-24 mb-4 rounded-full overflow-hidden shadow-lg border-2 border-primary/50">
                   <Image
-                    src={testimonial.avatar} // Assumes images are in public/avatars/
+                    src={testimonial.avatar} 
                     alt={testimonial.name}
                     fill 
                     style={{ objectFit: 'cover' }} 
@@ -91,11 +91,9 @@ export default function AllTestimonialsPage() {
                   "{testimonial.quote}"
                 </p>
               </CardContent>
-              {/* Rating display removed as it's not in the new data */}
             </InteractiveCard>
           ))}
         </div>
-        {/* Reminder for user to place avatar images */}
         <div className="text-center mt-12 text-sm text-muted-foreground">
             Note: Ensure avatar images (e.g., <code>chatgpt.png</code>, <code>friend1.png</code>) are placed in the <code>public/avatars/</code> directory.
         </div>

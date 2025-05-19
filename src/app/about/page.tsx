@@ -23,7 +23,7 @@ export const metadata: Metadata = {
     type: 'profile',
     images: [
       {
-        url: '/og-image-about.png', 
+        url: '/og-image-about.png', // Ensure this image exists in public/og-image-about.png
         width: 1200,
         height: 630,
         alt: 'Md Kasif Uddin - About Me',
@@ -34,7 +34,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: pageTitle,
     description: pageDescription,
-    images: ['/twitter-image-about.png'], 
+    images: ['/twitter-image-about.png'], // Ensure this image exists in public/twitter-image-about.png
   },
 };
 

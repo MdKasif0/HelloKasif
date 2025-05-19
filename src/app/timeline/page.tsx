@@ -1,13 +1,13 @@
 // src/app/timeline/page.tsx
 import Header from '@/components/layout/Header';
 import Footer from '@/components/layout/Footer';
-import { Briefcase, GraduationCap, Flag, Code2, AppWindow, Brain, Search, Lightbulb } from 'lucide-react';
+import { Code2, AppWindow, Brain, GraduationCap } from 'lucide-react'; // Specific icons for events
 import InteractiveCard from '@/components/interactive/InteractiveCard';
 import { CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import type { Metadata } from 'next';
 import BackToTopButton from '@/components/interactive/BackToTopButton';
 
-const pageTitle = 'My Path So Far | Md Kasif Uddin | HelloKasif';
+const pageTitle = 'My Path So Far | Journey of Md Kasif Uddin | HelloKasif';
 const pageDescription = 'Explore the career progression, key milestones, and educational path of Md Kasif Uddin, an aspiring developer, through a detailed interactive timeline on HelloKasif.';
 
 export const metadata: Metadata = {
@@ -20,7 +20,7 @@ export const metadata: Metadata = {
     type: 'website',
      images: [
       {
-        url: '/og-image-timeline.png', 
+        url: '/og-image-timeline.png', // Ensure this image exists in public/og-image-timeline.png
         width: 1200,
         height: 630,
         alt: 'Md Kasif Uddin - Career Timeline',
@@ -31,7 +31,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: pageTitle,
     description: pageDescription,
-    images: ['/twitter-image-timeline.png'],
+    images: ['/twitter-image-timeline.png'], // Ensure this image exists in public/twitter-image-timeline.png
   },
 };
 

@@ -13,7 +13,7 @@ import type { Metadata } from 'next';
 import BackToTopButton from '@/components/interactive/BackToTopButton';
 
 const pageTitle = 'Projects & Case Studies | Md Kasif Uddin | HelloKasif';
-const pageDescription = 'Explore a collection of innovative projects and in-depth case studies by Md Kasif Uddin, showcasing skills in web development, AI integration, and UI/UX design within HelloKasif.';
+const pageDescription = 'Explore a collection of innovative projects and in-depth case studies by Md Kasif Uddin, showcasing skills in web development, AI integration, and UI/UX design on HelloKasif.';
 
 export const metadata: Metadata = {
   title: pageTitle,
@@ -25,7 +25,7 @@ export const metadata: Metadata = {
     type: 'website',
     images: [
       {
-        url: '/og-image-projects.png', 
+        url: '/og-image-projects.png', // Ensure this image exists in public/og-image-projects.png
         width: 1200,
         height: 630,
         alt: 'Md Kasif Uddin - Project Showcase',
@@ -36,7 +36,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: pageTitle,
     description: pageDescription,
-    images: ['/twitter-image-projects.png'], 
+    images: ['/twitter-image-projects.png'], // Ensure this image exists in public/twitter-image-projects.png
   },
 };
 
