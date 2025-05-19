@@ -1,3 +1,4 @@
+
 // src/components/modules/HeroSection.tsx
 'use client';
 
@@ -7,14 +8,14 @@ import Link from 'next/link';
 
 export default function HeroSection() {
   return (
-    <section 
-      id="hero" 
+    <section
+      id="hero"
       className="min-h-[calc(100vh-4rem)] flex flex-col justify-center items-center text-center px-4 py-16 sm:py-24 relative -mt-16 pt-16 overflow-hidden"
     >
       <div className="absolute inset-0 -z-10">
         {/* Optional: Add a subtle, large background element here like a very faint nebula or geometric pattern */}
       </div>
-      <h1 
+      <h1
         className="font-mono text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-extrabold mb-6 tracking-tight text-balance animate-in fade-in slide-in-from-bottom-8 duration-700"
         style={{
           textShadow: '0 0 15px hsl(var(--primary) / 0.3), 0 0 30px hsl(var(--accent) / 0.2)',
@@ -27,9 +28,9 @@ export default function HeroSection() {
       <p className="text-lg sm:text-xl md:text-2xl text-muted-foreground mb-10 max-w-3xl mx-auto text-balance animate-in fade-in slide-in-from-bottom-8 duration-700 delay-200">
         Hello, I’m Md Kasif Uddin — I build AI-powered experiences for the web.
       </p>
-      <Button 
-        asChild 
-        size="lg" 
+      <Button
+        asChild
+        size="lg"
         className="bg-gradient-to-r from-orange-400 via-pink-500 to-fuchsia-500 text-black font-semibold hover:opacity-90 group rounded-lg px-8 py-3 text-lg shadow-lg hover:shadow-pink-500/40 transition-all duration-300 transform hover:scale-105 animate-in fade-in slide-in-from-bottom-8 duration-700 delay-400"
       >
         <Link href="#about">
