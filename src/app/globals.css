@@ -13,83 +13,92 @@ body {
 
 @layer base {
   :root {
-    --background: 220 20% 7%; /* Deep Dark Blue */
-    --foreground: 210 40% 96%; /* Off-white / Light Gray */
+    --background: 0 0% 100%; /* Light theme: White */
+    --foreground: 240 10% 3.9%; /* Light theme: Near Black */
 
-    --muted: 220 15% 18%; /* Darker Muted Blue */
-    --muted-foreground: 210 30% 70%; /* Lighter Gray for muted text */
+    --muted: 240 4.8% 95.9%; /* Light theme: Light Gray */
+    --muted-foreground: 240 3.8% 46.1%; /* Light theme: Dark Gray */
 
-    --popover: 220 20% 10%; /* Slightly Lighter Deep Dark Blue */
-    --popover-foreground: 210 40% 96%;
+    --popover: 0 0% 100%; /* Light theme: White */
+    --popover-foreground: 240 10% 3.9%; /* Light theme: Near Black */
 
-    --card: 220 20% 10%; /* Slightly Lighter Deep Dark Blue */
-    --card-foreground: 210 40% 96%;
+    --card: 0 0% 100%; /* Light theme: White */
+    --card-foreground: 240 10% 3.9%; /* Light theme: Near Black */
 
-    --border: 220 15% 22%; /* Muted Border */
-    --input: 220 15% 20%; /* Muted Input Background */
+    --border: 240 5.9% 90%; /* Light theme: Light Gray Border */
+    --input: 240 5.9% 90%; /* Light theme: Light Gray Input Background */
 
-    --primary: 210 90% 55%; /* Bright Vivid Blue */
-    --primary-foreground: 210 20% 98%; /* White for text on primary */
+    --primary: 210 90% 55%; /* Shared: Bright Vivid Blue */
+    --primary-foreground: 210 20% 98%; /* Shared: White for text on primary */
 
-    --secondary: 200 80% 50%; /* Slightly Lighter Vivid Blue */
-    --secondary-foreground: 210 20% 98%; /* White for text on secondary */
+    --secondary: 200 80% 50%; /* Shared: Slightly Lighter Vivid Blue */
+    --secondary-foreground: 210 20% 98%; /* Shared: White for text on secondary */
 
-    --accent: 170 80% 45%; /* Vibrant Teal/Cyan */
-    --accent-foreground: 210 20% 98%; /* White for text on accent */
+    --accent: 170 80% 45%; /* Shared: Vibrant Teal/Cyan */
+    --accent-foreground: 210 20% 98%; /* Shared: White for text on accent */
 
-    --destructive: 0 70% 55%; /* Retained Red for destructive actions */
-    --destructive-foreground: 0 0% 98%;
+    --destructive: 0 70% 55%; /* Shared: Red for destructive actions */
+    --destructive-foreground: 0 0% 98%; /* Shared: White for text on destructive */
 
-    --ring: 210 90% 65%; /* Brighter Blue for focus rings */
+    --ring: 210 90% 60%; /* Light theme: Slightly adjusted ring */
     --radius: 0.5rem;
 
-    /* Sidebar variables */
-    --sidebar-background: 220 20% 5%; /* Even Darker Blue for sidebar */
-    --sidebar-foreground: 210 30% 80%;
-    --sidebar-primary: 210 90% 55%;
-    --sidebar-primary-foreground: 210 20% 98%;
-    --sidebar-accent: 170 80% 45%;
-    --sidebar-accent-foreground: 210 20% 98%;
-    --sidebar-border: 220 15% 18%;
-    --sidebar-ring: 210 90% 65%;
+    /* Sidebar variables - Light Theme */
+    --sidebar-background: 0 0% 97%; /* Light theme: Very Light Gray */
+    --sidebar-foreground: 240 10% 3.9%; /* Light theme: Near Black */
+    --sidebar-primary: 210 90% 55%; /* Shared */
+    --sidebar-primary-foreground: 210 20% 98%; /* Shared */
+    --sidebar-accent: 170 80% 45%; /* Shared */
+    --sidebar-accent-foreground: 210 20% 98%; /* Shared */
+    --sidebar-border: 240 5.9% 85%; /* Light theme: Slightly darker gray for sidebar border */
+    --sidebar-ring: 210 90% 60%; /* Light theme: Slightly adjusted ring */
 
-    --chart-1: 210 90% 55%; /* Primary Blue */
-    --chart-2: 170 80% 45%; /* Accent Teal */
-    --chart-3: 200 80% 50%; /* Secondary Blue */
-    --chart-4: 280 70% 60%; /* A contrasting Purple */
-    --chart-5: 30 80% 60%;  /* A contrasting Orange */
+    --chart-1: 210 90% 55%;
+    --chart-2: 170 80% 45%;
+    --chart-3: 200 80% 50%;
+    --chart-4: 280 70% 60%;
+    --chart-5: 30 80% 60%;
   }
 
   .dark {
-    --background: 220 20% 7%;
-    --foreground: 210 40% 96%;
-    --muted: 220 15% 18%;
-    --muted-foreground: 210 30% 70%;
-    --popover: 220 20% 10%;
-    --popover-foreground: 210 40% 96%;
-    --card: 220 20% 10%;
-    --card-foreground: 210 40% 96%;
-    --border: 220 15% 22%;
-    --input: 220 15% 20%;
-    --primary: 210 90% 55%;
-    --primary-foreground: 210 20% 98%;
-    --secondary: 200 80% 50%;
-    --secondary-foreground: 210 20% 98%;
-    --accent: 170 80% 45%;
-    --accent-foreground: 210 20% 98%;
-    --destructive: 0 70% 55%;
-    --destructive-foreground: 0 0% 98%;
-    --ring: 210 90% 65%;
+    --background: 220 20% 7%; /* Dark theme: Deep Dark Blue */
+    --foreground: 210 40% 96%; /* Dark theme: Off-white / Light Gray */
 
-    /* Sidebar variables */
-    --sidebar-background: 220 20% 5%;
-    --sidebar-foreground: 210 30% 80%;
-    --sidebar-primary: 210 90% 55%;
-    --sidebar-primary-foreground: 210 20% 98%;
-    --sidebar-accent: 170 80% 45%;
-    --sidebar-accent-foreground: 210 20% 98%;
-    --sidebar-border: 220 15% 18%;
-    --sidebar-ring: 210 90% 65%;
+    --muted: 220 15% 18%; /* Dark theme: Darker Muted Blue */
+    --muted-foreground: 210 30% 70%; /* Dark theme: Lighter Gray for muted text */
+
+    --popover: 220 20% 10%; /* Dark theme: Slightly Lighter Deep Dark Blue */
+    --popover-foreground: 210 40% 96%; /* Dark theme: Off-white / Light Gray */
+
+    --card: 220 20% 10%; /* Dark theme: Slightly Lighter Deep Dark Blue */
+    --card-foreground: 210 40% 96%; /* Dark theme: Off-white / Light Gray */
+
+    --border: 220 15% 22%; /* Dark theme: Muted Border */
+    --input: 220 15% 20%; /* Dark theme: Muted Input Background */
+
+    --primary: 210 90% 55%; /* Shared */
+    --primary-foreground: 210 20% 98%; /* Shared */
+
+    --secondary: 200 80% 50%; /* Shared */
+    --secondary-foreground: 210 20% 98%; /* Shared */
+
+    --accent: 170 80% 45%; /* Shared */
+    --accent-foreground: 210 20% 98%; /* Shared */
+
+    --destructive: 0 70% 55%; /* Shared */
+    --destructive-foreground: 0 0% 98%; /* Shared */
+
+    --ring: 210 90% 65%; /* Dark theme: Brighter Blue for focus rings */
+
+    /* Sidebar variables - Dark Theme */
+    --sidebar-background: 220 20% 5%; /* Dark theme: Even Darker Blue for sidebar */
+    --sidebar-foreground: 210 30% 80%; /* Dark theme: Lighter Gray */
+    --sidebar-primary: 210 90% 55%; /* Shared */
+    --sidebar-primary-foreground: 210 20% 98%; /* Shared */
+    --sidebar-accent: 170 80% 45%; /* Shared */
+    --sidebar-accent-foreground: 210 20% 98%; /* Shared */
+    --sidebar-border: 220 15% 18%; /* Dark theme: Dark Muted Border */
+    --sidebar-ring: 210 90% 65%; /* Dark theme: Brighter Blue */
 
     --chart-1: 210 90% 55%;
     --chart-2: 170 80% 45%;
