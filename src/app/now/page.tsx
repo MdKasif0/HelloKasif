@@ -3,7 +3,7 @@
 import Header from '@/components/layout/Header';
 import Footer from '@/components/layout/Footer';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
-import { CalendarDays, Sparkles, Zap } from 'lucide-react';
+import { CalendarDays, Sparkles, Zap, Brain } from 'lucide-react'; // Added Brain icon
 import type { Metadata } from 'next';
 import BackToTopButton from '@/components/interactive/BackToTopButton';
 
@@ -17,10 +17,10 @@ export const metadata: Metadata = {
     title: pageTitle,
     description: pageDescription,
     url: '/now',
-    type: 'article', 
+    type: 'article',
      images: [
       {
-        url: '/og-image-now.png', 
+        url: '/og-image-now.png',
         width: 1200,
         height: 630,
         alt: 'Md Kasif Uddin - What I\'m Doing Now',
@@ -31,15 +31,13 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: pageTitle,
     description: pageDescription,
-    images: ['/twitter-image-now.png'], 
+    images: ['/twitter-image-now.png'],
   },
 };
 
 
 export default function NowPage() {
-  // For a "Now" page, it's common to manually update this date when you update the content.
-  const manuallyUpdatedDate = "October 26, 2023"; // MANUALLY UPDATE THIS WHEN YOU UPDATE THE PAGE CONTENT
-
+  const manuallyUpdatedDate = "May 19, 2025"; // Updated date
 
   return (
     <>
@@ -61,36 +59,14 @@ export default function NowPage() {
             <CardContent className="p-6 md:p-8 space-y-8 text-lg">
               <section>
                 <h2 className="flex items-center text-2xl font-semibold text-primary mb-3">
-                  <Zap className="h-6 w-6 mr-2" /> Current Focus
+                  <Brain className="h-6 w-6 mr-2" /> Current Focus & Learning
                 </h2>
-                <ul className="list-disc list-outside pl-5 space-y-2 text-muted-foreground">
-                  <li>Deep diving into scalable serverless architectures for upcoming projects.</li>
-                  <li>Contributing to an open-source GenAI toolkit, focusing on developer experience.</li>
-                  <li>Preparing a workshop on "Ethical AI in Creative Industries".</li>
-                </ul>
+                <p className="text-muted-foreground leading-relaxed text-balance">
+                  Currently, I am focused on exploring and learning how to integrate Artificial Intelligence (AI) and Machine Learning (ML) models into modern web applications. I'm experimenting with various APIs, studying model deployment techniques, and looking into frameworks that bridge the gap between frontend and intelligent backend systems.
+                </p>
               </section>
 
-              <section>
-                <h2 className="flex items-center text-2xl font-semibold text-accent mb-3">
-                  <Sparkles className="h-6 w-6 mr-2" /> Learning & Exploring
-                </h2>
-                <ul className="list-disc list-outside pl-5 space-y-2 text-muted-foreground">
-                  <li>Experimenting with advanced prompting techniques for multimodal AI models.</li>
-                  <li>Studying the latest developments in quantum computing (out of sheer curiosity!).</li>
-                  <li>Improving my Spanish language skills through daily practice.</li>
-                </ul>
-              </section>
-
-              <section>
-                <h2 className="text-2xl font-semibold text-foreground mb-3">
-                  Personal Goals
-                </h2>
-                <ul className="list-disc list-outside pl-5 space-y-2 text-muted-foreground">
-                  <li>Read at least two non-fiction books a month.</li>
-                  <li>Complete a 10k run by the end of the quarter.</li>
-                  <li>Spend more time offline, exploring nature.</li>
-                </ul>
-              </section>
+              {/* You can add other sections like "Personal Goals" or "Reading" back here if needed */}
 
               <p className="text-sm text-center text-muted-foreground/80 pt-6 border-t border-border/30">
                 This page is inspired by <a href="https://nownownow.com/" target="_blank" rel="noopener noreferrer" className="underline hover:text-primary">nownownow.com</a>.
