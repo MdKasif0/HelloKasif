@@ -1,4 +1,3 @@
-
 // src/components/layout/Footer.tsx
 import { Github, Linkedin, Twitter, FileText } from 'lucide-react'; // Added FileText for Now page
 import Link from 'next/link';
@@ -10,10 +9,10 @@ export default function Footer() {
       <div className="container mx-auto px-4">
         <div className="flex justify-center gap-6 mb-6">
           <a 
-            href="#" 
+            href="https://github.com/MdKasif0" 
             target="_blank" 
             rel="noopener noreferrer" 
-            aria-label="Md Kasif Uddin's GitHub profile (update link)" 
+            aria-label="Md Kasif Uddin's GitHub profile" 
             className="text-muted-foreground hover:text-primary transition-all hover:scale-125 hover:-translate-y-1"
           >
             <Github size={24} />
