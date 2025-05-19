@@ -6,7 +6,6 @@ import ProjectsSection from '@/components/modules/ProjectsSection'; // Teaser ve
 import TimelineSection from '@/components/modules/TimelineSection'; // Teaser version
 import AchievementsSection from '@/components/modules/AchievementsSection';
 import ContactSection from '@/components/modules/ContactSection';
-import EnvironmentDisplay from '@/components/ai/EnvironmentDisplay';
 import Header from '@/components/layout/Header';
 import Footer from '@/components/layout/Footer';
 import { Separator } from '@/components/ui/separator';
@@ -19,9 +18,7 @@ export default function Home() {
       <HeroSection /> 
       
       <main className="container mx-auto px-4 space-y-16 md:space-y-24 relative z-10 pb-16 md:pb-24">
-        <div className="my-12 md:my-16">
-           <EnvironmentDisplay />
-        </div>
+        {/* EnvironmentDisplay component removed */}
 
         {/* About Section Teaser - links to /about */}
         <AboutSection /> 
