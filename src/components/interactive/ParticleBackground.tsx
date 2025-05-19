@@ -4,7 +4,7 @@
 import { motion } from 'framer-motion';
 import { useState, useEffect, useMemo } from 'react';
 
-const NUM_PARTICLES = 25;
+const NUM_PARTICLES = 40; // Increased from 25
 
 interface ParticleProps {
   windowSize: { width: number; height: number } | null;
@@ -25,7 +25,7 @@ const Particle = ({ windowSize }: ParticleProps) => {
     if (!windowSize) return;
     const { width: vw, height: vh } = windowSize;
 
-    setSize(Math.random() * 2 + 1); // 1px to 3px, very small
+    setSize(Math.random() * 2.5 + 1); // 1px to 3.5px, slightly larger max
     setInitialX(Math.random() * vw);
     setInitialY(Math.random() * vh);
   }, [windowSize]);
@@ -34,7 +34,7 @@ const Particle = ({ windowSize }: ParticleProps) => {
 
   return (
     <motion.div
-      className="absolute rounded-full bg-primary/25 dark:bg-primary/35" // Increased opacity
+      className="absolute rounded-full bg-primary/30 dark:bg-primary/40" // Increased opacity slightly
       initial={{ x: initialX, y: initialY, opacity: 0 }}
       animate={{ 
         x: animateX, 
