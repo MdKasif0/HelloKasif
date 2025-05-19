@@ -34,7 +34,7 @@ const Particle = ({ windowSize }: ParticleProps) => {
 
   return (
     <motion.div
-      className="absolute rounded-full bg-primary/10 dark:bg-primary/20" // opacity 10% in light, 20% in dark
+      className="absolute rounded-full bg-primary/25 dark:bg-primary/35" // Increased opacity
       initial={{ x: initialX, y: initialY, opacity: 0 }}
       animate={{ 
         x: animateX, 
