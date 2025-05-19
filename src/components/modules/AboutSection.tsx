@@ -13,12 +13,12 @@ export default function AboutSection() {
       <div className="grid md:grid-cols-1 lg:grid-cols-3 gap-8 items-center">
         <InteractiveCard className="lg:col-span-1 p-0 animate-in fade-in slide-in-from-left-10 duration-700">
           <Image
-            src="/images/profile.jpg" // Updated to local path
+            src="/images/profile.jpg" // Ensure this image is at public/images/profile.jpg
             alt="Md Kasif Uddin - Aspiring Developer"
             width={600}
             height={750}
             className="rounded-t-xl object-cover w-full h-auto"
-            data-ai-hint="student portrait anime"
+            data-ai-hint="student portrait"
             priority
           />
           <CardHeader className="p-6">
