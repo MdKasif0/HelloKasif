@@ -1,4 +1,3 @@
-
 // src/components/layout/Header.tsx
 'use client';
 
@@ -175,7 +174,7 @@ export default function Header() {
       <div className="container flex h-16 max-w-screen-2xl items-center justify-between px-4 sm:px-6 lg:px-8">
         <Link href="/" className="flex items-center gap-2 group" onClick={() => isHomepage && setActiveSection('hero')}>
           <CodeXml className="h-7 w-7 text-primary transition-transform group-hover:rotate-[25deg] group-hover:scale-110" />
-          <span className="font-sans text-xl font-bold tracking-tight sm:text-2xl group-hover:text-primary transition-colors">HelloKasif</span>
+          <span className="font-mono text-xl font-bold tracking-tight sm:text-2xl group-hover:text-primary transition-colors">HelloKasif</span>
         </Link>
         
         <div className="flex items-center gap-0.5 sm:gap-1">
@@ -209,7 +208,7 @@ export default function Header() {
               </SheetTrigger>
               <SheetContent side="right" className="w-[280px] bg-background/95 backdrop-blur-md pt-6">
                 <SheetHeader className="mb-4 border-b pb-4">
-                  <SheetTitle className="text-center text-lg font-semibold">Menu</SheetTitle>
+                  <SheetTitle className="text-center text-lg font-semibold font-mono">Menu</SheetTitle>
                 </SheetHeader>
                 <nav className="flex flex-col gap-2"> 
                    {NAV_ITEMS_CONFIG.map(item => (

@@ -21,7 +21,7 @@ export default function TestimonialsSection() {
   return (
     <section id="testimonials" className="py-16 md:py-24 animate-in fade-in duration-500">
       <div className="text-center mb-16 animate-in fade-in slide-in-from-bottom-5 duration-700">
-        <h2 className="text-4xl md:text-5xl font-bold tracking-tight">What Folks Are Saying</h2>
+        <h2 className="font-mono text-4xl md:text-5xl font-bold tracking-tight">What Folks Are Saying</h2>
          <p className="text-lg text-muted-foreground mt-3 max-w-2xl mx-auto text-balance">
           I'm grateful for the opportunity to have collaborated and learned. Here's some feedback.
         </p>

@@ -68,7 +68,7 @@ export async function generateMetadata(
 
 const SectionBlock = ({ title, children }: { title: string, children: React.ReactNode }) => (
   <div className="mb-8">
-    <h2 className="text-2xl md:text-3xl font-semibold text-primary mb-3">{title}</h2>
+    <h2 className="font-mono text-2xl md:text-3xl font-semibold text-primary mb-3">{title}</h2>
     <div className="prose prose-lg dark:prose-invert text-muted-foreground max-w-none leading-relaxed space-y-4">
       {typeof children === 'string' ? <p>{children}</p> : children}
     </div>
@@ -97,7 +97,7 @@ export default function ProjectPage({ params }: Props) {
 
           <article className="animate-in fade-in slide-in-from-bottom-5 duration-700">
             <header className="mb-10">
-              <h1 className="text-4xl md:text-5xl font-bold tracking-tight mb-4 text-balance">
+              <h1 className="font-mono text-4xl md:text-5xl font-bold tracking-tight mb-4 text-balance">
                 {project.title}
               </h1>
               <div className="relative overflow-hidden rounded-xl shadow-2xl mb-8 aspect-video w-full">
@@ -122,7 +122,7 @@ export default function ProjectPage({ params }: Props) {
                 
                 {project.clientFeedback && (
                   <div className="mt-6 p-6 border-l-4 border-accent bg-accent/10 rounded-r-lg">
-                    <h3 className="text-xl font-semibold text-accent mb-2 flex items-center">
+                    <h3 className="font-mono text-xl font-semibold text-accent mb-2 flex items-center">
                       <MessageSquareQuote size={22} className="mr-2" /> Client Feedback
                     </h3>
                     <blockquote className="text-muted-foreground italic text-lg text-balance">
@@ -132,7 +132,7 @@ export default function ProjectPage({ params }: Props) {
                 )}
 
                 <div className="mt-8 pt-6 border-t border-border/30">
-                  <h3 className="text-xl font-semibold text-primary mb-3">Technologies Used:</h3>
+                  <h3 className="font-mono text-xl font-semibold text-primary mb-3">Technologies Used:</h3>
                   <div className="flex flex-wrap gap-2">
                     {project.tags.map((tag) => (
                       <Badge key={tag} variant="secondary" className="bg-primary/10 text-primary border-primary/30 hover:bg-primary/20 px-3 py-1 text-sm">

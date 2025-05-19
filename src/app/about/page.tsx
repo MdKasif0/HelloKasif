@@ -50,7 +50,7 @@ export default function AboutPage() {
     <>
       <Header />
       <main className="container mx-auto px-4 py-16 md:py-24 relative z-10 min-h-[calc(100vh-8rem)]">
-        <h1 className="text-4xl md:text-5xl font-bold text-center mb-16 tracking-tight animate-in fade-in slide-in-from-bottom-5 duration-700">The Aspiring Developer</h1>
+        <h1 className="font-mono text-4xl md:text-5xl font-bold text-center mb-16 tracking-tight animate-in fade-in slide-in-from-bottom-5 duration-700">The Aspiring Developer</h1>
         <div className="grid md:grid-cols-1 lg:grid-cols-3 gap-8 items-start">
           <InteractiveCard className="lg:col-span-1 p-0 animate-in fade-in slide-in-from-left-10 duration-700">
             <Image
@@ -107,7 +107,7 @@ export default function AboutPage() {
               <CardContent className="space-y-6">
                 {skillsData.map((skillCategory) => (
                   <div key={skillCategory.category}>
-                    <h3 className="text-xl font-semibold text-foreground mb-2 flex items-center">
+                    <h3 className="text-xl font-semibold text-foreground mb-2 flex items-center font-mono">
                       <skillCategory.icon className="h-6 w-6 mr-2 text-accent" />
                       {skillCategory.category}
                     </h3>

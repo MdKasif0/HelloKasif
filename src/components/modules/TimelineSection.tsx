@@ -29,7 +29,7 @@ export default function TimelineSection() {
   return (
     <section id="timeline" className="py-16 md:py-24 animate-in fade-in duration-500">
        <div className="text-center mb-20 animate-in fade-in slide-in-from-bottom-5 duration-700">
-        <h2 className="text-4xl md:text-5xl font-bold tracking-tight">My Path So Far</h2>
+        <h2 className="font-mono text-4xl md:text-5xl font-bold tracking-tight">My Path So Far</h2>
         <p className="text-lg text-muted-foreground mt-3 max-w-2xl mx-auto text-balance">
           Key milestones from my journey. See the full story on my timeline page.
         </p>

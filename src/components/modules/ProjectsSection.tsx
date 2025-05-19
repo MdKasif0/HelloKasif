@@ -1,4 +1,3 @@
-
 // src/components/modules/ProjectsSection.tsx
 // This is now the HOMEPAGE version of the Projects Section (teaser)
 'use client';
@@ -16,7 +15,7 @@ const INITIAL_PROJECTS_COUNT_HOMEPAGE = 2; // Show only 2 on homepage
 
 const SectionBlock = ({ title, children }: { title: string, children: React.ReactNode }) => (
   <div className="mb-4">
-    <h4 className="text-md font-semibold text-primary mb-1">{title}</h4>
+    <h4 className="font-mono text-md font-semibold text-primary mb-1">{title}</h4>
     <p className="text-muted-foreground leading-relaxed text-sm text-balance">{children}</p>
   </div>
 );
@@ -27,7 +26,7 @@ export default function ProjectsSection() {
   return (
     <section id="projects" className="py-16 md:py-24 animate-in fade-in duration-500">
       <div className="text-center mb-16 animate-in fade-in slide-in-from-bottom-5 duration-700">
-        <h2 className="text-4xl md:text-5xl font-bold tracking-tight">A Peek at My Work</h2>
+        <h2 className="font-mono text-4xl md:text-5xl font-bold tracking-tight">A Peek at My Work</h2>
         <p className="text-lg text-muted-foreground mt-3 max-w-2xl mx-auto text-balance">
           Here are a couple of projects I've enjoyed building. There's more to see on the full projects page!
         </p>
@@ -57,14 +56,14 @@ export default function ProjectsSection() {
               <SectionBlock title="The Challenge">{project.problem}</SectionBlock>
               {project.clientFeedback && (
                 <div className="mt-4 mb-4 p-3 border-l-4 border-accent bg-accent/10 rounded-r-md">
-                  <h4 className="text-sm font-semibold text-accent mb-1 flex items-center">
+                  <h4 className="font-mono text-sm font-semibold text-accent mb-1 flex items-center">
                     <MessageSquareQuote size={16} className="mr-2" /> Client Feedback
                   </h4>
                   <blockquote className="text-xs text-muted-foreground italic text-balance">"{project.clientFeedback}"</blockquote>
                 </div>
               )}
               <div className="mt-6 mb-2">
-                <h4 className="text-md font-semibold text-primary mb-2">Core Technologies:</h4>
+                <h4 className="font-mono text-md font-semibold text-primary mb-2">Core Technologies:</h4>
                 <div className="flex flex-wrap gap-2">
                   {project.tags.slice(0, 3).map((tag) => ( // Show a few key tags
                     <Badge key={tag} variant="secondary" className="bg-primary/10 text-primary border-primary/30 hover:bg-primary/20">

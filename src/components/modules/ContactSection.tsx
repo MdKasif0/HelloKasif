@@ -52,7 +52,7 @@ export default function ContactSection() {
 
   return (
     <section id="contact" className="py-16 md:py-24 animate-in fade-in duration-500">
-      <h2 className="text-4xl md:text-5xl font-bold text-center mb-16 tracking-tight animate-in fade-in slide-in-from-bottom-5 duration-700">Let's Connect</h2>
+      <h2 className="font-mono text-4xl md:text-5xl font-bold text-center mb-16 tracking-tight animate-in fade-in slide-in-from-bottom-5 duration-700">Let's Connect</h2>
       <InteractiveCard className="max-w-2xl mx-auto animate-in fade-in slide-in-from-bottom-10 duration-700 delay-200">
         <CardHeader className="p-6">
           <CardTitle className="text-3xl">Send a Signal</CardTitle>

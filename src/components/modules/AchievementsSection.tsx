@@ -42,7 +42,7 @@ const achievements: Achievement[] = [
 export default function AchievementsSection() {
   return (
     <section id="achievements" className="py-16 md:py-24 animate-in fade-in duration-500">
-      <h2 className="text-4xl md:text-5xl font-bold text-center mb-16 tracking-tight animate-in fade-in slide-in-from-bottom-5 duration-700">Milestones & Recognition</h2>
+      <h2 className="font-mono text-4xl md:text-5xl font-bold text-center mb-16 tracking-tight animate-in fade-in slide-in-from-bottom-5 duration-700">Milestones & Recognition</h2>
       <div className="grid md:grid-cols-1 lg:grid-cols-2 gap-8">
         {achievements.map((achievement, index) => (
           <InteractiveCard 

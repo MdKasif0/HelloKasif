@@ -1,4 +1,3 @@
-
 // src/app/now/page.tsx
 import Header from '@/components/layout/Header';
 import Footer from '@/components/layout/Footer';
@@ -49,7 +48,7 @@ export default function NowPage() {
               <div className="inline-flex items-center justify-center p-3 bg-primary/10 rounded-full mb-4 mx-auto">
                 <CalendarDays className="h-10 w-10 text-primary" />
               </div>
-              <h1 className="text-4xl md:text-5xl font-bold tracking-tight">
+              <h1 className="font-mono text-4xl md:text-5xl font-bold tracking-tight">
                 <CardTitle>What I'm Doing Now</CardTitle>
               </h1>
               <CardDescription className="text-muted-foreground text-lg mt-2">
@@ -58,7 +57,7 @@ export default function NowPage() {
             </CardHeader>
             <CardContent className="p-6 md:p-8 space-y-8 text-lg">
               <section>
-                <h2 className="flex items-center text-2xl font-semibold text-primary mb-3">
+                <h2 className="font-mono flex items-center text-2xl font-semibold text-primary mb-3">
                   <Brain className="h-6 w-6 mr-2" /> Current Focus & Learning
                 </h2>
                 <p className="text-muted-foreground leading-relaxed text-balance">

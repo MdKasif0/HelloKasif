@@ -15,7 +15,7 @@ export default function HeroSection() {
         {/* Optional: Add a subtle, large background element here like a very faint nebula or geometric pattern */}
       </div>
       <h1 
-        className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-extrabold mb-6 tracking-tight text-balance animate-in fade-in slide-in-from-bottom-8 duration-700"
+        className="font-mono text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-extrabold mb-6 tracking-tight text-balance animate-in fade-in slide-in-from-bottom-8 duration-700"
         style={{
           textShadow: '0 0 15px hsl(var(--primary) / 0.3), 0 0 30px hsl(var(--accent) / 0.2)',
         }}

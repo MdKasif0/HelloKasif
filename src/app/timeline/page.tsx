@@ -68,7 +68,7 @@ export default function FullTimelinePage() {
       <Header />
       <main className="container mx-auto px-4 py-16 md:py-24 relative z-10 min-h-[calc(100vh-8rem)]">
         <div className="text-center mb-20 animate-in fade-in slide-in-from-bottom-5 duration-700">
-          <h1 className="text-4xl md:text-5xl font-bold tracking-tight">My Path So Far</h1>
+          <h1 className="font-mono text-4xl md:text-5xl font-bold tracking-tight">My Path So Far</h1>
           <p className="text-lg text-muted-foreground mt-3 max-w-2xl mx-auto text-balance">
             A look at the key chapters in my professional and educational story.
           </p>
