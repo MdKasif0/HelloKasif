@@ -1,4 +1,3 @@
-
 // src/components/layout/MainLayout.tsx
 'use client';
 
@@ -7,7 +6,8 @@ import { useState, useEffect, useRef } from 'react';
 import { cn } from '@/lib/utils';
 import { useTheme } from 'next-themes';
 import BackToTopButton from '@/components/interactive/BackToTopButton';
-import ScrollProgressBar from '@/components/interactive/ScrollProgressBar'; // Added ScrollProgressBar
+import ScrollProgressBar from '@/components/interactive/ScrollProgressBar';
+import ParticleBackground from '@/components/interactive/ParticleBackground'; // Added ParticleBackground
 
 interface MainLayoutProps {
   children: ReactNode;
@@ -32,6 +32,7 @@ export default function MainLayout({ children, className }: MainLayoutProps) {
         const y = Math.min(Math.max((event.clientY - rect.top) / rect.height, 0), 1);
         setMousePosition({ x, y });
       } else {
+        // Fallback if ref is not available (e.g., during initial render cycles)
         const x = Math.min(Math.max(event.clientX / window.innerWidth, 0), 1);
         const y = Math.min(Math.max(event.clientY / window.innerHeight, 0), 1);
         setMousePosition({ x, y });
@@ -64,20 +65,23 @@ export default function MainLayout({ children, className }: MainLayoutProps) {
     <div
       ref={layoutRef}
       className={cn(
-        "min-h-screen w-full bg-background text-foreground overflow-x-hidden perspective-1000px transition-colors duration-500",
+        "min-h-screen w-full bg-background text-foreground overflow-x-hidden perspective-1000px transition-colors duration-500 relative", // Added relative positioning
         className
       )}
       style={{
         // Enhanced radial gradient effect for more dynamism
         backgroundImage: `radial-gradient(circle at ${mousePosition.x * 100}% ${
           mousePosition.y * 100 
-        }%, hsl(var(--primary) / 0.1), transparent 40%), radial-gradient(circle at ${ // Increased opacity, smaller spread
+        }%, hsl(var(--primary) / 0.1), transparent 40%), radial-gradient(circle at ${ 
           (1 - mousePosition.x) * 100 
-        }% ${ (1 - mousePosition.y) * 100}%, hsl(var(--accent) / 0.07), transparent 50%)`, // Increased opacity, smaller spread
+        }% ${ (1 - mousePosition.y) * 100}%, hsl(var(--accent) / 0.07), transparent 50%)`, 
       }}
     >
-      <ScrollProgressBar /> {/* Added ScrollProgressBar here */}
-      {children}
+      <ScrollProgressBar />
+      <ParticleBackground /> {/* Added ParticleBackground component */}
+      <div className="relative z-0"> {/* Wrapper for main content to ensure it's above particles if needed */}
+        {children}
+      </div>
       <BackToTopButton />
     </div>
   );
