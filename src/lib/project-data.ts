@@ -11,7 +11,7 @@ export interface Project {
   result: string;
   clientFeedback?: string;
   imageUrl: string;
-  imageHint: string;
+  imageHint: string; // Max two words
   tags: string[];
   liveLink?: string;
   repoLink?: string;
@@ -42,8 +42,9 @@ export const allProjects: Project[] = [
     process: "The project started with a structural outline, focusing on core functionalities like adding, viewing, and deleting notes and tasks. I then iteratively enhanced the user interface and expanded features based on self-testing and usability principles, aiming for an intuitive experience.",
     solution: "A lightweight and responsive note-taking web application built with HTML, CSS, and JavaScript. 'Note It' provides a clean interface for users to effortlessly manage their notes and track tasks.",
     result: "The outcome is a fully functional, aesthetically pleasing, and user-friendly note-taking web app. This self-driven project was instrumental in my learning journey and received positive feedback for its simplicity and utility.",
-    imageUrl: "https://placehold.co/600x400.png",
-    imageHint: "UI code",
+    clientFeedback: "Not applicable as this was a personal project.",
+    imageUrl: "/images/projects/note-it-cover.png", // Path for actual image in public folder
+    imageHint: "notes app", // Updated hint
     tags: ["HTML", "CSS", "JavaScript", "Web App", "Productivity", "Self Project"],
     liveLink: "https://note-it0.netlify.app/",
     repoLink: "https://github.com/MdKasif0/Note_It.git"
@@ -68,4 +69,3 @@ export const allProjects: Project[] = [
 export const getProjectBySlug = (slug: string): Project | undefined => {
   return allProjects.find(project => project.slug === slug);
 };
-
