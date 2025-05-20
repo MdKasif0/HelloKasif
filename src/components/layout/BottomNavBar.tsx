@@ -16,11 +16,6 @@ const NAV_ITEMS_BOTTOM = [
 export default function BottomNavBar() {
   const pathname = usePathname();
 
-  // Determine if we are on the homepage and if any section is active (for #hash links)
-  const isHomepage = pathname === '/';
-  
-  // For homepage, simple "/" match. For other pages, check startsWith.
-  // This simplified active logic works well for distinct top-level pages.
   const isActive = (href: string) => {
     if (href === '/') {
       return pathname === '/';
@@ -31,11 +26,13 @@ export default function BottomNavBar() {
   return (
     <nav
       className={cn(
-        "fixed bottom-0 left-0 right-0 z-50 border-t border-border/40 bg-background/80 backdrop-blur-lg sm:hidden",
-        "shadow-[0_-4px_15px_-5px_hsl(var(--foreground)/0.07)] rounded-t-2xl" 
+        "fixed bottom-0 left-0 right-0 z-50 flex items-center justify-center border-t border-border/40 bg-background/80 backdrop-blur-lg sm:hidden", // Added flex, items-center, justify-center
+        "h-16", // Explicitly set height on the nav itself
+        "shadow-[0_-4px_15px_-5px_hsl(var(--foreground)/0.07)] rounded-t-2xl"
       )}
     >
-      <div className="mx-auto flex h-16 max-w-md items-center justify-around px-2">
+      {/* The inner div now focuses on max-width and distributing items, parent nav handles height and centering */}
+      <div className="flex w-full max-w-md items-center justify-around px-2">
         {NAV_ITEMS_BOTTOM.map((item) => {
           const Icon = item.icon;
           const active = isActive(item.href);
