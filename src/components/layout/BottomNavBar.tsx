@@ -4,7 +4,7 @@
 
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import { Home, UserCircle2, LayoutGrid, Award, Settings2, GanttChartSquare, Mail, Sun, Moon } from 'lucide-react';
+import { Home, UserCircle2, LayoutGrid, Award, Settings2, GanttChartSquare, Mail, Sun, Moon, MonitorSmartphone } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import { Button } from '@/components/ui/button';
 import {
@@ -86,6 +86,7 @@ export default function BottomNavBar() {
                 "flex flex-col items-center justify-center gap-0.5 p-2 rounded-md transition-colors duration-200 ease-in-out",
                 "text-muted-foreground hover:text-primary flex-1 min-w-0 hover:bg-muted/50"
               )}
+              aria-label="Open settings menu"
             >
               <Settings2 size={22} strokeWidth={2} />
               <span className="text-[0.65rem] font-medium">Settings</span>
@@ -95,35 +96,56 @@ export default function BottomNavBar() {
             <SheetHeader className="p-4 border-b border-border/30">
               <SheetTitle className="font-mono text-center text-lg">Settings</SheetTitle>
             </SheetHeader>
-            <div className="p-4 space-y-3">
-              <SheetClose asChild>
-                <Link href="/timeline" className="flex items-center gap-3 p-3 rounded-lg hover:bg-muted transition-colors">
-                  <GanttChartSquare size={22} className="text-primary" />
-                  <span className="text-sm font-medium">Timeline</span>
-                </Link>
-              </SheetClose>
-              <SheetClose asChild>
-                <Link href="/contact" className="flex items-center gap-3 p-3 rounded-lg hover:bg-muted transition-colors">
-                  <Mail size={22} className="text-primary" />
-                  <span className="text-sm font-medium">Contact</span>
-                </Link>
-              </SheetClose>
-              
-              <div className="border-t border-border/30 pt-3"></div>
-
-              <div className="flex items-center justify-between p-3 rounded-lg hover:bg-muted transition-colors cursor-pointer" onClick={toggleTheme}>
+            <div className="p-4">
+              {/* Theme Toggle - Moved to the top */}
+              <div 
+                onClick={toggleTheme}
+                role="button"
+                tabIndex={0}
+                onKeyDown={(e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); toggleTheme(); }}}
+                className="flex w-full items-center justify-between gap-3 p-3 rounded-lg hover:bg-muted transition-colors cursor-pointer text-sm font-medium mb-3"
+                aria-label={`Switch to ${mounted ? (theme === 'dark' ? 'light' : 'dark') : ''} mode. Current theme: ${mounted ? theme : 'loading'}.`}
+              >
                 <div className="flex items-center gap-3">
-                  {mounted && (theme === 'dark' ? <Sun size={22} className="text-primary" /> : <Moon size={22} className="text-primary" />)}
-                  {mounted && (
-                    <span className="text-sm font-medium">
-                      {theme === 'dark' ? 'Light Mode' : 'Dark Mode'}
-                    </span>
+                  {mounted ? (
+                    theme === 'dark' ? (
+                      <Sun size={20} className="text-primary" />
+                    ) : (
+                      <Moon size={20} className="text-primary" />
+                    )
+                  ) : (
+                    <MonitorSmartphone size={20} className="text-primary" /> 
                   )}
-                  {!mounted && (
-                    <span className="text-sm font-medium">Toggle Theme</span>
-                  )}
+                  <span>
+                    {mounted ? (theme === 'dark' ? 'Light Mode' : 'Dark Mode') : 'Appearance'}
+                  </span>
                 </div>
-                 {mounted && <span className="text-xs text-muted-foreground capitalize">{theme}</span>}
+                {mounted && <span className="text-xs text-muted-foreground capitalize bg-muted px-2 py-1 rounded-md">{theme}</span>}
+              </div>
+
+              <div className="border-t border-border/30"></div> {/* Separator */}
+
+              <div className="mt-3 space-y-2"> {/* Group for links */}
+                <SheetClose asChild>
+                  <Link 
+                    href="/timeline" 
+                    className="flex w-full items-center gap-3 p-3 rounded-lg hover:bg-muted transition-colors text-sm font-medium"
+                    aria-label="View Timeline"
+                  >
+                    <GanttChartSquare size={20} className="text-primary" />
+                    <span>Timeline</span>
+                  </Link>
+                </SheetClose>
+                <SheetClose asChild>
+                  <Link 
+                    href="/contact" 
+                    className="flex w-full items-center gap-3 p-3 rounded-lg hover:bg-muted transition-colors text-sm font-medium"
+                    aria-label="Contact Me"
+                  >
+                    <Mail size={20} className="text-primary" />
+                    <span>Contact</span>
+                  </Link>
+                </SheetClose>
               </div>
             </div>
           </SheetContent>
@@ -132,4 +154,3 @@ export default function BottomNavBar() {
     </nav>
   );
 }
-
