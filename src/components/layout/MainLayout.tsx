@@ -7,7 +7,8 @@ import { cn } from '@/lib/utils';
 import { useTheme } from 'next-themes';
 import BackToTopButton from '@/components/interactive/BackToTopButton';
 import ScrollProgressBar from '@/components/interactive/ScrollProgressBar';
-import ParticleBackground from '@/components/interactive/ParticleBackground'; // Added ParticleBackground
+import ParticleBackground from '@/components/interactive/ParticleBackground';
+import BottomNavBar from '@/components/layout/BottomNavBar'; // Added BottomNavBar
 
 interface MainLayoutProps {
   children: ReactNode;
@@ -65,11 +66,10 @@ export default function MainLayout({ children, className }: MainLayoutProps) {
     <div
       ref={layoutRef}
       className={cn(
-        "min-h-screen w-full bg-background text-foreground overflow-x-hidden perspective-1000px transition-colors duration-500 relative", // Added relative positioning
+        "min-h-screen w-full bg-background text-foreground overflow-x-hidden perspective-1000px transition-colors duration-500 relative",
         className
       )}
       style={{
-        // Enhanced radial gradient effect for more dynamism
         backgroundImage: `radial-gradient(circle at ${mousePosition.x * 100}% ${
           mousePosition.y * 100 
         }%, hsl(var(--primary) / 0.1), transparent 40%), radial-gradient(circle at ${ 
@@ -78,11 +78,12 @@ export default function MainLayout({ children, className }: MainLayoutProps) {
       }}
     >
       <ScrollProgressBar />
-      <ParticleBackground /> {/* Added ParticleBackground component */}
-      <div className="relative z-0"> {/* Wrapper for main content to ensure it's above particles if needed */}
+      <ParticleBackground />
+      <div className="relative z-0 pb-20 sm:pb-0"> {/* Added padding-bottom for mobile to avoid overlap with BottomNavBar */}
         {children}
       </div>
       <BackToTopButton />
+      <BottomNavBar /> {/* Added BottomNavBar component */}
     </div>
   );
 }
