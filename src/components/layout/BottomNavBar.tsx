@@ -96,7 +96,31 @@ export default function BottomNavBar() {
             <SheetHeader className="p-4 border-b border-border/30">
               <SheetTitle className="font-mono text-center text-lg">Settings</SheetTitle>
             </SheetHeader>
-            <div className="p-4">
+            <div className="p-4 space-y-1">
+              {/* Navigation Links */}
+              <SheetClose asChild>
+                <Link 
+                  href="/timeline" 
+                  className="flex w-full items-center gap-3 p-3 rounded-lg hover:bg-muted transition-colors text-sm font-medium"
+                  aria-label="View Timeline"
+                >
+                  <GanttChartSquare size={20} className="text-primary" />
+                  <span>Timeline</span>
+                </Link>
+              </SheetClose>
+              <SheetClose asChild>
+                <Link 
+                  href="/contact" 
+                  className="flex w-full items-center gap-3 p-3 rounded-lg hover:bg-muted transition-colors text-sm font-medium"
+                  aria-label="Contact Me"
+                >
+                  <Mail size={20} className="text-primary" />
+                  <span>Contact</span>
+                </Link>
+              </SheetClose>
+
+              <div className="border-t border-border/30 my-2"></div> {/* Separator */}
+
               {/* Theme Toggle */}
               <div 
                 onClick={toggleTheme}
@@ -121,31 +145,6 @@ export default function BottomNavBar() {
                   </span>
                 </div>
                 {mounted && <span className="text-xs text-muted-foreground capitalize bg-muted px-2 py-1 rounded-md">{theme}</span>}
-              </div>
-
-              <div className="border-t border-border/30 mt-3 mb-1"></div> {/* Separator */}
-
-              <div className="space-y-1"> {/* Group for links */}
-                <SheetClose asChild>
-                  <Link 
-                    href="/timeline" 
-                    className="flex w-full items-center gap-3 p-3 rounded-lg hover:bg-muted transition-colors text-sm font-medium"
-                    aria-label="View Timeline"
-                  >
-                    <GanttChartSquare size={20} className="text-primary" />
-                    <span>Timeline</span>
-                  </Link>
-                </SheetClose>
-                <SheetClose asChild>
-                  <Link 
-                    href="/contact" 
-                    className="flex w-full items-center gap-3 p-3 rounded-lg hover:bg-muted transition-colors text-sm font-medium"
-                    aria-label="Contact Me"
-                  >
-                    <Mail size={20} className="text-primary" />
-                    <span>Contact</span>
-                  </Link>
-                </SheetClose>
               </div>
             </div>
           </SheetContent>
