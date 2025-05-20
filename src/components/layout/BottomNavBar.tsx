@@ -97,13 +97,13 @@ export default function BottomNavBar() {
               <SheetTitle className="font-mono text-center text-lg">Settings</SheetTitle>
             </SheetHeader>
             <div className="p-4">
-              {/* Theme Toggle - Moved to the top */}
+              {/* Theme Toggle */}
               <div 
                 onClick={toggleTheme}
                 role="button"
                 tabIndex={0}
                 onKeyDown={(e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); toggleTheme(); }}}
-                className="flex w-full items-center justify-between gap-3 p-3 rounded-lg hover:bg-muted transition-colors cursor-pointer text-sm font-medium mb-3"
+                className="flex w-full items-center justify-between gap-3 p-3 rounded-lg hover:bg-muted transition-colors cursor-pointer text-sm font-medium"
                 aria-label={`Switch to ${mounted ? (theme === 'dark' ? 'light' : 'dark') : ''} mode. Current theme: ${mounted ? theme : 'loading'}.`}
               >
                 <div className="flex items-center gap-3">
@@ -123,9 +123,9 @@ export default function BottomNavBar() {
                 {mounted && <span className="text-xs text-muted-foreground capitalize bg-muted px-2 py-1 rounded-md">{theme}</span>}
               </div>
 
-              <div className="border-t border-border/30"></div> {/* Separator */}
+              <div className="border-t border-border/30 mt-3 mb-1"></div> {/* Separator */}
 
-              <div className="mt-3 space-y-2"> {/* Group for links */}
+              <div className="space-y-1"> {/* Group for links */}
                 <SheetClose asChild>
                   <Link 
                     href="/timeline" 
