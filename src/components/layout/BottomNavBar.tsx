@@ -114,9 +114,14 @@ export default function BottomNavBar() {
               <div className="flex items-center justify-between p-3 rounded-lg hover:bg-muted transition-colors cursor-pointer" onClick={toggleTheme}>
                 <div className="flex items-center gap-3">
                   {mounted && (theme === 'dark' ? <Sun size={22} className="text-primary" /> : <Moon size={22} className="text-primary" />)}
-                  <span className="text-sm font-medium">
-                    {mounted ? (theme === 'dark' ? 'Light Mode' : 'Dark Mode') : 'Toggle Theme'}
-                  </span>
+                  {mounted && (
+                    <span className="text-sm font-medium">
+                      {theme === 'dark' ? 'Light Mode' : 'Dark Mode'}
+                    </span>
+                  )}
+                  {!mounted && (
+                    <span className="text-sm font-medium">Toggle Theme</span>
+                  )}
                 </div>
                  {mounted && <span className="text-xs text-muted-foreground capitalize">{theme}</span>}
               </div>
@@ -127,3 +132,4 @@ export default function BottomNavBar() {
     </nav>
   );
 }
+
