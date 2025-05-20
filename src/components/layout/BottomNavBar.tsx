@@ -49,9 +49,9 @@ export default function BottomNavBar() {
   return (
     <nav
       className={cn(
-        "fixed bottom-0 left-0 right-0 z-[90] flex items-center justify-center border-t border-border/40 bg-background/80 backdrop-blur-lg sm:hidden",
-        "h-16", 
-        "shadow-[0_-4px_15px_-5px_hsl(var(--foreground)/0.07)] rounded-t-2xl"
+        "fixed bottom-4 left-4 right-4 z-[90] flex items-center justify-center border border-border/40 bg-background/80 backdrop-blur-lg sm:hidden",
+        "h-16",
+        "shadow-xl rounded-xl"
       )}
     >
       <div className="flex w-full max-w-md items-center justify-around px-1">
@@ -64,13 +64,13 @@ export default function BottomNavBar() {
               href={item.href}
               className={cn(
                 "flex flex-col items-center justify-center gap-0.5 p-2 rounded-md transition-colors duration-200 ease-in-out",
-                "text-muted-foreground hover:text-primary flex-1 min-w-0", // Adjusted gap and padding
+                "text-muted-foreground hover:text-primary flex-1 min-w-0",
                 active ? "text-primary" : "hover:bg-muted/50"
               )}
               aria-current={active ? "page" : undefined}
             >
               <Icon size={22} strokeWidth={active ? 2.5 : 2} />
-              <span className={cn("text-[0.65rem] font-medium", active ? "font-semibold" : "font-normal")}> {/* Smaller text */}
+              <span className={cn("text-[0.65rem] font-medium", active ? "font-semibold" : "font-normal")}>
                 {item.label}
               </span>
             </Link>
