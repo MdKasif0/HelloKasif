@@ -51,7 +51,7 @@ export default function BottomNavBar() {
       className={cn(
         "fixed bottom-4 left-4 right-4 z-[90] flex items-center justify-center border border-border/40 bg-background/80 backdrop-blur-lg sm:hidden",
         "h-16",
-        "shadow-xl rounded-xl"
+        "shadow-xl rounded-xl" // For floating effect
       )}
     >
       <div className="flex w-full max-w-md items-center justify-around px-1">
