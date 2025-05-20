@@ -1,3 +1,4 @@
+
 // src/components/layout/Header.tsx
 'use client';
 
@@ -116,7 +117,11 @@ export default function Header() {
       targetHref = (id === 'hero' && href === '/') ? '/' : `/#${id}`; 
       isActive = activeSection === id;
     } else {
+      // For subpages, active state is based on matching the start of the pathname
       isActive = (href !== "/" && pathname.startsWith(href)) || (href === "/" && pathname === "/");
+       if (href === "/" && isHomepage && activeSection) { // Prioritize scrollspy on homepage root
+        isActive = activeSection === id;
+      }
     }
     
     const baseClasses = "transition-all hover:-translate-y-0.5 py-1.5 px-2.5 sm:px-3";
@@ -169,9 +174,9 @@ export default function Header() {
       )}
     >
       <div className="container flex h-16 max-w-screen-2xl items-center justify-between px-4 sm:px-6 lg:px-8">
-        <Link href="/" className="flex items-center gap-2 group" onClick={() => isHomepage && setActiveSection('hero')}>
+        <Link href="/" className="font-mono flex items-center gap-2 group" onClick={() => isHomepage && setActiveSection('hero')}>
           <CodeXml className="h-7 w-7 text-primary transition-transform group-hover:rotate-[25deg] group-hover:scale-110" />
-          <span className="font-mono text-xl font-bold tracking-tight sm:text-2xl group-hover:text-primary transition-colors">HelloKasif</span>
+          <span className="text-xl font-bold tracking-tight sm:text-2xl group-hover:text-primary transition-colors">HelloKasif</span>
         </Link>
         
         <div className="flex items-center gap-0.5 sm:gap-1">
@@ -197,7 +202,8 @@ export default function Header() {
           )}
 
           {/* Mobile/Tablet Hamburger Menu Trigger */}
-          <div className="hidden sm:flex md:hidden"> {/* Hidden on XS, Flex on SM, Hidden on MD+ */}
+          {/* Hidden on XS (extra-small), Flex on SM (small), Hidden on MD (medium and up) */}
+          <div className="hidden sm:flex md:hidden"> 
             <Sheet>
               <SheetTrigger asChild>
                 <Button variant="ghost" size="icon" className="text-muted-foreground hover:text-foreground">
@@ -207,7 +213,7 @@ export default function Header() {
               </SheetTrigger>
               <SheetContent side="right" className="w-[280px] bg-background/95 backdrop-blur-md pt-6">
                 <SheetHeader className="mb-4 border-b pb-4">
-                  <SheetTitle className="text-center text-lg font-semibold font-mono">Menu</SheetTitle>
+                  <SheetTitle className="font-mono text-center text-lg font-semibold">Menu</SheetTitle>
                 </SheetHeader>
                 <nav className="flex flex-col gap-2"> 
                    {NAV_ITEMS_CONFIG.map(item => (

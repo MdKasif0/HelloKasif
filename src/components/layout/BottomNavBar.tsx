@@ -1,3 +1,4 @@
+
 // src/components/layout/BottomNavBar.tsx
 'use client';
 
@@ -26,7 +27,7 @@ export default function BottomNavBar() {
   return (
     <nav
       className={cn(
-        "fixed bottom-0 left-0 right-0 z-[90] flex items-center justify-center border-t border-border/40 bg-background/80 backdrop-blur-lg sm:hidden", // Increased z-index, sm:hidden is correct
+        "fixed bottom-0 left-0 right-0 z-[90] flex items-center justify-center border-t border-border/40 bg-background/80 backdrop-blur-lg sm:hidden", // sm:hidden ensures it's hidden on sm screens and up
         "h-16", 
         "shadow-[0_-4px_15px_-5px_hsl(var(--foreground)/0.07)] rounded-t-2xl"
       )}
