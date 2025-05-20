@@ -66,7 +66,7 @@ export default function MainLayout({ children, className }: MainLayoutProps) {
     <div
       ref={layoutRef}
       className={cn(
-        "min-h-screen w-full bg-background text-foreground overflow-x-hidden perspective-1000px transition-colors duration-500 relative",
+        "min-h-screen w-full bg-background text-foreground overflow-x-hidden transition-colors duration-500 relative", // Removed perspective-1000px
         className
       )}
       style={{
