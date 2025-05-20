@@ -45,10 +45,10 @@ export default function Header() {
 
   useEffect(() => {
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 10); // Set to true if scrolled more than 10px
+      setIsScrolled(window.scrollY > 10); 
     };
     window.addEventListener('scroll', handleScroll);
-    handleScroll(); // Call on mount to check initial scroll position
+    handleScroll(); 
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
@@ -57,19 +57,17 @@ export default function Header() {
       if (observer.current) {
         observer.current.disconnect();
       }
-      // For non-homepage, active section is determined by NavLink logic based on pathname
       const currentNavItem = NAV_ITEMS_CONFIG.find(item => item.href !== "/" && pathname.startsWith(item.href));
       if (currentNavItem) {
         setActiveSection(currentNavItem.id);
       } else if (pathname === "/") {
-        setActiveSection("hero"); // Default to hero for homepage if no specific section matches
+        setActiveSection("hero"); 
       } else {
         setActiveSection(null);
       }
       return;
     }
 
-    // IntersectionObserver logic for homepage scrollspy
     const headerHeight = headerRef.current?.offsetHeight || 64; 
     const options = {
       root: null, 
@@ -118,7 +116,6 @@ export default function Header() {
       targetHref = (id === 'hero' && href === '/') ? '/' : `/#${id}`; 
       isActive = activeSection === id;
     } else {
-      // For subpages, active link is based on path starting with href
       isActive = (href !== "/" && pathname.startsWith(href)) || (href === "/" && pathname === "/");
     }
     
@@ -178,7 +175,8 @@ export default function Header() {
         </Link>
         
         <div className="flex items-center gap-0.5 sm:gap-1">
-          <nav className="hidden items-center gap-0.5 sm:gap-1 sm:flex">
+          {/* Desktop Navigation */}
+          <nav className="hidden items-center gap-0.5 sm:gap-1 md:flex">
             {NAV_ITEMS_CONFIG.map(item => (
               <NavLink key={item.id} id={item.id} href={item.href}>
                 {item.label}
@@ -198,7 +196,8 @@ export default function Header() {
             </Button>
           )}
 
-          <div className="sm:hidden">
+          {/* Mobile/Tablet Hamburger Menu Trigger */}
+          <div className="hidden sm:flex md:hidden"> {/* Hidden on XS, Flex on SM, Hidden on MD+ */}
             <Sheet>
               <SheetTrigger asChild>
                 <Button variant="ghost" size="icon" className="text-muted-foreground hover:text-foreground">

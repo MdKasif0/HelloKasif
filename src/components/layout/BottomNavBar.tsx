@@ -26,12 +26,11 @@ export default function BottomNavBar() {
   return (
     <nav
       className={cn(
-        "fixed bottom-0 left-0 right-0 z-50 flex items-center justify-center border-t border-border/40 bg-background/80 backdrop-blur-lg sm:hidden", // Added flex, items-center, justify-center
-        "h-16", // Explicitly set height on the nav itself
+        "fixed bottom-0 left-0 right-0 z-[90] flex items-center justify-center border-t border-border/40 bg-background/80 backdrop-blur-lg sm:hidden", // Increased z-index, sm:hidden is correct
+        "h-16", 
         "shadow-[0_-4px_15px_-5px_hsl(var(--foreground)/0.07)] rounded-t-2xl"
       )}
     >
-      {/* The inner div now focuses on max-width and distributing items, parent nav handles height and centering */}
       <div className="flex w-full max-w-md items-center justify-around px-2">
         {NAV_ITEMS_BOTTOM.map((item) => {
           const Icon = item.icon;
