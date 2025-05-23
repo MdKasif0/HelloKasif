@@ -17,6 +17,7 @@ import {
 } from "@/components/ui/sheet";
 import { useTheme } from 'next-themes';
 import { useEffect, useState } from 'react';
+import { Separator } from '../ui/separator';
 
 const NAV_ITEMS_BOTTOM = [
   { id: 'home', label: 'Home', href: '/', icon: Home },
@@ -50,8 +51,8 @@ export default function BottomNavBar() {
     <nav
       className={cn(
         "fixed bottom-4 left-4 right-4 z-[90] flex items-center justify-center border border-border/40 bg-background/80 backdrop-blur-lg sm:hidden",
-        "h-16",
-        "shadow-xl rounded-2xl" // Changed from rounded-xl to rounded-2xl
+        "h-16", // Main height of the nav bar
+        "shadow-xl rounded-2xl" 
       )}
     >
       <div className="flex w-full max-w-md items-center justify-around px-1">
@@ -63,13 +64,13 @@ export default function BottomNavBar() {
               key={item.id}
               href={item.href}
               className={cn(
-                "flex flex-col items-center justify-center gap-0.5 p-2 rounded-md transition-colors duration-200 ease-in-out",
+                "flex flex-col items-center justify-center gap-0.5 p-3 rounded-md transition-colors duration-200 ease-in-out", // Increased padding
                 "text-muted-foreground hover:text-primary flex-1 min-w-0",
                 active ? "text-primary" : "hover:bg-muted/50"
               )}
               aria-current={active ? "page" : undefined}
             >
-              <Icon size={22} strokeWidth={active ? 2.5 : 2} />
+              <Icon size={24} strokeWidth={active ? 2.5 : 2} /> 
               <span className={cn("text-[0.65rem] font-medium", active ? "font-semibold" : "font-normal")}>
                 {item.label}
               </span>
@@ -82,12 +83,12 @@ export default function BottomNavBar() {
             <Button
               variant="ghost"
               className={cn(
-                "flex flex-col items-center justify-center gap-0.5 p-2 rounded-md transition-colors duration-200 ease-in-out",
+                "flex flex-col items-center justify-center gap-0.5 p-3 rounded-md transition-colors duration-200 ease-in-out", // Increased padding
                 "text-muted-foreground hover:text-primary flex-1 min-w-0 hover:bg-muted/50"
               )}
               aria-label="Open settings menu"
             >
-              <Settings2 size={22} strokeWidth={2} />
+              <Settings2 size={24} strokeWidth={2} /> 
               <span className="text-[0.65rem] font-medium">Settings</span>
             </Button>
           </SheetTrigger>
@@ -96,7 +97,7 @@ export default function BottomNavBar() {
               <SheetTitle className="font-mono text-center text-lg">Settings</SheetTitle>
             </SheetHeader>
             <div className="p-4 space-y-1">
-              <SheetClose asChild>
+               <SheetClose asChild>
                 <Link 
                   href="/timeline" 
                   className="flex w-full items-center gap-3 p-3 rounded-lg hover:bg-muted transition-colors text-sm font-medium"
@@ -117,7 +118,7 @@ export default function BottomNavBar() {
                 </Link>
               </SheetClose>
 
-              <div className="border-t border-border/30 my-2"></div> {/* Separator */}
+              <Separator className="my-2 bg-border/30"/>
               
               <div 
                 onClick={toggleTheme}
@@ -125,7 +126,7 @@ export default function BottomNavBar() {
                 tabIndex={0}
                 onKeyDown={(e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); toggleTheme(); }}}
                 className="flex w-full items-center justify-between gap-3 p-3 rounded-lg hover:bg-muted transition-colors cursor-pointer text-sm font-medium"
-                aria-label={`Switch to ${mounted ? (theme === 'dark' ? 'light' : 'dark') : ''} mode. Current theme: ${mounted ? theme : 'loading'}.`}
+                aria-label={`Switch to ${mounted ? (theme === 'dark' ? 'light' : 'dark') : 'system'} mode. Current theme: ${mounted ? theme : 'system'}.`}
               >
                 <div className="flex items-center gap-3">
                   {mounted ? (
@@ -150,3 +151,4 @@ export default function BottomNavBar() {
     </nav>
   );
 }
+
