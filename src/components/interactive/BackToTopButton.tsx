@@ -11,11 +11,10 @@ export default function BackToTopButton() {
 
   const toggleVisibility = () => {
     const scrollableHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
-    if (scrollableHeight <= 0) { // Page is not scrollable or barely scrollable
+    if (scrollableHeight <= 0) { 
       setIsVisible(false);
       return;
     }
-    // Calculate the scroll percentage
     const scrollPercentage = (window.scrollY / scrollableHeight) * 100;
 
     if (scrollPercentage > 20) {
@@ -34,7 +33,6 @@ export default function BackToTopButton() {
 
   useEffect(() => {
     window.addEventListener('scroll', toggleVisibility);
-    // Call on mount to set initial state if page is already scrolled
     toggleVisibility(); 
     return () => {
       window.removeEventListener('scroll', toggleVisibility);
@@ -44,18 +42,19 @@ export default function BackToTopButton() {
   return (
     <Button
       variant="outline"
+      size="icon" // Use icon size for a more compact default
       onClick={scrollToTop}
       className={cn(
-        "fixed bottom-8 right-8 z-50 h-12 w-12 rounded-full p-3 shadow-xl transition-all duration-300 ease-in-out transform", // Adjusted size and padding
-        "border-2 border-primary/50 bg-background/80 backdrop-blur-md text-primary",
-        "hover:bg-primary hover:text-primary-foreground hover:scale-110 hover:border-primary hover:shadow-primary/30",
+        "fixed bottom-8 right-8 z-50 h-12 w-12 rounded-full p-0 shadow-lg transition-all duration-300 ease-in-out transform", 
+        "border-2 border-border/60 bg-background/70 text-muted-foreground backdrop-blur-md", // Refined initial state
+        "hover:bg-primary hover:text-primary-foreground hover:border-primary hover:shadow-primary/30 hover:scale-110", // Refined hover state
         isVisible
           ? "opacity-100 translate-y-0 scale-100"
           : "opacity-0 translate-y-5 scale-90 pointer-events-none"
       )}
       aria-label="Scroll to top"
     >
-      <ArrowUp className="h-6 w-6" /> {/* Adjusted icon size */}
+      <ArrowUp className="h-6 w-6" />
     </Button>
   );
 }
