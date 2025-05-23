@@ -51,7 +51,7 @@ export default function BottomNavBar() {
       className={cn(
         "fixed bottom-4 left-4 right-4 z-[90] flex items-center justify-center border border-border/40 bg-background/80 backdrop-blur-lg sm:hidden",
         "h-16",
-        "shadow-xl rounded-xl" // For floating effect
+        "shadow-xl rounded-2xl" // Changed from rounded-xl to rounded-2xl
       )}
     >
       <div className="flex w-full max-w-md items-center justify-around px-1">
@@ -77,7 +77,6 @@ export default function BottomNavBar() {
           );
         })}
         
-        {/* Settings Sheet Trigger */}
         <Sheet>
           <SheetTrigger asChild>
             <Button
@@ -97,7 +96,6 @@ export default function BottomNavBar() {
               <SheetTitle className="font-mono text-center text-lg">Settings</SheetTitle>
             </SheetHeader>
             <div className="p-4 space-y-1">
-              {/* Navigation Links */}
               <SheetClose asChild>
                 <Link 
                   href="/timeline" 
@@ -120,8 +118,7 @@ export default function BottomNavBar() {
               </SheetClose>
 
               <div className="border-t border-border/30 my-2"></div> {/* Separator */}
-
-              {/* Theme Toggle */}
+              
               <div 
                 onClick={toggleTheme}
                 role="button"
