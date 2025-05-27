@@ -14,12 +14,12 @@ export default function AboutSection() {
       <div className="grid md:grid-cols-1 lg:grid-cols-3 gap-8 items-center">
         <InteractiveCard className="lg:col-span-1 p-0 animate-in fade-in slide-in-from-left-10 duration-700">
           <Image
-            src="https://placehold.co/600x750.png" 
+            src="https://raw.githubusercontent.com/MdKasif0/HelloKasif/b6b03e2ca12e6e5bc66fa496c78bab57bf7b3fa4/public/Images/file_0000000006c851f78147f7ea8a5edc00_conversation_id%3D67e8916e-6574-8002-a80a-054fd38329e9%26message_id%3Dc5173a0a-1dc0-4b3f-bfde-02b77bed7523(1)_copy_600x750.jpg" 
             alt="Md Kasif Uddin - Aspiring Developer"
             width={600}
             height={750}
             className="rounded-t-xl object-cover w-full h-auto"
-            data-ai-hint="student portrait"
+            data-ai-hint="Md Kasif Uddin"
             priority
           />
           <CardHeader className="p-6">

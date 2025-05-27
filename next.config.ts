@@ -21,6 +21,12 @@ const nextConfig: NextConfig = {
         hostname: 'imaginate-ai.netlify.app',
         port: '',
         pathname: '/**',
+      },
+      {
+        protocol: 'https',
+        hostname: 'raw.githubusercontent.com',
+        port: '',
+        pathname: '/**',
       }
     ],
   },

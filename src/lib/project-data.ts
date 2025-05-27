@@ -27,8 +27,8 @@ export const allProjects: Project[] = [
     process: "I began by outlining the key features of the app, starting with a minimal interface to generate images from text input. Over time, I added more advanced features, enhanced styling, and improved loading feedback. Assistance from ChatGPT and Gemini helped troubleshoot issues and refine functionality.",
     solution: "An AI-powered web app that lets users generate images using text prompts through Hugging Face APIs. The app features a clean UI, responsive design, and dynamic loading states for better user experience.",
     result: "The final product is a fully functional and visually appealing AI image generator. It performs reliably and has been positively received for its simplicity and effectiveness.",
-    imageUrl: "https://placehold.co/600x400.png", // Updated from https://imaginate-ai.netlify.app/preview.png
-    imageHint: "AI interface", // Kept original hint, adjusted if needed
+    imageUrl: "https://raw.githubusercontent.com/MdKasif0/HelloKasif/refs/heads/master/public/Images/output_copy_600x400_1.png",
+    imageHint: "AI interface",
     tags: ["Html", "CSS", "JavaScript", "Hugging Face"],
     liveLink: "https://imaginate-ai.netlify.app/",
     repoLink: "https://github.com/MdKasif0/Imaginate",
@@ -43,7 +43,7 @@ export const allProjects: Project[] = [
     solution: "A lightweight and responsive note-taking web application built with HTML, CSS, and JavaScript. 'Note It' provides a clean interface for users to effortlessly manage their notes and track tasks.",
     result: "The outcome is a fully functional, aesthetically pleasing, and user-friendly note-taking web app. This self-driven project was instrumental in my learning journey and received positive feedback for its simplicity and utility.",
     clientFeedback: "Not applicable as this was a personal project.",
-    imageUrl: "https://placehold.co/600x400.png", // Updated from /images/projects/note-it-cover.png
+    imageUrl: "https://raw.githubusercontent.com/MdKasif0/HelloKasif/b6b03e2ca12e6e5bc66fa496c78bab57bf7b3fa4/public/Images/file_00000000d2b061f6a720db46ac426feb_copy_600x400.png",
     imageHint: "notes app", 
     tags: ["HTML", "CSS", "JavaScript", "Web App", "Productivity", "Self Project"],
     liveLink: "https://note-it0.netlify.app/",
@@ -58,7 +58,7 @@ export const allProjects: Project[] = [
     process: "Researched existing UI frameworks and game engine principles. Developed a component-based architecture using TypeScript and Web Components. Focused on performance and ease of use for developers.",
     solution: "Aether Engine: A modular UI framework designed for creating highly interactive and immersive web environments with a consistent look and feel.",
     result: "Reduced development time for interactive web features by 30%. Adopted by multiple teams, enhancing product quality and developer productivity across the organization.",
-    imageUrl: "https://placehold.co/600x400.png", // Already a placeholder
+    imageUrl: "https://placehold.co/600x400.png",
     imageHint: "abstract code",
     tags: ["TypeScript", "Web Components", "Animation", "Framework Design"],
     liveLink: "#",
