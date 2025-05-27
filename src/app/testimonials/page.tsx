@@ -1,3 +1,4 @@
+
 // src/app/testimonials/page.tsx
 import Header from '@/components/layout/Header';
 import Footer from '@/components/layout/Footer';
@@ -21,7 +22,7 @@ export const metadata: Metadata = {
     type: 'website',
     images: [
       {
-        url: '/og-image-testimonials.png', // Ensure this image exists in public/og-image-testimonials.png
+        url: '/og-image-testimonials.png', 
         width: 1200,
         height: 630,
         alt: 'Md Kasif Uddin - Testimonials',
@@ -32,7 +33,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: pageTitle,
     description: pageDescription,
-    images: ['/twitter-image-testimonials.png'], // Ensure this image exists in public/twitter-image-testimonials.png
+    images: ['/twitter-image-testimonials.png'], 
   },
 };
 
@@ -40,14 +41,14 @@ const allTestimonials = [
   {
     name: "Virtual Mentor",
     role: "AI Assistant (ChatGPT)",
-    avatar: "/avatars/chatgpt.png", // Path for public directory, e.g., public/avatars/chatgpt.png
+    avatar: "https://placehold.co/96x96.png", 
     avatarHint: "AI logo",
     quote: "Kasif shows exceptional curiosity and consistency in learning. His commitment to real-world project development at a young age is impressive and commendable."
   },
   {
     name: "Tech Enthusiast Friend",
     role: "Peer Reviewer",
-    avatar: "/avatars/friend1.png", // Path for public directory, e.g., public/avatars/friend1.png
+    avatar: "https://placehold.co/96x96.png", 
     avatarHint: "person icon",
     quote: "The 'Note It' app by Kasif is clean, functional, and showcases the fundamentals of web development well. It’s inspiring to see such initiative in a student."
   }
@@ -95,7 +96,7 @@ export default function AllTestimonialsPage() {
           ))}
         </div>
         <div className="text-center mt-12 text-sm text-muted-foreground">
-            Note: Ensure avatar images (e.g., <code>chatgpt.png</code>, <code>friend1.png</code>) are placed in the <code>public/avatars/</code> directory.
+            Note: Replace placeholder avatars with actual images.
         </div>
       </main>
       <Footer />

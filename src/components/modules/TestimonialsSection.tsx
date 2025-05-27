@@ -1,3 +1,4 @@
+
 // src/components/modules/TestimonialsSection.tsx
 // This is now the HOMEPAGE version of the Testimonials Section (teaser)
 import Image from 'next/image';
@@ -10,7 +11,7 @@ import Link from 'next/link';
 const homepageTestimonial = { // Static single testimonial for homepage
   name: "Virtual Mentor",
   role: "AI Assistant (ChatGPT)",
-  avatar: "/avatars/chatgpt.png", // Path for public directory
+  avatar: "https://placehold.co/96x96.png", 
   avatarHint: "AI logo",
   quote: "Kasif shows exceptional curiosity and consistency in learning. His commitment to real-world project development at a young age is impressive and commendable."
 };
@@ -66,7 +67,7 @@ export default function TestimonialsSection() {
           </Button>
         </div> 
          <div className="text-center mt-8 text-sm text-muted-foreground">
-            Note: Ensure avatar images (e.g., <code>chatgpt.png</code>) are placed in the <code>public/avatars/</code> directory.
+            Note: Replace placeholder avatars with actual images.
         </div>
     </section>
   );

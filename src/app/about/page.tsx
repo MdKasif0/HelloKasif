@@ -1,3 +1,4 @@
+
 // src/app/about/page.tsx
 import Header from '@/components/layout/Header';
 import Footer from '@/components/layout/Footer';
@@ -23,7 +24,7 @@ export const metadata: Metadata = {
     type: 'profile',
     images: [
       {
-        url: '/og-image-about.png', // Ensure this image exists in public/og-image-about.png
+        url: '/og-image-about.png', 
         width: 1200,
         height: 630,
         alt: 'Md Kasif Uddin - About Me',
@@ -34,7 +35,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: pageTitle,
     description: pageDescription,
-    images: ['/twitter-image-about.png'], // Ensure this image exists in public/twitter-image-about.png
+    images: ['/twitter-image-about.png'], 
   },
 };
 
@@ -54,7 +55,7 @@ export default function AboutPage() {
         <div className="grid md:grid-cols-1 lg:grid-cols-3 gap-8 items-start">
           <InteractiveCard className="lg:col-span-1 p-0 animate-in fade-in slide-in-from-left-10 duration-700">
             <Image
-              src="/images/profile.jpg" // Ensure this image is at public/images/profile.jpg
+              src="https://placehold.co/600x750.png" 
               alt="Md Kasif Uddin - Aspiring Developer"
               width={600}
               height={750}

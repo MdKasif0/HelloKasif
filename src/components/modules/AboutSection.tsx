@@ -1,3 +1,4 @@
+
 // src/components/modules/AboutSection.tsx
 // This is now the HOMEPAGE version of the About Section (teaser)
 import InteractiveCard from '@/components/interactive/InteractiveCard';
@@ -13,7 +14,7 @@ export default function AboutSection() {
       <div className="grid md:grid-cols-1 lg:grid-cols-3 gap-8 items-center">
         <InteractiveCard className="lg:col-span-1 p-0 animate-in fade-in slide-in-from-left-10 duration-700">
           <Image
-            src="/images/profile.jpg" // Ensure this image is at public/images/profile.jpg
+            src="https://placehold.co/600x750.png" 
             alt="Md Kasif Uddin - Aspiring Developer"
             width={600}
             height={750}
