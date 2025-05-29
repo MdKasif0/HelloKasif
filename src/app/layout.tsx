@@ -29,6 +29,7 @@ export const metadata: Metadata = {
   },
   description: 'Interactive portfolio of Md Kasif Uddin, a Grade 12th PCM student exploring web development and AI/ML.',
   authors: [{ name: 'Md Kasif Uddin', url: siteUrl }],
+  manifest: '/manifest.json', // Link to the manifest file
   openGraph: {
     type: 'website',
     locale: 'en_US',
@@ -52,12 +53,15 @@ export const metadata: Metadata = {
     // creator: '@YourTwitterHandle', // Uncomment and replace if you have a Twitter handle
     images: [`/twitter-image.png`], // Relative to public folder, metadataBase will make it absolute
   },
-  // keywords: ['Next.js', 'React', 'Tailwind CSS', 'Portfolio', 'Developer', 'AI', 'Md Kasif Uddin', 'Web Developer', 'Student Developer'],
-  // Consider adding a favicon link here if you have one in your public folder
-  // icons: {
-  //   icon: '/favicon.ico',
-  //   apple: '/apple-touch-icon.png',
-  // },
+  appleWebApp: { // For iOS "Add to Home Screen"
+    capable: true,
+    statusBarStyle: 'default', // Or 'black' or 'black-translucent'
+    title: 'HelloKasif',
+    // startupImage: [], // You can add startup images for different iOS device sizes here
+  },
+  // PWA specific meta tags, often covered by manifest but good for quick access
+  applicationName: 'HelloKasif',
+  themeColor: '#000000', // Match your dark theme's background, or your manifest's theme_color
 };
 
 export default function RootLayout({
@@ -67,6 +71,39 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={`${geistSans.variable} ${geistMono.variable}`} suppressHydrationWarning>
+      <head>
+        {/* Standard PWA meta tags */}
+        <meta name="application-name" content="HelloKasif" />
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+        <meta name="apple-mobile-web-app-title" content="HelloKasif" />
+        <meta name="format-detection" content="telephone=no" />
+        <meta name="mobile-web-app-capable" content="yes" />
+        <meta name="msapplication-config" content="/icons/browserconfig.xml" />
+        <meta name="msapplication-TileColor" content="#BE185D" />
+        <meta name="msapplication-tap-highlight" content="no" />
+        
+        {/* Theme Color for browsers */}
+        <meta name="theme-color" content="#000000" />
+
+        {/* Link to Manifest */}
+        <link rel="manifest" href="/manifest.json" />
+
+        {/* Apple Touch Icons */}
+        <link rel="apple-touch-icon" href="/icons/apple-touch-icon.png" />
+        {/* You can add more specific sizes if needed:
+        <link rel="apple-touch-icon" sizes="152x152" href="/icons/icon-152x152.png" />
+        <link rel="apple-touch-icon" sizes="180x180" href="/icons/icon-192x192.png" />
+        <link rel="apple-touch-icon" sizes="167x167" href="/icons/icon-167x167.png" />
+        */}
+
+        {/* Favicons */}
+        <link rel="icon" type="image/png" sizes="32x32" href="/icons/icon-32x32.png" />
+        <link rel="icon" type="image/png" sizes="16x16" href="/icons/icon-16x16.png" />
+        <link rel="mask-icon" href="/icons/safari-pinned-tab.svg" color="#BE185D" />
+        <link rel="shortcut icon" href="/favicon.ico" />
+
+      </head>
       <body className="antialiased">
         <ThemeProvider
           attribute="class"
