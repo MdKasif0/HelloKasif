@@ -20,6 +20,8 @@ const geistMono = Geist_Mono({ // Correct usage for variable fonts
 });
 
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'http://localhost:3000'; // Define a default or use env var
+const profileImageUrl = "https://raw.githubusercontent.com/MdKasif0/HelloKasif/b6b03e2ca12e6e5bc66fa496c78bab57bf7b3fa4/public/Images/file_0000000006c851f78147f7ea8a5edc00_conversation_id%3D67e8916e-6574-8002-a80a-054fd38329e9%26message_id%3Dc5173a0a-1dc0-4b3f-bfde-02b77bed7523(1)_copy_600x750.jpg";
+
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl), // Crucial for canonical URLs and absolute OG URLs
@@ -90,18 +92,18 @@ export default function RootLayout({
         <link rel="manifest" href="/manifest.json" />
 
         {/* Apple Touch Icons */}
-        <link rel="apple-touch-icon" href="/icons/apple-touch-icon.png" />
+        <link rel="apple-touch-icon" href={profileImageUrl} />
         {/* You can add more specific sizes if needed:
-        <link rel="apple-touch-icon" sizes="152x152" href="/icons/icon-152x152.png" />
-        <link rel="apple-touch-icon" sizes="180x180" href="/icons/icon-192x192.png" />
-        <link rel="apple-touch-icon" sizes="167x167" href="/icons/icon-167x167.png" />
+        <link rel="apple-touch-icon" sizes="152x152" href={profileImageUrl} />
+        <link rel="apple-touch-icon" sizes="180x180" href={profileImageUrl} />
+        <link rel="apple-touch-icon" sizes="167x167" href={profileImageUrl} />
         */}
 
         {/* Favicons */}
-        <link rel="icon" type="image/png" sizes="32x32" href="/icons/icon-32x32.png" />
-        <link rel="icon" type="image/png" sizes="16x16" href="/icons/icon-16x16.png" />
-        <link rel="mask-icon" href="/icons/safari-pinned-tab.svg" color="#BE185D" />
-        <link rel="shortcut icon" href="/favicon.ico" />
+        <link rel="icon" type="image/jpeg" sizes="32x32" href={profileImageUrl} />
+        <link rel="icon" type="image/jpeg" sizes="16x16" href={profileImageUrl} />
+        {/* <link rel="mask-icon" href="/icons/safari-pinned-tab.svg" color="#BE185D" />  Removed as profile image is not SVG */}
+        <link rel="shortcut icon" href={profileImageUrl} type="image/jpeg" />
 
       </head>
       <body className="antialiased">

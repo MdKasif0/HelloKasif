@@ -1,60 +1,20 @@
 {
-  "name": "HelloKasif - Md Kasif Uddin",
+  "name": "HelloKasif",
   "short_name": "HelloKasif",
-  "description": "Interactive portfolio of Md Kasif Uddin, a Grade 12th PCM student exploring web development and AI/ML.",
+  "description": "Interactive portfolio of Md Kasif Uddin, an aspiring developer.",
+  "icons": [
+    { "src": "https://raw.githubusercontent.com/MdKasif0/HelloKasif/b6b03e2ca12e6e5bc66fa496c78bab57bf7b3fa4/public/Images/file_0000000006c851f78147f7ea8a5edc00_conversation_id%3D67e8916e-6574-8002-a80a-054fd38329e9%26message_id%3Dc5173a0a-1dc0-4b3f-bfde-02b77bed7523(1)_copy_600x750.jpg", "sizes": "72x72", "type": "image/jpeg" },
+    { "src": "https://raw.githubusercontent.com/MdKasif0/HelloKasif/b6b03e2ca12e6e5bc66fa496c78bab57bf7b3fa4/public/Images/file_0000000006c851f78147f7ea8a5edc00_conversation_id%3D67e8916e-6574-8002-a80a-054fd38329e9%26message_id%3Dc5173a0a-1dc0-4b3f-bfde-02b77bed7523(1)_copy_600x750.jpg", "sizes": "96x96", "type": "image/jpeg" },
+    { "src": "https://raw.githubusercontent.com/MdKasif0/HelloKasif/b6b03e2ca12e6e5bc66fa496c78bab57bf7b3fa4/public/Images/file_0000000006c851f78147f7ea8a5edc00_conversation_id%3D67e8916e-6574-8002-a80a-054fd38329e9%26message_id%3Dc5173a0a-1dc0-4b3f-bfde-02b77bed7523(1)_copy_600x750.jpg", "sizes": "128x128", "type": "image/jpeg" },
+    { "src": "https://raw.githubusercontent.com/MdKasif0/HelloKasif/b6b03e2ca12e6e5bc66fa496c78bab57bf7b3fa4/public/Images/file_0000000006c851f78147f7ea8a5edc00_conversation_id%3D67e8916e-6574-8002-a80a-054fd38329e9%26message_id%3Dc5173a0a-1dc0-4b3f-bfde-02b77bed7523(1)_copy_600x750.jpg", "sizes": "144x144", "type": "image/jpeg" },
+    { "src": "https://raw.githubusercontent.com/MdKasif0/HelloKasif/b6b03e2ca12e6e5bc66fa496c78bab57bf7b3fa4/public/Images/file_0000000006c851f78147f7ea8a5edc00_conversation_id%3D67e8916e-6574-8002-a80a-054fd38329e9%26message_id%3Dc5173a0a-1dc0-4b3f-bfde-02b77bed7523(1)_copy_600x750.jpg", "sizes": "152x152", "type": "image/jpeg" },
+    { "src": "https://raw.githubusercontent.com/MdKasif0/HelloKasif/b6b03e2ca12e6e5bc66fa496c78bab57bf7b3fa4/public/Images/file_0000000006c851f78147f7ea8a5edc00_conversation_id%3D67e8916e-6574-8002-a80a-054fd38329e9%26message_id%3Dc5173a0a-1dc0-4b3f-bfde-02b77bed7523(1)_copy_600x750.jpg", "sizes": "192x192", "type": "image/jpeg", "purpose": "any maskable" },
+    { "src": "https://raw.githubusercontent.com/MdKasif0/HelloKasif/b6b03e2ca12e6e5bc66fa496c78bab57bf7b3fa4/public/Images/file_0000000006c851f78147f7ea8a5edc00_conversation_id%3D67e8916e-6574-8002-a80a-054fd38329e9%26message_id%3Dc5173a0a-1dc0-4b3f-bfde-02b77bed7523(1)_copy_600x750.jpg", "sizes": "384x384", "type": "image/jpeg" },
+    { "src": "https://raw.githubusercontent.com/MdKasif0/HelloKasif/b6b03e2ca12e6e5bc66fa496c78bab57bf7b3fa4/public/Images/file_0000000006c851f78147f7ea8a5edc00_conversation_id%3D67e8916e-6574-8002-a80a-054fd38329e9%26message_id%3Dc5173a0a-1dc0-4b3f-bfde-02b77bed7523(1)_copy_600x750.jpg", "sizes": "512x512", "type": "image/jpeg" }
+  ],
   "start_url": "/",
   "display": "standalone",
   "orientation": "portrait",
-  "background_color": "#000000",
   "theme_color": "#000000",
-  "icons": [
-    {
-      "src": "/icons/icon-72x72.png",
-      "sizes": "72x72",
-      "type": "image/png",
-      "purpose": "any"
-    },
-    {
-      "src": "/icons/icon-96x96.png",
-      "sizes": "96x96",
-      "type": "image/png",
-      "purpose": "any"
-    },
-    {
-      "src": "/icons/icon-128x128.png",
-      "sizes": "128x128",
-      "type": "image/png",
-      "purpose": "any"
-    },
-    {
-      "src": "/icons/icon-144x144.png",
-      "sizes": "144x144",
-      "type": "image/png",
-      "purpose": "any"
-    },
-    {
-      "src": "/icons/icon-152x152.png",
-      "sizes": "152x152",
-      "type": "image/png",
-      "purpose": "any"
-    },
-    {
-      "src": "/icons/icon-192x192.png",
-      "sizes": "192x192",
-      "type": "image/png",
-      "purpose": "any maskable"
-    },
-    {
-      "src": "/icons/icon-384x384.png",
-      "sizes": "384x384",
-      "type": "image/png",
-      "purpose": "any"
-    },
-    {
-      "src": "/icons/icon-512x512.png",
-      "sizes": "512x512",
-      "type": "image/png",
-      "purpose": "any"
-    }
-  ]
+  "background_color": "#000000"
 }
