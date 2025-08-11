@@ -72,7 +72,7 @@ export const allProjects: Project[] = [
       "Multi-Model",
       "Voice Interface"
     ],
-    liveLink: "https://promptly-ai.netlify.app/",
+    liveLink: "https://promptly-ai-chatbot.netlify.app/",
     repoLink: "https://github.com/MdKasif0/Promptly"
   },
   {
@@ -100,7 +100,7 @@ export const allProjects: Project[] = [
       "Google Genkit",
       "Newsdata.io"
     ],
-    liveLink: "https://readon-news.netlify.app/",
+    liveLink: "https://read-on.netlify.app/",
     repoLink: "https://github.com/MdKasif0/ReadOn"
   },
   {
