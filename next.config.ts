@@ -36,6 +36,12 @@ const nextConfig: NextConfig = {
         hostname: 'raw.githubusercontent.com',
         port: '',
         pathname: '/**',
+      },
+      {
+        protocol: 'https',
+        hostname: 'bytechat-v3.netlify.app',
+        port: '',
+        pathname: '/**',
       }
     ],
   },

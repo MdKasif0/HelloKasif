@@ -49,13 +49,13 @@ export const allProjects: Project[] = [
     id: 4,
     slug: "bytechat",
     title: "ByteChat",
-    problem: "In today’s fast-paced digital world, people need a single, secure, and modern platform that combines text messaging, media sharing, voice/video calls, and AI assistance without compromising on privacy or user experience. Most existing apps are either too heavy, lack robust encryption, or fail to deliver smooth performance across devices.",
-    myRole: "I independently developed ByteChat as a Progressive Web App (PWA) — overseeing the complete process from concept design and UI/UX to backend integration and WebRTC-based real-time communication. I implemented secure messaging, HD calls, AI features, and performance optimizations to ensure the app runs flawlessly on both desktop and mobile devices.",
+    problem: "Most messaging apps either compromise on security, lack modern features, or don't work seamlessly across devices with a native-like feel.",
+    myRole: "Led full-stack development from design to deployment, integrating WebRTC for peer-to-peer communication, Firebase for authentication and real-time data, and Gemini AI for in-app assistance.",
     process: "I started by defining the core pillars of ByteChat: speed, security, and versatility. Using Next.js with the App Router and Tailwind CSS for a sleek, responsive UI, I integrated Firebase for authentication, real-time Firestore updates, and cloud storage. For calls, I implemented PeerJS over WebRTC data channels to enable crystal-clear peer-to-peer voice and video communication. I also integrated an AI assistant powered by Google Gemini for contextual user help. The PWA functionality ensures users can install and use ByteChat offline-ready like a native app. Rigorous testing and iterative improvements refined performance, responsiveness, and UI polish.",
-    solution: "A modern, feature-rich Progressive Web App offering real-time one-on-one and group messaging, file sharing, emoji reactions, typing indicators, HD voice/video calls, AI-powered chat assistance, and customizable user profiles — all running securely on WebRTC and Firebase. The app features light/dark themes, responsive layouts, and is installable as a PWA for a native-like experience.",
-    result: "The final ByteChat PWA delivers a fast, secure, and premium messaging experience that works seamlessly across devices. Its smooth animations, minimal latency, and strong security make it stand out. The integrated AI assistant adds unique value, while PWA support enhances accessibility and engagement.",
+    solution: "I developed ByteChat — a secure, real-time Progressive Web App that supports text messaging, file sharing, HD voice/video calls via WebRTC, and AI-powered assistance. Built with Next.js, Firebase, and PeerJS, it offers customizable profiles, light/dark themes, and a fully responsive, installable PWA experience.",
+    result: "A premium, cross-platform messaging app with minimal latency, strong security, and native-like usability.",
     clientFeedback: null,
-    imageUrl: "/bytechat-cover.png",
+    imageUrl: "https://bytechat-v3.netlify.app/bytechat-logo.png",
     imageHint: "chat app",
     tags: [
       "Next.js",
@@ -69,8 +69,7 @@ export const allProjects: Project[] = [
       "PeerJS",
       "AI",
       "Google Gemini",
-      "PWA",
-      "Responsive Design"
+      "PWA"
     ],
     liveLink: "https://bytechat-v3.netlify.app/",
     repoLink: "https://github.com/MdKasif0/ByteChat-V3"
@@ -115,7 +114,7 @@ export const allProjects: Project[] = [
     process: "Researched existing UI frameworks and game engine principles. Developed a component-based architecture using TypeScript and Web Components. Focused on performance and ease of use for developers.",
     solution: "Aether Engine: A modular UI framework designed for creating highly interactive and immersive web environments with a consistent look and feel.",
     result: "Reduced development time for interactive web features by 30%. Adopted by multiple teams, enhancing product quality and developer productivity across the organization.",
-    imageUrl: "https://placehold.co/600x400.png",
+    imageUrl: "/images/projects/aether-engine.png",
     imageHint: "abstract code",
     tags: ["TypeScript", "Web Components", "Animation", "Framework Design"],
     liveLink: "#",
