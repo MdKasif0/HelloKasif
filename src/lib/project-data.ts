@@ -28,7 +28,7 @@ export const allProjects: Project[] = [
     solution: "I developed ByteChat — a secure, real-time Progressive Web App that supports text messaging, file sharing, HD voice/video calls via WebRTC, and AI-powered assistance. Built with Next.js, Firebase, and PeerJS, it offers customizable profiles, light/dark themes, and a fully responsive, installable PWA experience.",
     result: "A premium, cross-platform messaging app with minimal latency, strong security, and native-like usability.",
     clientFeedback: null,
-    imageUrl: "https://bytechat-v3.netlify.app/bytechat-logo.png",
+    imageUrl: "bytechat-cover.png",
     imageHint: "chat app",
     tags: [
       "Next.js",
