@@ -1,4 +1,3 @@
-
 // src/lib/project-data.ts
 export interface Project {
   id: number;
@@ -9,7 +8,7 @@ export interface Project {
   process: string;
   solution: string;
   result: string;
-  clientFeedback?: string;
+  clientFeedback?: string | null;
   imageUrl: string;
   imageHint: string; // Max two words
   tags: string[];
@@ -18,6 +17,36 @@ export interface Project {
 }
 
 export const allProjects: Project[] = [
+  {
+    id: 4,
+    slug: "bytechat",
+    title: "ByteChat",
+    problem: "In today’s fast-paced digital world, people need a single, secure, and modern platform that combines text messaging, media sharing, voice/video calls, and AI assistance without compromising on privacy or user experience. Most existing apps are either too heavy, lack robust encryption, or fail to deliver smooth performance across devices.",
+    myRole: "I independently developed ByteChat as a Progressive Web App (PWA) — overseeing the complete process from concept design and UI/UX to backend integration and WebRTC-based real-time communication. I implemented secure messaging, HD calls, AI features, and performance optimizations to ensure the app runs flawlessly on both desktop and mobile devices.",
+    process: "I started by defining the core pillars of ByteChat: speed, security, and versatility. Using Next.js with the App Router and Tailwind CSS for a sleek, responsive UI, I integrated Firebase for authentication, real-time Firestore updates, and cloud storage. For calls, I implemented PeerJS over WebRTC data channels to enable crystal-clear peer-to-peer voice and video communication. I also integrated an AI assistant powered by Google Gemini for contextual user help. The PWA functionality ensures users can install and use ByteChat offline-ready like a native app. Rigorous testing and iterative improvements refined performance, responsiveness, and UI polish.",
+    solution: "A modern, feature-rich Progressive Web App offering real-time one-on-one and group messaging, file sharing, emoji reactions, typing indicators, HD voice/video calls, AI-powered chat assistance, and customizable user profiles — all running securely on WebRTC and Firebase. The app features light/dark themes, responsive layouts, and is installable as a PWA for a native-like experience.",
+    result: "The final ByteChat PWA delivers a fast, secure, and premium messaging experience that works seamlessly across devices. Its smooth animations, minimal latency, and strong security make it stand out. The integrated AI assistant adds unique value, while PWA support enhances accessibility and engagement.",
+    clientFeedback: null,
+    imageUrl: "/bytechat-cover.png",
+    imageHint: "chat app",
+    tags: [
+      "Next.js",
+      "TypeScript",
+      "Tailwind CSS",
+      "ShadCN UI",
+      "Firebase",
+      "Firestore",
+      "Authentication",
+      "WebRTC",
+      "PeerJS",
+      "AI",
+      "Google Gemini",
+      "PWA",
+      "Responsive Design"
+    ],
+    liveLink: "https://bytechat-v3.netlify.app/",
+    repoLink: "https://github.com/MdKasif0/ByteChat-V3"
+  },
   {
     id: 1,
     slug: "imaginate-ai",
