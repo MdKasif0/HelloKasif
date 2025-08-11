@@ -19,6 +19,33 @@ export interface Project {
 
 export const allProjects: Project[] = [
   {
+    id: 7,
+    slug: "candleweb",
+    title: "CandleWeb",
+    problem: "People often want to send unique, heartfelt birthday wishes online but lack the time or design skills to create something beautiful and personalized.",
+    myRole: "Designed and developed the full application, integrated Genkit AI for message generation, implemented PWA support, template selection, and dynamic website creation with shareable links.",
+    process: "The process involved designing a user-friendly interface for creating personalized birthday websites. I integrated Genkit AI to allow users to generate heartfelt messages. The application was built as a PWA using Next.js and Tailwind CSS, with functionality for template selection and generating a unique, shareable link for each customized site.",
+    solution: "I built CandleWeb — an AI-powered PWA that helps users create personalized, animated birthday websites in minutes. Users can generate messages with AI, select from stunning templates, customize names and messages, and instantly share a unique link. Built with Next.js, Tailwind CSS, and ShadCN UI, it works offline and feels like a native app.",
+    result: "A fast, creative, and user-friendly way to send personalized birthday wishes, combining AI and beautiful templates in a single seamless experience.",
+    clientFeedback: null,
+    imageUrl: "/CandleWeb-cover.png",
+    imageHint: "birthday websites",
+    tags: [
+        "Next.js",
+        "React",
+        "TypeScript",
+        "Tailwind CSS",
+        "ShadCN UI",
+        "Genkit",
+        "PWA",
+        "AI",
+        "React Hook Form",
+        "Zod"
+    ],
+    liveLink: "https://candleweb.netlify.app/",
+    repoLink: "https://github.com/MdKasif0/CandleWeb"
+  },
+  {
     id: 6,
     slug: "promptly",
     title: "Promptly",
@@ -143,7 +170,7 @@ export const allProjects: Project[] = [
     process: "Researched existing UI frameworks and game engine principles. Developed a component-based architecture using TypeScript and Web Components. Focused on performance and ease of use for developers.",
     solution: "Aether Engine: A modular UI framework designed for creating highly interactive and immersive web environments with a consistent look and feel.",
     result: "Reduced development time for interactive web features by 30%. Adopted by multiple teams, enhancing product quality and developer productivity across the organization.",
-    imageUrl: "https://placehold.co/600x400.png",
+    imageUrl: "/images/projects/aether-engine.png",
     imageHint: "abstract code",
     tags: ["TypeScript", "Web Components", "Animation", "Framework Design"],
     liveLink: "#",
