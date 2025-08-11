@@ -18,6 +18,34 @@ export interface Project {
 
 export const allProjects: Project[] = [
   {
+    id: 5,
+    slug: "readon",
+    title: "ReadOn",
+    problem: "Users often struggle to find a single news app that is fast, personalized, works offline, and provides advanced filtering without clutter or unnecessary distractions.",
+    myRole: "Handled end-to-end development — from UI/UX design in Next.js and Tailwind CSS to integrating Firebase, AI search, PWA features, and optimized offline-first architecture.",
+    process: "I started by designing a clean, responsive UI with Next.js and Tailwind CSS, focusing on an optimal reading experience. I engineered an offline-first architecture by fetching news from the Newsdata.io API, caching it in Firebase Firestore for quick server-side access, and storing it in the browser's IndexedDB for offline availability. I integrated a Genkit-powered AI search to provide intelligent, contextual results. The app was built as a PWA from the ground up to be installable and performant.",
+    solution: "I built ReadOn — a modern, intelligent PWA that aggregates news from multiple categories using the Newsdata.io API, caches it in Firebase Firestore for server-side speed, and IndexedDB for offline access. It includes AI-assisted search, advanced filters, bookmark management, and a responsive, installable interface.",
+    result: "A clean, fast, and installable news reader that works seamlessly across devices, personalizes content, and functions even without internet connectivity.",
+    clientFeedback: null,
+    imageUrl: "/readon-cover.png",
+    imageHint: "news app",
+    tags: [
+      "Next.js",
+      "TypeScript",
+      "Tailwind CSS",
+      "ShadCN UI",
+      "Firebase",
+      "Firestore",
+      "IndexedDB",
+      "PWA",
+      "AI",
+      "Google Genkit",
+      "Newsdata.io"
+    ],
+    liveLink: "https://readon-news.netlify.app/",
+    repoLink: "https://github.com/MdKasif0/ReadOn"
+  },
+  {
     id: 4,
     slug: "bytechat",
     title: "ByteChat",
