@@ -1,3 +1,4 @@
+
 // src/lib/project-data.ts
 export interface Project {
   id: number;
@@ -17,6 +18,34 @@ export interface Project {
 }
 
 export const allProjects: Project[] = [
+  {
+    id: 6,
+    slug: "promptly",
+    title: "Promptly",
+    problem: "Users need a modern, responsive, and versatile AI chat app that supports multiple AI models, handles images, and offers advanced interaction methods like voice input — all in a single, polished interface.",
+    myRole: "Designed and developed the entire application, integrating multiple AI providers, implementing responsive UI/UX, voice and vision features, and ensuring smooth error handling and performance.",
+    process: "The development process involved designing a futuristic, responsive UI with Next.js and ShadCN UI. I integrated multiple AI providers like Google Gemini and OpenRouter using Google Genkit, and implemented vision capabilities for image-based conversations. A key part of the process was creating a dedicated voice interaction page and ensuring local storage was used for chat history persistence.",
+    solution: "I built Promptly — a high-performance AI chat application with multi-model support for Google Gemini and OpenRouter, vision-enabled image discussions, and a futuristic voice interaction page. Built with Next.js, Tailwind CSS, and ShadCN UI, it offers a premium chat interface, chat history in local storage, and intelligent error handling that retries with alternate models.",
+    result: "A premium, multi-model AI chat experience with image and voice support, local chat history, and a clean, modern interface ready for deployment as a fully functional web app.",
+    clientFeedback: null,
+    imageUrl: "/promptly-cover.png",
+    imageHint: "AI chat",
+    tags: [
+      "Next.js",
+      "TypeScript",
+      "Tailwind CSS",
+      "ShadCN UI",
+      "Lucide React",
+      "Google Genkit",
+      "Google Gemini",
+      "OpenRouter",
+      "AI",
+      "Multi-Model",
+      "Voice Interface"
+    ],
+    liveLink: "https://promptly-ai.netlify.app/",
+    repoLink: "https://github.com/MdKasif0/Promptly"
+  },
   {
     id: 5,
     slug: "readon",
@@ -98,7 +127,7 @@ export const allProjects: Project[] = [
     process: "The project started with a structural outline, focusing on core functionalities like adding, viewing, and deleting notes and tasks. I then iteratively enhanced the user interface and expanded features based on self-testing and usability principles, aiming for an intuitive experience.",
     solution: "A lightweight and responsive note-taking web application built with HTML, CSS, and JavaScript. 'Note It' provides a clean interface for users to effortlessly manage their notes and track tasks.",
     result: "The outcome is a fully functional, aesthetically pleasing, and user-friendly note-taking web app. This self-driven project was instrumental in my learning journey and received positive feedback for its simplicity and utility.",
-    clientFeedback: "Not applicable as this was a personal project.",
+    clientFeedback: null,
     imageUrl: "https://raw.githubusercontent.com/MdKasif0/HelloKasif/b6b03e2ca12e6e5bc66fa496c78bab57bf7b3fa4/public/Images/file_00000000d2b061f6a720db46ac426feb_copy_600x400.png",
     imageHint: "notes app", 
     tags: ["HTML", "CSS", "JavaScript", "Web App", "Productivity", "Self Project"],
@@ -114,7 +143,7 @@ export const allProjects: Project[] = [
     process: "Researched existing UI frameworks and game engine principles. Developed a component-based architecture using TypeScript and Web Components. Focused on performance and ease of use for developers.",
     solution: "Aether Engine: A modular UI framework designed for creating highly interactive and immersive web environments with a consistent look and feel.",
     result: "Reduced development time for interactive web features by 30%. Adopted by multiple teams, enhancing product quality and developer productivity across the organization.",
-    imageUrl: "/images/projects/aether-engine.png",
+    imageUrl: "https://placehold.co/600x400.png",
     imageHint: "abstract code",
     tags: ["TypeScript", "Web Components", "Animation", "Framework Design"],
     liveLink: "#",
