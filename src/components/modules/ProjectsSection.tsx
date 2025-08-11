@@ -12,7 +12,7 @@ import { Badge } from '@/components/ui/badge';
 import Link from 'next/link';
 import { allProjects } from '@/lib/project-data';
 
-const INITIAL_PROJECTS_COUNT_HOMEPAGE = 2; // Show only 2 on homepage
+const INITIAL_PROJECTS_COUNT_HOMEPAGE = 3; // Show 3 on homepage
 
 const SectionBlock = ({ title, children }: { title: string, children: React.ReactNode }) => (
   <div className="mb-4">
