@@ -179,21 +179,6 @@ export const allProjects: Project[] = [
     liveLink: "https://note-it0.netlify.app/",
     repoLink: "https://github.com/MdKasif0/Note_It.git"
   },
-  {
-    id: 3,
-    slug: "aether-engine",
-    title: "Aether Engine",
-    problem: "Building immersive and interactive web environments was time-consuming and lacked a standardized approach, leading to inconsistent user experiences.",
-    myRole: "Core Framework Developer. Designed and implemented the modular architecture, animation system, and developer APIs for the Aether Engine.",
-    process: "Researched existing UI frameworks and game engine principles. Developed a component-based architecture using TypeScript and Web Components. Focused on performance and ease of use for developers.",
-    solution: "Aether Engine: A modular UI framework designed for creating highly interactive and immersive web environments with a consistent look and feel.",
-    result: "Reduced development time for interactive web features by 30%. Adopted by multiple teams, enhancing product quality and developer productivity across the organization.",
-    imageUrl: "/images/projects/aether-engine.png",
-    imageHint: "abstract code",
-    tags: ["TypeScript", "Web Components", "Animation", "Framework Design"],
-    liveLink: "#",
-    repoLink: "#",
-  },
 ];
 
 export const getProjectBySlug = (slug: string): Project | undefined => {
