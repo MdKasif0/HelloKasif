@@ -19,6 +19,24 @@ export interface Project {
 
 export const allProjects: Project[] = [
   {
+    id: 8,
+    slug: "barakah",
+    title: "Barakah",
+    problem: "Muslims need a lightweight, privacy-first companion to get accurate prayer times, read the Quran, and access daily spiritual tools without heavy backend dependency or intrusive tracking.",
+    myRole: "Lead Frontend Developer — implemented core features, integrations, PWA offline flow, UI polish, and deployment.",
+    process: "Designed UI/UX, scaffolded React+Vite app, integrated Aladhan, implemented service worker + IndexedDB for offline PDFs, added animations with Framer Motion, Fuse.js search, and Netlify CI/CD.",
+    solution: "A static PWA (React + Vite) that provides location-based prayer times (Aladhan), Qibla compass, Quran reader with per-chapter PDFs, recitation audio, Tasbih, Meditation, MoodVerse, and an AI Dua assistant — fully client-side with offline caching and elegant UI.",
+    result: "Barakah delivers a lightweight, privacy-first Islamic companion: accurate location-based prayer times, Qibla compass, Quran reader with per-chapter PDFs, Tasbih and Meditation tools, AI-powered Dua assistant, and offline PWA support. Built for fast performance, accessibility, and elegant UX, it empowers users to practice faith with calm, modern design and customizable themes, favorites, and shareable verse images.",
+    clientFeedback: "‘Practical, beautiful, and respectful of privacy — exactly what our community needed.’ — Beta user",
+    imageUrl: "/barakah-cover.png",
+    imageHint: "islamic app",
+    tags: [
+        "React", "Vite", "Tailwind CSS", "Aladhan API", "Halal Identification", "PWA", "IndexedDB", "Service Worker", "Framer Motion", "Fuse.js", "Recitation", "Accessibility", "Netlify", "Barakah", "Islamic App", "Qibla", "Prayer Times", "Quran Reader"
+    ],
+    liveLink: "https://barakah-v3.netlify.app/",
+    repoLink: "https://github.com/MdKasif0/Barakah.git"
+  },
+  {
     id: 4,
     slug: "bytechat",
     title: "ByteChat",
